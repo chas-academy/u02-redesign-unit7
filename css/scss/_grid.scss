@@ -1,0 +1,11 @@
+.container {
+	width: 100vw;
+	padding: 2rem 1rem;
+	margin: 0 auto;
+}
+
+@include media-lg {
+	.container {
+		width: 1140px;
+	}
+}
