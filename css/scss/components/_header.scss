@@ -1,7 +1,19 @@
+#main-header {
+	border-bottom: 5px solid $black;
+
+	nav {
+		a {
+			text-transform: uppercase;
+			font-weight: 300;
+		}
+	}
+}
+
 @include media-lg {
 	#main-header {
 		#main-header-logotype {
 			max-width: 350px;
+			margin-bottom: 1rem;
 		}
 	}
 }
