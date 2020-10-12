@@ -1,0 +1,15 @@
+@include media-lg {
+	#front-page-news {
+		.main-news {
+			grid-area: main-news;
+		}
+
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		column-gap: 1rem;
+		grid-template-areas:
+			"main-news main-news"
+			". .";
+	}
+}

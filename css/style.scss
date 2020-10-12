@@ -1,9 +1,13 @@
-// Compile all
+// General purpose
 @import "./scss/media";
 @import "./scss/reset";
 @import "./scss/colors";
 @import "./scss/typography";
 @import "./scss/grid";
 
+// Components
 @import "./scss/components/header";
 @import "./scss/components/footer";
+
+// Pages
+@import "./scss/pages/index";
