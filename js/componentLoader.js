@@ -3,12 +3,12 @@ function componentLoader() {
 	// Define up keyword
 	const keyword = "component";
 
-	// Assign const tag to all elements on page
-	const tag = document.getElementsByTagName("*");
+	// Assign const els to all elements on page
+	const els = document.getElementsByTagName("*");
 
-	// Run all tags in for loop
-	for (i = 0; i < tag.length; i++) {
-		const el = tag[i];
+	// Run all elements in for loop
+	for (i = 0; i < els.length; i++) {
+		const el = els[i];
 
 		// search for element atrribute with keyword
 		const file = el.getAttribute(keyword);
@@ -33,12 +33,15 @@ function componentLoader() {
 					}
 					// Remove attribute from element
 					el.removeAttribute(keyword);
-					// componentLoader();
+					// As long as we are in loop we should run function
+					componentLoader();
 				}
 			}
 
+			// Get content of file
 			xhr.open("GET", file);
-			xhr.send(el.innerHTML);
+			// Send back content to element
+			xhr.send();
 
 			// The cow goes moo
 			return;
