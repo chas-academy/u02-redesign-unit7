@@ -1,47 +1,79 @@
-#front-page-news {
-	.main-news {
-		position: relative;
-		background: $black;
-		padding: 1.375rem 1.25rem;
-		margin-bottom: 2rem;
-		overflow: hidden;
+.main-gateway-full-width {
+	grid-area: full-width;
+}
 
-		div {
-			position: relative;
-			z-index: 2;
-			color: $white;
+#main-gateway {
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: 1rem;
+	grid-template-areas:
+		"."
+		"."
+		"full-width";
 
-			p:last-child {
-				margin-bottom: 0;
-			}
-		}
-
-		img {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			opacity: 0.5;
-			z-index: 1;
-		}
-	}
-
-	.lvl2-news {
+	section {
 		background: $smoke;
 		padding: 1.375rem 1.25rem;
 	}
 }
 
+#front-page-news {
+	&.container {
+		padding: 0;
+
+		.main-news {
+			position: relative;
+			background: $black;
+			padding: 1.375rem 1.25rem;
+			margin-bottom: 2rem;
+			overflow: hidden;
+
+			div {
+				position: relative;
+				z-index: 2;
+				color: $white;
+
+				p:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				opacity: 0.5;
+				z-index: 1;
+			}
+		}
+
+		.lvl2-news {
+			background: $smoke;
+			padding: 1.375rem 1.25rem;
+		}
+	}
+}
+
 @include media-lg {
+	#main-gateway {
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 2rem;
+		row-gap: 2rem;
+		grid-template-areas:
+			". ."
+			"full-width full-width";
+	}
+
 	#front-page-news {
 		.main-news {
 			grid-area: main-news;
 		}
 
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(2, 1fr);
 		column-gap: 2rem;
 		grid-template-areas:
 			"main-news main-news"
