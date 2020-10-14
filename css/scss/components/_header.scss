@@ -1,7 +1,25 @@
 #main-header {
 	border-bottom: 5px solid $black;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem 0;
+	grid-template-areas:
+		"logotype"
+		"search"
+		"nav";
+
+	#main-header-logotype {
+		grid-area: logotype;
+		width: 100%;
+	}
+
+	input {
+		grid-area: search;
+		justify-self: end;
+	}
 
 	nav {
+		grid-area: nav;
 		display: flex;
 		flex-wrap: nowrap;
 		flex-direction: row;
@@ -24,9 +42,14 @@
 
 @include media-lg {
 	#main-header {
+		grid-template-columns: repeat(5, 1fr);
+		gap: 2rem;
+		grid-template-areas:
+			"logotype logotype search search search"
+			"nav nav nav nav nav";
+
 		#main-header-logotype {
-			max-width: 350px;
-			margin-bottom: 1rem;
+			min-width: 350px;
 		}
 	}
 }
