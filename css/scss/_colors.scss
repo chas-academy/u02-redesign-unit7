@@ -22,6 +22,10 @@ $black: #000000;
 $white: #ffffff;
 $smoke: #f5f5f5;
 
+$signal-green: #1ac03e;
+$royal-blue: #0d0d75;
+$baby-blue: #4563ae;
+
 // Classes
 .text-primary {
 	color: $color-primary !important;
@@ -49,6 +53,18 @@ $smoke: #f5f5f5;
 
 .background-black {
 	background: $black !important;
+}
+
+.background-signal-green {
+	background: $signal-green !important;
+}
+
+.background-royal-blue {
+	background: $royal-blue !important;
+}
+
+.background-baby-blue {
+	background: $baby-blue !important;
 }
 
 .spectrum {
