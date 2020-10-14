@@ -27,6 +27,11 @@
 			z-index: 1;
 		}
 	}
+
+	.lvl2-news {
+		background: $smoke;
+		padding: 1.375rem 1.25rem;
+	}
 }
 
 @include media-lg {
@@ -37,7 +42,6 @@
 
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
 		column-gap: 2rem;
 		grid-template-areas:
 			"main-news main-news"
