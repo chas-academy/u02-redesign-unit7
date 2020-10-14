@@ -10,10 +10,11 @@
 		"."
 		"."
 		"full-width";
-
-	section {
-		background: $smoke;
-		padding: 1.375rem 1.25rem;
+	&.container {
+		section {
+			background: $smoke;
+			padding: 1.375rem 1.25rem;
+		}
 	}
 }
 
@@ -59,24 +60,28 @@
 
 @include media-lg {
 	#main-gateway {
-		grid-template-columns: repeat(2, 1fr);
-		column-gap: 2rem;
-		row-gap: 2rem;
-		grid-template-areas:
-			". ."
-			"full-width full-width";
+		&.container {
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 2rem;
+			row-gap: 2rem;
+			grid-template-areas:
+				". ."
+				"full-width full-width";
+		}
 	}
 
 	#front-page-news {
-		.main-news {
-			grid-area: main-news;
-		}
+		&.container {
+			.main-news {
+				grid-area: main-news;
+			}
 
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		column-gap: 2rem;
-		grid-template-areas:
-			"main-news main-news"
-			". .";
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 2rem;
+			grid-template-areas:
+				"main-news main-news"
+				". .";
+		}
 	}
 }
