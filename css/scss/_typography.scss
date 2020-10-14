@@ -117,6 +117,17 @@ strong,
 	font-size: 0.675rem !important;
 }
 
+// Alignment
+.text-center {
+	text-align: center !important;
+}
+.text-left {
+	text-align: left !important;
+}
+.text-right {
+	text-align: right !important;
+}
+
 @include media-sm {
 	html,
 	body {
