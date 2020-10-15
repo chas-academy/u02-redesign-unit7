@@ -110,7 +110,6 @@
 
 	#front-page-news {
 		.more-news {
-			padding-top: 0;
 			grid-template-columns: repeat(2, 1fr);
 			column-gap: 2rem;
 			grid-template-areas: ". .";
