@@ -1,6 +1,6 @@
-function componentLoader() {
+const componentLoader = () => {
 
-	// Define up keyword
+	// Define keyword
 	const keyword = "component";
 
 	// Assign const els to all elements on page

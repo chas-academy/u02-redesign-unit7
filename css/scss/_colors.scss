@@ -22,9 +22,13 @@ $black: #000000;
 $white: #ffffff;
 $smoke: #f5f5f5;
 
+$signal-green: #1ac03e;
+$royal-blue: #0d0d75;
+$baby-blue: #4563ae;
+
 // Classes
 .text-primary {
-	color: $color-primary;
+	color: $color-primary !important;
 }
 
 .text-black {
@@ -36,15 +40,31 @@ $smoke: #f5f5f5;
 }
 
 .background-light {
-	background: $smoke;
+	background: $smoke !important;
 }
 
 .background-primary {
-	background: $color-primary;
+	background: $color-primary !important;
 }
 
 .background-white {
-	background: $white;
+	background: $white !important;
+}
+
+.background-black {
+	background: $black !important;
+}
+
+.background-signal-green {
+	background: $signal-green !important;
+}
+
+.background-royal-blue {
+	background: $royal-blue !important;
+}
+
+.background-baby-blue {
+	background: $baby-blue !important;
 }
 
 .spectrum {
