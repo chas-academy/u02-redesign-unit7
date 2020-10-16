@@ -1,3 +1,8 @@
+#index-student-info-banner {
+	margin-top: 2rem;
+	background: $gray-green;
+}
+
 #main-option-sections {
 	padding-bottom: 0;
 	display: grid;
@@ -93,6 +98,11 @@
 }
 
 @include media-lg {
+	#index-student-info-banner {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
 	#main-gateway {
 		grid-template-columns: repeat(2, 1fr);
 		column-gap: 2rem;
