@@ -24,7 +24,6 @@ const componentLoader = () => {
 					if (this.status === 200) {
 						// A-OK
 						el.innerHTML = this.responseText;
-						console.log(this.responseText);
 					}
 
 					if (this.status === 404) {
