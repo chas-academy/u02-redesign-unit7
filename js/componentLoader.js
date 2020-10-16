@@ -47,3 +47,5 @@ const componentLoader = () => {
 		}
 	}
 }
+// Run function
+componentLoader();
