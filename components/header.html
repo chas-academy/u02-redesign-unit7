@@ -1,34 +1,54 @@
-<!-- Top extras -->
-<section id="main-header-top" class="text-small">
-	<a href="#" class="globe">Other languages</a>
-	<a href="#" class="lock">Logga in</a>
-</section>
-
 <!-- main header section -->
 <a href="/" target="_self">
 	<img id="main-header-logotype" src="../assets/svg/logotype.svg" alt="MYH logotyp" />
 </a>
+
 <input placeholder="SÖK" type="search" />
-<nav>
-	<a href="#" target="_self">
-		Om oss
-	</a>
-	<a href="#" target="_self">
-		Verksamhetsområden
-	</a>
-	<a href="#" target="_self">
-		Lagar, regler, tillsyn
-	</a>
-	<a href="#" target="_self">
-		Statistik
-	</a>
-	<a href="../pages/publikationer.html" target="_self">
-		Publikationer
-	</a>
-	<a href="#" target="_self">
-		Nyhetsrum
-	</a>
-	<a href="#" target="_self">
-		Kontakt
-	</a>
+
+<div id="main-header-options">
+	<button onclick="menuToggler()" class="menu-toggle">MENY</button>
+	<a href="#" class="globe-icon">English</a>
+	<a href="#" class="lock-icon">Logga in</a>
+</div>
+
+<nav onclick="menuToggler()" id="nav-main">
+	<button class="menu-toggle"></button>
+	<ul>
+		<li>
+			<a href="#" target="_self">
+				Om oss
+			</a>
+		</li>
+
+		<li>
+			<a href="#" target="_self">
+				Verksamhetsområden
+			</a>
+		</li>
+		<li>
+			<a href="#" target="_self">
+				Lagar, regler, tillsyn
+			</a>
+		</li>
+		<li>
+			<a href="#" target="_self">
+				Statistik
+			</a>
+		</li>
+		<li>
+			<a href="../pages/publikationer.html" target="_self">
+				Publikationer
+			</a>
+		</li>
+		<li>
+			<a href="#" target="_self">
+				Nyhetsrum
+			</a>
+		</li>
+		<li>
+			<a href="#" target="_self">
+				Kontakt
+			</a>
+		</li>
+	</ul>
 </nav>
