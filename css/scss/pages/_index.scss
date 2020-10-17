@@ -1,6 +1,13 @@
 #index-student-info-banner {
-	margin-top: 2rem;
-	background: $gray-green;
+	&.container {
+		margin-top: 2rem;
+		padding: 1rem;
+		background: $gray-green;
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 
 #main-option-sections {
