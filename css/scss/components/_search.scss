@@ -35,9 +35,14 @@
 			text-align: center;
 			font-weight: 700;
 			font-size: 2rem;
-		}
+			opacity: 1;
+			transition: opacity 0.35s;
 
-		&.searching {
+			&.hide {
+				opacity: 0;
+				visibility: hidden;
+			}
+
 			&::before {
 				display: block;
 				content: "";
@@ -46,7 +51,7 @@
 				position: absolute;
 				background: $black;
 				border-radius: 50%;
-				top: 50%;
+				top: 150%;
 				left: 50%;
 				transform-origin: center center;
 				animation: pulsate 1s alternate infinite;
