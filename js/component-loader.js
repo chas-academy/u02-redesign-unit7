@@ -2,7 +2,7 @@
 const menuTogglerScriptEl = document.createElement('script');
 
 // Insert menu toggler file in script source
-menuTogglerScriptEl.src = '/js/menu-toggle.js';
+menuTogglerScriptEl.src = '/u02-redesign-unit7/js/menu-toggle.js';
 
 // Append script to head (NOTE! NOT header element)
 document.head.appendChild(menuTogglerScriptEl);
@@ -11,7 +11,7 @@ document.head.appendChild(menuTogglerScriptEl);
 const searchScripEl = document.createElement('script');
 
 // Insert menu toggler file in script source
-searchScripEl.src = '/js/search.js';
+searchScripEl.src = '/u02-redesign-unit7/js/search.js';
 
 // Append script to body. Append, rather than prepend
 // will add script at the end of body since this file
