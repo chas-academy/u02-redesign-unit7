@@ -23,14 +23,14 @@ const searchButtonEl = searchBoxEl && searchBoxEl.querySelector('button')
 // Make sure that searchFiedlEl is fetched
 // Add event listener, click, to search button
 // When we click it, run function
-searchFiedlEl && searchFiedlEl.addEventListener('keydown', () => {
+searchFiedlEl.addEventListener('keydown', () => {
 	window.event.key === 'Enter' && doSearch(searchFiedlEl);
 });
 
 // Make sure that searchButtonEl is fetched
 // Add event listener, click, to search button
 // When we click it, run function
-searchButtonEl && searchButtonEl.addEventListener('click', () => {
+searchButtonEl.addEventListener('click', () => {
 	doSearch(searchFiedlEl, true);
 });
 
