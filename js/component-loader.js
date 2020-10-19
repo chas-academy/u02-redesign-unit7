@@ -1,8 +1,22 @@
+// This is just a clean up process to remove the inital script
+// in head, that createt the script element for this file
+const removeInitalScript = document.head.querySelector('script');
+removeInitalScript.parentNode.removeChild(removeInitalScript);
+
+// Quick test to see if we are on index page
+// We'll use this test later to handle the menu links
+const isIndex = window.location.pathname === '/' ? true : false;
+
+// Test if we are on CHAS Academy's GitHub pages
+const chasGitHub = 'chas-academy.github.io';
+const gitHubRepoName = 'u02-redesign-unit7';
+const isGitHub = window.location.host === chasGitHub ? true : false;
+
 // Create empty script element
 const menuTogglerScriptEl = document.createElement('script');
 
 // Insert menu toggler file in script source
-menuTogglerScriptEl.src = '/u02-redesign-unit7/js/menu-toggle.js';
+menuTogglerScriptEl.src = !isGitHub ? `/js/menu-toggle.js` : `/${gitHubRepoName}/js/menu-toggle.js`;
 
 // Append script to head (NOTE! NOT header element)
 document.head.appendChild(menuTogglerScriptEl);
@@ -11,7 +25,7 @@ document.head.appendChild(menuTogglerScriptEl);
 const searchScripEl = document.createElement('script');
 
 // Insert menu toggler file in script source
-searchScripEl.src = '/u02-redesign-unit7/js/search.js';
+searchScripEl.src = !isGitHub ? `/js/search.js` : `/${gitHubRepoName}/js/search.js`;
 
 // Append script to body. Append, rather than prepend
 // will add script at the end of body since this file
@@ -20,15 +34,6 @@ searchScripEl.src = '/u02-redesign-unit7/js/search.js';
 document.body.appendChild(searchScripEl);
 
 const componentLoader = () => {
-
-	// Quick test to see if we are on index page
-	// We'll use this test later to handle the menu links
-	const isIndex = window.location.pathname === '/' ? true : false;
-
-	// Test if we are on CHAS Academy's GitHub pages
-	const chasGitHub = 'chas-academy.github.io';
-	const gitHubRepoName = 'u02-redesign-unit7';
-	const isGitHub = window.location.host === chasGitHub ? true : false;
 
 	// Define keyword
 	const keyword = 'component';
@@ -39,13 +44,13 @@ const componentLoader = () => {
 	// Run all elements in for each loop
 	componentElemets.forEach(async (el) => {
 
+		// Best practice for async is to run it in try/catch block
 		try {
-
 			// Get component tag name
 			const componentTag = el.tagName;
 
 			// Get file location from element atrribute
-			const file = el.getAttribute(keyword);
+			const file = !isGitHub ? el.getAttribute(keyword) : `/${gitHubRepoName}${el.getAttribute(keyword)}`;
 
 			if (file) {
 				const fetchResponse = await fetch(file);
@@ -59,6 +64,10 @@ const componentLoader = () => {
 					if (componentTag === 'HEADER') {
 
 						const nodeList = new DOMParser().parseFromString(html, 'text/html').body;
+
+						const headerLogotype = nodeList.querySelector('a#main-header-logotype img');
+						headerLogotype.src = `/${gitHubRepoName}${headerLogotype.getAttribute('src')}`;
+						console.log(headerLogotype);
 
 						// Get all anchors in list items from menu (nav)
 						const menuItems = nodeList.querySelectorAll('.container nav ul li a');
@@ -110,10 +119,11 @@ const componentLoader = () => {
 
 				// If HTML string is not false add it to element
 				if (html)
-					el.insertAdjacentHTML(
-						'afterbegin',
-						html
-					);
+					// el.insertAdjacentHTML(
+					// 	'afterbegin',
+					// 	html
+					// );
+					el.innerHTML = html;
 
 				// Keep source code clean
 				// Remove keyword attribute from element

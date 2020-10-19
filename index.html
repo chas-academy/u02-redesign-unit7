@@ -5,13 +5,44 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>MYH - Myndigheten för yrkeshögskolan</title>
-	<link rel="stylesheet" href="/u02-redesign-unit7/css/style.min.css?v=1.0" />
 	<!-- DRY KISS 💋 -->
-	<script defer src="/u02-redesign-unit7/js/component-loader.js"></script>
+	<script>
+		// Wait for DOM content to load
+		document.addEventListener('DOMContentLoaded', () => {
+
+			// This is simply to test for where we are
+			// local is default in file references
+			// if we are on github, changes file references
+
+			// Set up variables for location test
+			const chasGitHub = 'chas-academy.github.io';
+			const gitHubRepoName = 'u02-redesign-unit7';
+
+			// Find out if location is GitHub pages or not
+			const isGitHub = window.location.host === chasGitHub ? true : false;
+
+			// Define the relative root path
+			const cssFile = '/css/style.min.css?v=1.0';
+			const jsFile = '/js/component-loader.js';
+
+			// Create the elements we'll need in head
+			const styleEl = document.createElement('link');
+			const scriptEl = document.createElement('script');
+
+			// Set attributes for elements
+			styleEl.rel = 'stylesheet';
+			styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
+			scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
+
+			// Add elements to head
+			document.head.appendChild(styleEl);
+			document.head.appendChild(scriptEl);
+		});
+	</script>
 </head>
 
 <body>
-	<header component="/u02-redesign-unit7/components/header.html" id="main-header"></header>
+	<header component="/components/header.html" id="main-header"></header>
 
 	<main>
 		<!-- Student info -->
@@ -109,7 +140,7 @@
 		<div id="front-page-news">
 			<!-- Main news article -->
 			<article class="main-news">
-				<img src="./assets/images/pages/index/corona_info.jpg"
+				<img src="/assets/images/pages/index/corona_info.jpg"
 					alt="Frågor och svar för utbildningsanordnare med anledning av coronaviruset" />
 				<div class="container">
 					<h1 class="h3">Frågor och svar för utbildningsanordnare med anledning av coronaviruset</h1>
@@ -162,7 +193,7 @@
 
 	</main>
 
-	<footer component="/u02-redesign-unit7/components/footer.html" id="main-footer"></footer>
+	<footer component="/components/footer.html" id="main-footer"></footer>
 
 </body>
 
