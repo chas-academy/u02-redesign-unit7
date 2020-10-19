@@ -1,35 +1,60 @@
-const searchOverlay = document.getElementById('search-results-overlay');
-const searchOverlayNotice = document.getElementById('search-results-overlay').querySelector('article');
-const searchOverlayNoticeAnimation = document.getElementById('search-results-overlay').querySelector('.active-search.searching');
-const searchField = document.getElementById('search-field');
-const searchFieldButton = document.getElementById('search-field-btn');
-let searchFieldButtonClick = false;
+// Create section and article for search overlay
+const searchOverlayEl = document.createElement('section');
+const searchOverlayArticleEl = document.createElement('article');
 
-// Activate search function on search button click
-const doSearchClick = () => {
-	searchFieldButtonClick = true;
-	doSearch(searchField);
-}
+// Add content to article element
+searchOverlayArticleEl.innerHTML = 'SÖKER';
+
+// Add id to search overlay
+searchOverlayEl.id = 'search-results-overlay';
+
+// Append article element to search overlay
+searchOverlayEl.appendChild(searchOverlayArticleEl);
+
+// Prepend search overlay to body
+// (i.e. insert it right after body tag)
+document.body.prepend(searchOverlayEl);
+
+// Get search box element
+const searchBoxEl = document.getElementById('search-box');
+const searchFiedlEl = searchBoxEl && searchBoxEl.querySelector('input')
+const searchButtonEl = searchBoxEl && searchBoxEl.querySelector('button')
+
+// Make sure that searchFiedlEl is fetched
+// Add event listener, click, to search button
+// When we click it, run function
+searchFiedlEl && searchFiedlEl.addEventListener('keydown', () => {
+	window.event.key === 'Enter' && doSearch(searchFiedlEl);
+});
+
+// Make sure that searchButtonEl is fetched
+// Add event listener, click, to search button
+// When we click it, run function
+searchButtonEl && searchButtonEl.addEventListener('click', () => {
+	doSearch(searchFiedlEl, true);
+});
 
 // Our search function
-const doSearch = async (input) => {
+// Default input to null and fromClick check false
+const doSearch = async (input = null) => {
 
-	// Make sure we only search on key event "enter"
-	// or on search button click
-	if (window.event.key === 'Enter' || searchFieldButtonClick) {
+	// Make sure input isn't null otherwise return false
+	const inputQuery = input !== null ? input.value : false;
 
-		searchOverlay.classList.toggle('active-search');
-		// searchOverlay.classList.toggle('searching');
+	// If inputQuery is false or empty string
+	if (!inputQuery || inputQuery === '') {
 
-		// Reset searchFieldButtonClick to false
-		// otherwise we'll keep getting hits on key down event
-		searchFieldButtonClick = false;
+		// Let user know that we can't perform search on empty string
+		alert('Du har inte anget någonting att söka efter');
+
+	} else {
+
+		// We have input
+		// Let visitor know we are working
+		searchOverlayEl.classList.toggle('active-search');
 
 		// Define domain we'll be fetching from
 		const domain = 'https://myh.se';
-
-		// What are we querying?
-		const inputQuery = input.value;
 
 		// Build query URL
 		const domainQuery = `${domain}/Sok/?q=${inputQuery}`;
@@ -156,12 +181,13 @@ const doSearch = async (input) => {
 
 		const resultItems = await getQueryResults(domainQuery);
 
-		searchOverlayNotice.parentNode.removeChild(searchOverlayNotice);
+		searchOverlayArticleEl.classList.toggle('hide');
+		// searchOverlayNotice.parentNode.removeChild(searchOverlayNotice);
 
-		searchOverlay.insertAdjacentHTML(
+		searchOverlayEl.insertAdjacentHTML(
 			'beforeend',
 			`<div class="container">
-				<h3>${totalSearchResults} träffar för "${inputQuery}"</h3>
+				<h3>Din sökning gav ${totalSearchResults} träffar för "${inputQuery}"</h3>
 				<ul>
 				${resultItems.map(item => {
 				const { headline, url, body, date } = item;
