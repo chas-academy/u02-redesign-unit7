@@ -9,79 +9,7 @@
 </head>
 
 <body>
-	<!-- <header component="/components/header.html" id="main-header"> -->
-	<section id="search-results-overlay">
-		<article>SÖKER</article>
-	</section>
-
-	<header id="main-header">
-		<!-- covid-19 info-bar -->
-		<article id="top-covid-info" class="text-small">
-			<a href="https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/">Information
-				med anledning av covid-19</a> (Uppdaterad: 17 oktober 2020)
-		</article>
-
-
-		<!-- main header section -->
-		<div class="container">
-			<a href="/" id="main-header-logotype">
-				<img src="/assets/svg/logotype-alt.svg" alt="MYH logotyp" />
-			</a>
-
-			<div id="main-header-options">
-				<a href="#" class="globe-icon">English</a>
-				<a href="#" class="lock-icon">Logga in</a>
-				<button onclick="menuToggler()" class="menu-toggle">MENY</button>
-			</div>
-
-			<div id="search-box">
-				<input onkeydown="doSearch(this)" id="search-field" placeholder="SÖK" type="search" />
-				<button onclick="doSearchClick()" id="search-field-btn" />
-			</div>
-
-			<nav onclick="menuToggler()" id="nav-main">
-				<button class="menu-toggle"></button>
-				<ul>
-					<li>
-						<a href="#">
-							Om oss
-						</a>
-					</li>
-
-					<li>
-						<a href="#">
-							Verksamhetsområden
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							Lagar, regler, tillsyn
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							Statistik
-						</a>
-					</li>
-					<li>
-						<a href="../pages/publikationer.html">
-							Publikationer
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							Nyhetsrum
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							Kontakt
-						</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+	<header component="/components/header.html" id="main-header"></header>
 
 	<main>
 		<!-- Student info -->
@@ -161,7 +89,8 @@
 			<section class="main-gateway-full-width">
 				<h1 class="h5">För företag och organisationer</h1>
 				<p>
-					Arbetslivet är den främsta drivkraften bakom vilka yrkeshögskoleutbildningar som startar och hur de
+					Arbetslivet är den främsta drivkraften bakom vilka yrkeshögskoleutbildningar som startar och hur
+					de
 					är upplagda.
 				</p>
 				<ul>
@@ -182,14 +111,16 @@
 					alt="Frågor och svar för utbildningsanordnare med anledning av coronaviruset" />
 				<div class="container">
 					<h1 class="h3">Frågor och svar för utbildningsanordnare med anledning av coronaviruset</h1>
-					<h2 class="h5">Här svarar myndigheten löpande på frågor som kommer in från utbildningsanordnare med
+					<h2 class="h5">Här svarar myndigheten löpande på frågor som kommer in från utbildningsanordnare
+						med
 						anledning
 						av
 						coronaviruset.</h2>
 					<p>Från myndighetens sida vill vi uttrycka vår förståelse för den svåra situation som ni, era
 						studerande
 						och elever samt
-						företrädare för arbetslivet befinner sig i. Myndigheten kommer att ta stor hänsyn till hur ni
+						företrädare för arbetslivet befinner sig i. Myndigheten kommer att ta stor hänsyn till hur
+						ni
 						som
 						anordnare väljer att
 						anpassa genomförandet av era utbildningar under de omständigheter som råder.</p>
@@ -201,20 +132,24 @@
 				<!-- Minor/Older news -->
 				<article class="lvl2-news">
 					<h1>Ligula Quam Amet</h1>
-					<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper
+					<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec
+						ullamcorper
 						nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris
 						condimentum
-						nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus.
+						nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget
+						metus.
 						Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur
 						adipiscing
 						elit.</p>
 				</article>
 				<article class="lvl2-news">
 					<h1>Ligula Quam Amet</h1>
-					<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper
+					<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec
+						ullamcorper
 						nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris
 						condimentum
-						nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus.
+						nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget
+						metus.
 						Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur
 						adipiscing
 						elit.</p>
@@ -225,12 +160,10 @@
 
 	</main>
 
-	<footer component="./components/footer.html" id="main-footer"></footer>
+	<footer component="/components/footer.html" id="main-footer"></footer>
 
 	<!-- DRY KISS 💋 -->
-	<!-- <script src="/js/componentLoader.js"></script> -->
-	<script src="/js/menu-toggle.js"></script>
-	<script src="/js/search.js"></script>
+	<script src="/js/component-loader.js"></script>
 </body>
 
 </html>
