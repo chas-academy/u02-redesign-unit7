@@ -9,7 +9,79 @@
 </head>
 
 <body>
-	<header component="/components/header.html" id="main-header"></header>
+	<!-- <header component="/components/header.html" id="main-header"> -->
+	<section id="search-results-overlay">
+		<article>SÖKER</article>
+	</section>
+
+	<header id="main-header">
+		<!-- covid-19 info-bar -->
+		<article id="top-covid-info" class="text-small">
+			<a href="https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/">Information
+				med anledning av covid-19</a> (Uppdaterad: 17 oktober 2020)
+		</article>
+
+
+		<!-- main header section -->
+		<div class="container">
+			<a href="/" id="main-header-logotype">
+				<img src="/assets/svg/logotype-alt.svg" alt="MYH logotyp" />
+			</a>
+
+			<div id="main-header-options">
+				<a href="#" class="globe-icon">English</a>
+				<a href="#" class="lock-icon">Logga in</a>
+				<button onclick="menuToggler()" class="menu-toggle">MENY</button>
+			</div>
+
+			<div id="search-box">
+				<input onkeydown="doSearch(this)" id="search-field" placeholder="SÖK" type="search" />
+				<button onclick="doSearchClick()" id="search-field-btn" />
+			</div>
+
+			<nav onclick="menuToggler()" id="nav-main">
+				<button class="menu-toggle"></button>
+				<ul>
+					<li>
+						<a href="#">
+							Om oss
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							Verksamhetsområden
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Lagar, regler, tillsyn
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Statistik
+						</a>
+					</li>
+					<li>
+						<a href="../pages/publikationer.html">
+							Publikationer
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Nyhetsrum
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Kontakt
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 
 	<main>
 		<!-- Student info -->
@@ -156,8 +228,9 @@
 	<footer component="./components/footer.html" id="main-footer"></footer>
 
 	<!-- DRY KISS 💋 -->
-	<script src="/js/componentLoader.js"></script>
+	<!-- <script src="/js/componentLoader.js"></script> -->
 	<script src="/js/menu-toggle.js"></script>
+	<script src="/js/search.js"></script>
 </body>
 
 </html>
