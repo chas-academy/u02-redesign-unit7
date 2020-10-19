@@ -67,7 +67,6 @@ const componentLoader = () => {
 
 						const headerLogotype = nodeList.querySelector('a#main-header-logotype img');
 						headerLogotype.src = `/${gitHubRepoName}${headerLogotype.getAttribute('src')}`;
-						console.log(headerLogotype);
 
 						// Get all anchors in list items from menu (nav)
 						const menuItems = nodeList.querySelectorAll('.container nav ul li a');
