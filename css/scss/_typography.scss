@@ -35,7 +35,7 @@ a {
 }
 
 // Headings
-@for $i from 1 through 3 {
+@for $i from 1 through 6 {
 	h#{$i} {
 		font-family: "Helvetica", sans-serif;
 	}

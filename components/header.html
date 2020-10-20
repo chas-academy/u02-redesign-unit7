@@ -1,14 +1,13 @@
 <!-- covid-19 info-bar -->
 <article id="top-covid-info" class="text-small">
-	<a href="https://www.umu.se/covid-19">Information till medarbetare med anledning av covid-19</a> (Uppdaterad: 13
-	oktober 2020)
+	<a href="https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/">Information
+		med anledning av covid-19</a> (Uppdaterad: 17 oktober 2020)
 </article>
-
 
 <!-- main header section -->
 <div class="container">
 	<a href="/" id="main-header-logotype">
-		<img src="../assets/svg/logotype-alt.svg" alt="MYH logotyp" />
+		<img src="/assets/svg/logotype-alt.svg" alt="MYH logotyp" />
 	</a>
 
 	<div id="main-header-options">
@@ -17,7 +16,10 @@
 		<button onclick="menuToggler()" class="menu-toggle">MENY</button>
 	</div>
 
-	<input placeholder="SÖK" type="search" />
+	<div id="search-box">
+		<input id="search-field" placeholder="SÖK" type="search" />
+		<button id="search-field-btn" />
+	</div>
 
 	<nav onclick="menuToggler()" id="nav-main">
 		<button class="menu-toggle"></button>
@@ -61,3 +63,5 @@
 		</ul>
 	</nav>
 </div>
+
+<!-- <script src="/js/search.js"></script> -->
