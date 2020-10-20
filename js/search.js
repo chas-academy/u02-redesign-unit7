@@ -35,9 +35,9 @@ const doSearch = async (input = null) => {
 		// We have input
 		// Let visitor know we are working
 
-		setTimeout(() => {
-			alert('More than 5s 🤔');
-		}, 5000);
+		// setTimeout(() => {
+		// 	alert('More than 5s 🤔');
+		// }, 5000);
 
 		// Start by clearing the input
 		input.value = '';
