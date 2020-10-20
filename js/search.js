@@ -1,36 +1,19 @@
-// Create section and article for search overlay
-const searchOverlayEl = document.createElement('section');
-const searchOverlayArticleEl = document.createElement('article');
-
-// Add content to article element
-searchOverlayArticleEl.innerHTML = 'SÖKER';
-
-// Add id to search overlay
-searchOverlayEl.id = 'search-results-overlay';
-
-// Append article element to search overlay
-searchOverlayEl.appendChild(searchOverlayArticleEl);
-
-// Prepend search overlay to body
-// (i.e. insert it right after body tag)
-document.body.prepend(searchOverlayEl);
-
 // Get search box element
 const searchBoxEl = document.getElementById('search-box');
-const searchFiedlEl = searchBoxEl && searchBoxEl.querySelector('input')
-const searchButtonEl = searchBoxEl && searchBoxEl.querySelector('button')
+const searchFiedlEl = searchBoxEl.querySelector('input')
+const searchButtonEl = searchBoxEl.querySelector('button')
 
 // Make sure that searchFiedlEl is fetched
 // Add event listener, click, to search button
 // When we click it, run function
-searchFiedlEl && searchFiedlEl.addEventListener('keydown', () => {
+searchFiedlEl.addEventListener('keydown', () => {
 	window.event.key === 'Enter' && doSearch(searchFiedlEl);
 });
 
 // Make sure that searchButtonEl is fetched
 // Add event listener, click, to search button
 // When we click it, run function
-searchButtonEl && searchButtonEl.addEventListener('click', () => {
+searchButtonEl.addEventListener('click', () => {
 	doSearch(searchFiedlEl, true);
 });
 
@@ -51,7 +34,25 @@ const doSearch = async (input = null) => {
 
 		// We have input
 		// Let visitor know we are working
-		searchOverlayEl.classList.toggle('active-search');
+
+		setTimeout(() => {
+			alert('More than 5s 🤔');
+		}, 5000);
+
+		// Start by clearing the input
+		input.value = '';
+
+		// Create section and article for search overlay
+		const searchArticleEl = document.createElement('article');
+
+		// Add id to article element
+		searchArticleEl.id = 'searching-active';
+
+		// Add content to article element
+		searchArticleEl.innerHTML = 'SÖKER';
+
+		// Show overlay
+		showOverlay(searchArticleEl);
 
 		// Define domain we'll be fetching from
 		const domain = 'https://myh.se';
@@ -181,24 +182,25 @@ const doSearch = async (input = null) => {
 
 		const resultItems = await getQueryResults(domainQuery);
 
-		searchOverlayArticleEl.classList.toggle('hide');
-		// searchOverlayNotice.parentNode.removeChild(searchOverlayNotice);
-
-		searchOverlayEl.insertAdjacentHTML(
-			'beforeend',
-			`<div class="container">
-				<h3>Din sökning gav ${totalSearchResults} träffar för "${inputQuery}"</h3>
+		if (resultItems) {
+			bodyOverlayContainerEl.innerHTML =
+				`<h3>Din sökning gav ${totalSearchResults} träffar för "${inputQuery}"</h3>
 				<ul>
 				${resultItems.map(item => {
-				const { headline, url, body, date } = item;
-				return `<li>
+					const { headline, url, body, date } = item;
+					return `<li>
 								<a href="${url}"><strong>${headline}</strong></a>
 								<time>${date}</time>
 								<p>${body}</p>
 							</li>`;
-			}).join('')}</ul >
-			</div>`
-		);
-
+				}).join('')}</ul >`;
+		} else {
+			bodyOverlayContainerEl.innerHTML =
+				`<h1>Sökningen kunde inte sluföras!</h1>
+				<p>Det uppstod ett fel när sökningen aktiverades. Om felet kvarstår ber vi dig att kontakta oss på <a href="mailto:webmaster@myh.se?subject=Website%20search%20error">webmaster@myh.se</a>.</p>`;
+		}
 	}
+
+	// Moo
+	return;
 }

@@ -1,8 +1,11 @@
 const menuToggler = () => {
-	// alert('hello');
-	const navMain = document.getElementById('nav-main');
-	const bodyLock = document.body;
+	// Get nav content
+	const navOrigin = 'header#main-header div.container';
+	const navMain = document.querySelector(`${navOrigin} nav#nav-main`);
+	// navMain.classList.toggle('show');
 
-	bodyLock.classList.toggle('scroll-lock');
-	navMain.classList.toggle('open');
+	// bodyOverlayEl.appendChild(navMain);
+
+	// bodyOverlayEl.classList.toggle('show');
+	showOverlay(navMain, navOrigin);
 }

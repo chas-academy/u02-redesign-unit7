@@ -87,14 +87,17 @@ const componentLoader = async () => {
 	// Now that all component elements are in place
 	// it's safe to continue with the rest of our scripts
 
+	// Create empty script element for body overlay
+	const bodyOverlayEl = document.createElement('script');
+
+	// Insert body overlay file in script source
+	bodyOverlayEl.src = !isGitHub ? `/js/body-overlay.js` : `/${gitHubRepoName}/js/body-overlay.js`;
+
 	// Create empty script element for menu toggler
 	const menuTogglerScriptEl = document.createElement('script');
 
 	// Insert menu toggler file in script source
 	menuTogglerScriptEl.src = !isGitHub ? `/js/menu-toggle.js` : `/${gitHubRepoName}/js/menu-toggle.js`;
-
-	// Append script to head (NOTE! NOT header element)
-	document.head.appendChild(menuTogglerScriptEl);
 
 	// Create empty script element for search
 	const searchScripEl = document.createElement('script');
@@ -112,6 +115,9 @@ const componentLoader = async () => {
 	// will add script at the end of body since this file
 	// must load last (otherwise the function can't find its elements
 	// since they don't exist yet)
+	document.body.appendChild(bodyOverlayEl);
+
+	document.body.appendChild(menuTogglerScriptEl);
 	document.body.appendChild(searchScripEl);
 	document.body.appendChild(scrollTopScripEl);
 
