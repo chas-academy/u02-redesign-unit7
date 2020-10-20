@@ -1,9 +1,3 @@
-// Define document root element for scroll top
-const rootEl = document.documentElement;
-
-// Get the top scroll element
-const topScrollEl = document.querySelector('#scroll-to-top');
-
 // The scroll handler function is used to
 // determine where visitors scroll is on page
 const scrollHandler = () => {
@@ -36,6 +30,12 @@ const toTop = () => {
 		behavior: "smooth"
 	})
 }
+
+// Define document root element for scroll top
+const rootEl = document.documentElement;
+
+// Get the top scroll element
+const topScrollEl = document.querySelector('#scroll-to-top');
 
 document.addEventListener('scroll', scrollHandler);
 topScrollEl.addEventListener('click', toTop);
