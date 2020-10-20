@@ -12,7 +12,7 @@ const chasGitHub = 'chas-academy.github.io';
 const gitHubRepoName = 'u02-redesign-unit7';
 const isGitHub = window.location.host === chasGitHub ? true : false;
 
-// Create empty script element
+// Create empty script element for menu toggler
 const menuTogglerScriptEl = document.createElement('script');
 
 // Insert menu toggler file in script source
@@ -21,17 +21,25 @@ menuTogglerScriptEl.src = !isGitHub ? `/js/menu-toggle.js` : `/${gitHubRepoName}
 // Append script to head (NOTE! NOT header element)
 document.head.appendChild(menuTogglerScriptEl);
 
-// Create empty script element
+// Create empty script element for search
 const searchScripEl = document.createElement('script');
 
 // Insert menu toggler file in script source
 searchScripEl.src = !isGitHub ? `/js/search.js` : `/${gitHubRepoName}/js/search.js`;
 
-// Append script to body. Append, rather than prepend
+// Create empty script element for scroll to top
+const scrollTopScripEl = document.createElement('script');
+
+// Insert menu toggler file in script source
+scrollTopScripEl.src = !isGitHub ? `/js/scroll-to-top.js` : `/${gitHubRepoName}/js/scroll-to-top.js`;
+
+// Append scripts to body. Append, rather than prepend
 // will add script at the end of body since this file
 // must load last (otherwise the function can't find its elements
 // since they don't exist yet)
 document.body.appendChild(searchScripEl);
+document.body.appendChild(scrollTopScripEl);
+
 
 const componentLoader = () => {
 
