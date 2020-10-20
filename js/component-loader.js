@@ -40,10 +40,10 @@ const componentLoader = async () => {
 					const nodeList = new DOMParser().parseFromString(html, 'text/html').body;
 
 					const logotypeLink = nodeList.querySelector('a#main-header-logotype');
-					logotypeLink.href = `/${gitHubRepoName}`;
+					logotypeLink.href = `/${gitHubRepoName}/`;
 
 					const headerLogotype = nodeList.querySelector('a#main-header-logotype img');
-					headerLogotype.src = `/${gitHubRepoName}${headerLogotype.getAttribute('src')}`;
+					headerLogotype.src = headerLogotype.getAttribute('src');
 
 					// Get all anchors in list items from menu (nav)
 					const menuItems = nodeList.querySelectorAll('.container nav ul li a');
