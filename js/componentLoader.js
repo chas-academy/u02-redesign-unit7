@@ -48,4 +48,8 @@ const componentLoader = () => {
 	}
 }
 // Run function
+<<<<<<< HEAD
 componentLoader();
+=======
+componentLoader();
+>>>>>>> 46ecbf4625c896ec6f8182b99e61879646d146b0
