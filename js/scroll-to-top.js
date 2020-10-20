@@ -35,7 +35,7 @@ const toTop = () => {
 const rootEl = document.documentElement;
 
 // Get the top scroll element
-const topScrollEl = document.querySelector('#scroll-to-top');
+const topScrollEl = document.querySelector('body footer div#scroll-to-top');
 
 document.addEventListener('scroll', scrollHandler);
 topScrollEl.addEventListener('click', toTop);
