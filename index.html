@@ -29,15 +29,20 @@
 			const jsFile = '/js/component-loader.js';
 
 			// Create the elements we'll need in head
+			const favicoEl = document.createElement('link');
 			const styleEl = document.createElement('link');
 			const scriptEl = document.createElement('script');
 
 			// Set attributes for elements
+			favicoEl.rel = 'shortcut icon';
+			favicoEl.type = 'image/x-icon';
+			favicoEl.href = 'https://myh.se/assets/images/favicon.ico';
 			styleEl.rel = 'stylesheet';
 			styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
 			scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
 
 			// Add elements to head
+			document.head.appendChild(favicoEl);
 			document.head.appendChild(styleEl);
 			document.head.appendChild(scriptEl);
 		});
