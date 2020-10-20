@@ -114,6 +114,16 @@ const componentLoader = async () => {
 	// since they don't exist yet)
 	document.body.appendChild(searchScripEl);
 	document.body.appendChild(scrollTopScripEl);
+
+	// A temporary fix for images source ref on GitHub pages
+	// Consider removing in production.
+	if (isGitHub) {
+		const pageImages = document.querySelectorAll('img');
+		for (let i = 0; i < pageImages.length; i++) {
+			const img = pageImages[i];
+			img.src = `/${gitHubRepoName}${img.getAttribute('src')}`;
+		}
+	}
 }
 
 // Run function
