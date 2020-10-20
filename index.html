@@ -8,6 +8,9 @@
 	<!-- DRY KISS 💋 -->
 	<script>
 		// Wait for DOM content to load
+		// We need this for now. It will cause a small glitch
+		// when the page loads because we're inserting styling
+		// and scripts first after the DOM is ready.
 		document.addEventListener('DOMContentLoaded', () => {
 
 			// This is simply to test for where we are
