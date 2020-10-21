@@ -3,6 +3,8 @@
 The aim of this project is to complete assignment **u02-Redesign** in the course HTML & CSS @ CHAS Academy.  
 **Due date November 1st 2020.**  
 
+[Live preview](https://chas-academy.github.io/u02-redesign-unit7/) of the **main branch** on Github pages
+
 [The general collaboration file for layout is a Google slide](https://docs.google.com/presentation/d/19k_KDMHZx57PBcOhPdqDo0FMRwZnlfstP9MUUzL7_LQ/edit#slide=id.ga37a843233_0_12)  
 
 ---
@@ -26,11 +28,13 @@ Following a general naming convention is important and simplifies the process of
 ## Quick-start
 
 To clone the project and save it locally:
+
 1. Open your terminal and go to your project/develop folder (where you want to save the clone)
 2. Type in `git clone git@github.com:chas-academy/u02-redesign-unit7.git` and hit enter. **NOTE:** This will require the use of SSH key. If you don't have one yet, [follow documentation to set it up](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
 3. Type `code .`to open the project in VS Code
 
 ### Start working on your assigned page  
+
 1. Open your terminal!
 2. Create a new branch by typing in `git checkout -b branch-name`(where "branchname" is the the name of your new branch)
 3. Make a HTML-file called `page-name.html` and put it in the *'pages'*-folder in the root
