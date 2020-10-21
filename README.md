@@ -1,4 +1,5 @@
 # u02-redesign-unit7
+
 The aim of this project is to complete assignment **u02-Redesign** in the course HTML & CSS @ CHAS Academy.  
 **Due date November 1st 2020.**  
 
@@ -53,7 +54,7 @@ To clone the project and save it locally:
 
 ## Workflow
 
-### Adding an issue to the 'to do'-list:
+### Adding an issue to the 'to do'-list
 
 1. Open the [project board](https://github.com/chas-academy/u02-redesign-unit7/projects/1) and click the +sign in the upper right corner of the card for the to do list (*'add note to this column'*).
 2. Add a descriptive but short title
@@ -94,7 +95,7 @@ To clone the project and save it locally:
 6. Wait for (at least one of) the reviewer to approve your changes! If the reviewer request changes, resolve these first, commit again, leave a comment and wait again until the reviewer approves
 7. When the changes are approved, you can merge the pull-request to the main branch (and delete your current branch, if you want)
 
-### Pull from remote:
+### Pull from remote
 
 1. If you go to the main-branch by typing `git checkout main`in your terminal, you can see how many changes have been made remotely that you are behind locally
 2. To pull all the changes, type in: `git pull`
@@ -102,7 +103,7 @@ To clone the project and save it locally:
 
 ### Best practice - Github pull request
 
-- Pull master locally
+- Pull main, locally: `git checkout main`
 - Create RC (release candidate), todays date, locally
 - Pull [feature_branch] to RC (git pull origin < branch-name >)
 This simulates a merge to master, locally. If all is good, approve pull request (in comment, as reviews). Delete RC locally.
