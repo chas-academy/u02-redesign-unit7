@@ -14,6 +14,7 @@
     background-color: rgba(160, 159, 159, 0.6);
     border-radius: 10px;
     box-shadow: 11px 14px 10px 0px rgba(0,0,0,0.75);
+    padding-bottom: 1em;
     
 }
 .container-box > p {
@@ -24,7 +25,13 @@
 }
 .background-signal-green {
     border-radius: 5px;
+    border: 0.05em solid white;
     
+}
+.flex-center {
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 @media only screen and (min-width: 440px) {
     .lrt-head {
