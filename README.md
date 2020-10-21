@@ -71,6 +71,37 @@ To clone the project and save it locally:
 2. To pull all the changes, type in: `git pull`
 3. You should now see all the new changes and additions that everybody made in your local repo!
 
+### Create and link SCSS file
+1. Install **Sass Live Compiler** extension in VS Code: https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass
+2. After installation, in your extension tab, click on the small cog wheel and click "Extension Settings"
+3. In the Extension Settings click on "Edit in settings.json" on the first alternative
+4. Paste in the following code anywhere inside the curly brackets: 
+"liveSassCompile.settings.generateMap": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveSassCompile.settings.autoprefix": [
+        "> 1%",
+        "last 2 versions"
+    ],
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/css"
+        },
+    ],
+    "liveSassCompile.settings.includeItems": [
+        "/css/style.scss",
+    ],
+    "liveSassCompile.settings.excludeList": [
+        "**/css/scss/**"
+    ],
+    "liveSassCompile.settings.showOutputWindow": false,
+    
+5. Now, create an SCSS file for your page in **[root] > css > scss > pages**
+6. Then open up the **styles.scss** file in the css folder and add an import to your SCSS file. Under the pages section write @import "./scss/pages/[yourpagename]";
+7. When enabling Sass Watch it should create a new CSS file called "style.min.css". This is the file you will link to in your <head> tag in your HTML file. Write additional CSS in the SCSS file you created.  
+
+
 ## Useful links
 
 Extensions for VSC:
