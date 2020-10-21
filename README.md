@@ -101,12 +101,36 @@ To clone the project and save it locally:
 2. To pull all the changes, type in: `git pull`
 3. You should now see all the new changes and additions that everybody made in your local repo!
 
-### Best practice - Github pull request
+### Github pull request. Industry standard/Best practice
 
-- Pull main, locally: `git checkout main`
-- Create RC (release candidate), todays date, locally
-- Pull [feature_branch] to RC (git pull origin < branch-name >)
-This simulates a merge to master, locally. If all is good, approve pull request (in comment, as reviews). Delete RC locally.
+Keep in mind that while these instructions **are** best practice/standars when working on bigger projects, they are also very tedious and might not alawys be performed. That being said, there is nothing stopping you from trying it out and maybe even learning something in the process 😱
+
+When there is a new pull request on Github, best practice is to simulate a merge, locally on your computer first. To do this:
+
+1. Swith to main branch, locally:
+    - `git checkout main`
+2. Pull main from origin (i.e. Github):
+    - `git pull`
+3. Create branch called **rc** (short for *release candidate*) followed by todays date, locally:
+    - `git checkout -b rc-2020-10-21`
+4. Pull the < pull-request-branch > (called **feature-branch-name** in example) while you are in your new RC branch:
+    - `git pull origin feature-branch-name`
+
+You now have a merge of `main` and `feature-branch-name` **inside your** `rc-2020-10-21` **branch locally**.
+
+At this point you will also be able to see any merge conflicts.
+
+Once all is good, you can **approve** the pull request (on Github) by doing
+
+`git checkout main`
+
+and then delete the RC branch with
+
+`git branch -d rc-2020-10-21`
+
+(since the pull request is approved, the `feature-branch-name` branch will be deleted once it's merged into main).
+
+**NOTE:** As a reviewer you should not perform the acctual merge of the pull request. That is the job of the person making the request, your job as a reviewer is to **review** the code and either **comment** or **approve** once you are done reviewing.
 
 ## File structure
 
