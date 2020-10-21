@@ -74,8 +74,8 @@ To clone the project and save it locally:
 ## Useful links
 
 Extensions for VSC:
-- [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass)
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+- [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass) | [Instructions](/css/README.md)
 
 ## File structure
 
