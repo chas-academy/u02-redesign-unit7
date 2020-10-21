@@ -1,3 +1,26 @@
-.yellow {
+.bg-yellow {
     background-color: yellow;
+    text-align: center;
+}
+.lrt-head {
+    font-size: 40px;
+    padding: 50px, 10px;
+}
+
+.container-box {
+    background-color: rgba(196, 196, 196, 0.60);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+.container-box > p {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 500;
+    padding: 10px;
+}
+@media only screen and (min-width: 440px) {
+    .lrt-head {
+        font-size: 60px;
+    }
 }
