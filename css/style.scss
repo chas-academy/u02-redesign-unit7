@@ -8,9 +8,12 @@
 @import "./scss/forms-input-select";
 
 // Components
+@import "./scss/components/body-overlay";
+@import "./scss/components/search";
 @import "./scss/components/header";
 @import "./scss/components/footer";
 @import "./scss/components/button";
+@import "./scss/components/scroll-to-top";
 
 // Pages
 @import "./scss/pages/index";
