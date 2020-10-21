@@ -6,17 +6,33 @@
     <link rel="stylesheet" href="../css/style.min.css?v=1.0" />
     <script src="./js/componentLoader.js"></script>
     <title>Lagar, Regler, Tillsyn</title>
+    <style>
+        body {
+background: #e7e7e7;
+        }
+    </style>
 </head>
 <body>
     <header component="../components/header.html" id="main-header" class="container">
     </header>
-    <div class="background-primary container">
-    <h1 class="text-muted">
-        Test text bing bong
+    <div class="container">
+        <div class="container-box">
+    <div class="bg-yellow">
+    <h1 class="lrt-head">
+        Lagar, Regler, Tillsyn
     </h1>
-    <a href="#">
-        Click me pls
-    </a>
+    </div>
+    <p style="font-weight: 600;">
+        För alla utbildningsformer finns det lagar och andra bestämmelser som måste följas. Det gäller till exempel hur utbildningarna ska utformas, kursplaner, betygskriterier, examina, tillträde och avgifter.</p>
+<p>
+Här hittar du de <a>lagar och förordningar</a> som reglerar de utbildningsformer som Myndigheten för yrkeshögskolan ansvarar för. Här finns även de <a>föreskrifter</a> som vi har beslutat om, samt de <a>allmänna</a> råd vi har gett ut. 
+</p>
+<p>
+Genom <a href="#">tillsyn</a> kontrollerar myndigheten att utbildningarna följer de lagar och regler som gäller. I menyn till höger kan du läsa om hur tillsynen går till och hitta tillsynsbeslut.</p>
+<p>
+Om du anser att det finns brister i en utbildning kan du anmäla det till oss. <a href="#">Anmäl brister i en utbildning.</a>
+    </p>
+    </div>
     </div>
     <footer component="../components/footer.html" id="main-footer"></footer>
     <script>componentLoader();</script>
