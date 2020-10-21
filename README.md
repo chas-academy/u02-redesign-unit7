@@ -2,9 +2,26 @@
 ---
 The aim of this project is to complete assignment **u02-Redesign** in the course HTML & CSS @ CHAS Academy.  
 **Due date November 1st 2020.**  
+
 [The general collaboration file for layout is a Google slide](https://docs.google.com/presentation/d/19k_KDMHZx57PBcOhPdqDo0FMRwZnlfstP9MUUzL7_LQ/edit#slide=id.ga37a843233_0_12)  
- 
- ---
+
+---
+
+## General guidelines
+
+### Naming convention
+
+Following a general naming convention is important and simplifies the process of working in a group. 
+
+**These are the naming conventions for this project:**
+
+- File names: **kebab-case**
+  - e.g. **long-file-name.type**
+  - Allowed characters are: a-z, A-Z, 0-9
+- Styling (CSS): **kebab-case**
+  - e.g. **.class-name**, **#id-name** etc.
+- Function & variable names (JavaScript): **camelCase**
+  - e.g. **someCustomclassName**, **aMagicConst** etc.
 
 ## Quick-start
 
