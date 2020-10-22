@@ -17,7 +17,7 @@ Following a general naming convention is important and simplifies the process of
 
 - File names: **kebab-case**
   - e.g. **long-file-name.type**
-  - Allowed characters are: a-z, A-Z, 0-9
+  - Allowed characters are: a-z, 0-9
 - Styling (CSS): **kebab-case**
   - e.g. **.class-name**, **#id-name** etc.
 - Function & variable names (JavaScript): **camelCase**
