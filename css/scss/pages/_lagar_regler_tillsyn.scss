@@ -23,13 +23,35 @@
     padding: 30px;
     line-height: 2em;
 }
+.breadcrumbs {
+    padding-top:20px;
+    font-size:20px;
+    text-align: center;
+}
 .background-signal-green {
     border-radius: 5px;
     border: 0.05em solid white;
     
 }
+.link-active {
+    color:blue;
+    font-weight: bold;
+}
+.paragraph-img {
+    height: 60%;
+    width: 60%;
+    padding-top:20px;
+    display:block;
+    margin: 0 auto;
+}
 @media only screen and (min-width: 440px) {
     .lrt-head {
         font-size: 60px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .breadcrumbs {
+        text-align: left;
+        font-size: 16px;
     }
 }
