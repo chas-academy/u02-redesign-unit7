@@ -17,7 +17,7 @@ To clone the project and save it locally:
 1. Open your terminal!
 2. Create a new branch by typing in `git checkout -b branch-name`(where "branchname" is the the name of your new branch)
 3. Make a HTML-file called `page-name.html` and put it in the *'pages'*-folder in the root
-4. Make a sass-file called `_page-name.scss` and put it in the *'pages'*-folder in the *'scss'*-folder
+4. Make a SCSS-file called `_page-name.scss` and put it in the *'pages'*-folder in the *'scss'*-folder (see below at '[Create and link scss-file](#create-and-link-scss-file)')
 5. Link in the header and footer:
     * In `<head>`, copy in the link to the style-file: `<link rel="stylesheet" href="../css/style.min.css" />`
       and the link to the script-file: `<script src="./js/componentLoader.js"></script>`
@@ -71,6 +71,41 @@ To clone the project and save it locally:
 2. To pull all the changes, type in: `git pull`
 3. You should now see all the new changes and additions that everybody made in your local repo!
 
+### Create and link SCSS-file
+1. Install [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass) extension in VS Code
+2. After installation, in your extension tab, click on the small cog wheel and click *'extension settings'*
+3. In the extension settings click on *'edit in settings.json'* (the first alternative)
+4. Paste in the following code anywhere inside the curly brackets: 
+    ```javascript
+    "liveSassCompile.settings.generateMap": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveSassCompile.settings.autoprefix": [
+        "> 1%",
+        "last 2 versions"
+    ],
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/css"
+        },
+    ],
+    "liveSassCompile.settings.includeItems": [
+        "/css/style.scss",
+    ],
+    "liveSassCompile.settings.excludeList": [
+        "/css/scss/"
+    ],
+    "liveSassCompile.settings.showOutputWindow": false,
+    ```
+5. Now, create a file called `your-page-name.scss` for your page in`[root] > css > scss > pages`
+6. Then open up the `styles.scss`file in the CSS-folder and add an import to your SCSS-file by writing under the pages section: 
+   ```scss
+   @import "./scss/pages/[your-page-name.scss]";
+   ```
+7. When enabling 'Sass Watch' it should create a new CSS-file called `style.min.css`. This is the file you will link to in your `<head>` tag in your HTML-file (see above at [Start working on your assigned page](#start-working-on-your-assigned-page)). 
+8. Write additional CSS in the SCSS-file you created!
+
 ## Useful links
 
 Extensions for VSC:
@@ -87,9 +122,9 @@ assets | _folder_ | Standard assets folder for images and other graphics
 *svg | _folder_ | Vector graphics
 components | _folder_ | HTML structure files for header and footer
 css | _folder_ | Contains style files
-*scss | _folder_ | All SASS files. Make sure these are run through pre-processor before finalizing.
-*style.scss | **file** | @import all files from scss folder
-*style.min.css | **file** | Final, minified, CSS file used in page head link.
+*scss | _folder_ | All SASS-files. Make sure these are run through pre-processor before finalizing.
+*style.scss | **file** | @import all files from SCSS-folder
+*style.min.css | **file** | Final, minified, CSS-file used in page head link.
 js | _folder_ | Javascript files
 *componentLoader.js | **file** | File with function used in pages to get content of components (e.g. header and footer)
-pages | _folder_ | HTML files for all pages
+pages | _folder_ | HTML-files for all pages
