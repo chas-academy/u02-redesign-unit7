@@ -1,215 +1,214 @@
 <!DOCTYPE html>
 <html lang="sv-SE">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MYH - Myndigheten för yrkeshögskolan</title>
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="https://myh.se/assets/images/favicon.ico"
-    />
-    <!-- Save the following scripts in place for production -->
-    <!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
 
-    <!-- DRY KISS 💋 -->
-    <script>
-      // This script helps us with github pages reference problem
-      // Consider removing, and use relative root refrencing (i.e. /) in production
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>MYH - Myndigheten för yrkeshögskolan</title>
+	<link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico" />
+	<!-- Save the following scripts in place for production -->
+	<!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
 
-      // Test for location
-      // local is default in file references
-      // if we are on github, changes file references
+	<!-- DRY KISS 💋 -->
+	<script>
+		// This script helps us with github pages reference problem
+		// Consider removing, and use relative root refrencing (i.e. /) in production
 
-      // Set up variables for location test
-      const chasGitHub = "chas-academy.github.io";
-      const gitHubRepoName = "u02-redesign-unit7";
+		// Test for location
+		// local is default in file references
+		// if we are on github, changes file references
 
-      // Find out if location is GitHub pages or not
-      const isGitHub = window.location.host === chasGitHub ? true : false;
+		// Set up variables for location test
+		const chasGitHub = "chas-academy.github.io";
+		const gitHubRepoName = "u02-redesign-unit7";
 
-      // Define the relative root path
-      const cssFile = "/css/style.min.css?v=1.0";
-      const jsFile = "/js/component-loader.js";
+		// Find out if location is GitHub pages or not
+		const isGitHub = window.location.host === chasGitHub ? true : false;
 
-      // Create the elements we'll need in head
-      const styleEl = document.createElement("link");
-      const scriptEl = document.createElement("script");
+		// Define the relative root path
+		const cssFile = "/css/style.min.css?v=1.0";
+		const jsFile = "/js/component-loader.js";
 
-      // Set attributes for elements
-      styleEl.rel = "stylesheet";
-      styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
-      scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
+		// Create the elements we'll need in head
+		const styleEl = document.createElement("link");
+		const scriptEl = document.createElement("script");
 
-      // Add style element to head
-      document.head.appendChild(styleEl);
+		// Set attributes for elements
+		styleEl.rel = "stylesheet";
+		styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
+		scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
 
-      // Wait for DOM to finish, then add
-      // component-loader script to end of body
-      document.addEventListener("DOMContentLoaded", () => {
-        document.body.appendChild(scriptEl);
-      });
-    </script>
-  </head>
+		// Add style element to head
+		document.head.appendChild(styleEl);
 
-  <body>
-    <header component="/components/header.html" id="main-header"></header>
+		// Wait for DOM to finish, then add
+		// component-loader script to end of body
+		document.addEventListener("DOMContentLoaded", () => {
+			document.body.appendChild(scriptEl);
+		});
+	</script>
+</head>
 
-    <main>
-      <!-- local header -->
-      <div id="main-gateway" class="container">
-        <section>
-          <h1 class="h1">Publikationer</h1>
-          <p>
-            Här hittar du rapporter, faktablad, broschyrer och andra
-            publikationer från MyH. Du kan filtrera listningen nedan.
-          </p>
-        </section>
-        <!-- insert filter function here -->
-        <section>
-          <p>Filter-funktion / lokal sökruta?</p>
-        </section>
-      </div>
-      <div id="front-page-news">
-        <article class="main-news">
-          <img
-            src="/assets/images/pages/index/corona_info.jpg"
-            alt="Frågor och svar för utbildningsanordnare med anledning av coronaviruset"
-          />
-          <div class="container">
-            <h1 class="h3">Populära taggar</h1>
-            <ul id="white-list">
-              <li><a href="#">rapport</a></li>
-              <li><a href="#">områdesanalys</a></li>
-              <li><a href="#">faktablad</a></li>
-              <li><a href="#">pedagogik</a></li>
-              <li><a href="#">underlag</a></li>
-            </ul>
-            <a href="#" target="_self"
-              ><button variant="white">se fler</button></a
-            >
-          </div>
-        </article>
-      </div>
-      <div class="container">
-        <article>
-          <h2>
-            <a href="#"
-              >Faktablad: Särskilt pedagogiskt stöd och tillgänglighet - för dig
-              som studerar på en konst- och kulturutbildning.</a
-            >
-          </h2>
-          <p>Utgiven: 2020-02-11</p>
-          <img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
-          <p>
-            <span>
-              <a href="#">Ladda ner</a>
-              |
-              <a href="#">Mer information</a>
-            </span>
-          </p>
-          <p>
-            Taggar: <a href="#">faktablad</a><a href="#">pedagogik</a
-            ><a href="#">konst- och kulturutbildningar</a>
-          </p>
-        </article>
+<body>
+	<header component="/components/header.html" id="main-header"></header>
 
-        <article class="container">
-          <h2>
-            <a href="#"
-              >Faktablad: Kvalitetskriterier för yrkeshögskolan 2020</a
-            >
-          </h2>
-          <p>Utgiven: 2019-10-30</p>
-          <img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
-          <p>
-            <span>
-              <a href="#">Ladda ner</a>
-              |
-              <a href="#">Mer information</a>
-            </span>
-          </p>
-          <p>Taggar: <a href="#">faktablad</a><a href="#">kvalitet</a></p>
-        </article>
+	<main>
+		<!-- local header -->
+		<div id="local-header" class="container">
+			<section>
+				<h1 class="h1">Publikationer</h1>
+				<p>
+					Här hittar du rapporter, faktablad, broschyrer och andra
+					publikationer från MyH. Du kan filtrera listningen, eller läsa någon
+					av våra senaste publikationer.
+				</p>
+			</section>
+			<!-- insert filter function here -->
+			<section>
+				<p>Filter-funktion / lokal sökruta?</p>
+			</section>
+		</div>
 
-        <article class="container">
-          <h2><a href="#">Stödmaterial:Jämställd utbildning</a></h2>
-          <p>Utgiven: 2019-11-22</p>
-          <img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
-          <p>
-            <span>
-              <a href="#">Ladda ner</a>
-              |
-              <a href="#">Mer information</a>
-            </span>
-          </p>
-          <p>
-            Taggar: <a href="#">stödmaterial</a><a href="#">jämställdhet</a
-            ><a href="#">konst- och kulturutbildningar</a>
-          </p>
-        </article>
+		<!-- full-width container -->
+		<div id="popular-tags">
+			<article class="main-tags">
+				<img src="/assets/images/pages/index/corona_info.jpg"
+					alt="Frågor och svar för utbildningsanordnare med anledning av coronaviruset" />
+				<div class="container">
+					<h1 class="h3">Populära taggar</h1>
+					<ul id="white-list">
+						<li><a href="#">rapport</a></li>
+						<li><a href="#">områdesanalys</a></li>
+						<li><a href="#">faktablad</a></li>
+						<li><a href="#">pedagogik</a></li>
+						<li><a href="#">underlag</a></li>
+					</ul>
+					<a href="#" target="_self"><button variant="white">se fler</button></a>
+				</div>
+			</article>
+		</div>
 
-        <article class="container">
-          <h3>
-            <a href="#"
-              >Områdesanalys: Hälso- och sjukvård samt socialt arbete</a
-            >
-          </h3>
-          <p>Utgiven: 2020-05-19</p>
-          <img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
-          <p>
-            <span>
-              <a href="#">Ladda ner</a>
-              |
-              <a href="#">Mer information</a>
-            </span>
-          </p>
-          <p>
-            Taggar: <a href="#">områdesanalys</a><a href="#">socialt arbete</a
-            ><a href="#">underlag</a>
-          </p>
-        </article>
+		<!-- latest publications -->
+		<div id="article-section" class="container">
+			<section>
+				<h1 class="h4 pub-head">Senaste publikationerna</h1>
+				<article>
+					<h2 class="h6">
+						<a href="#">
+							Faktablad: Särskilt pedagogiskt stöd och tillgänglighet - för dig som studerar på en konst-
+							och
+							kulturutbildning.
+						</a>
+					</h2>
+					<p class="text-medium text-italic">Utgiven: 2020-02-11</p>
+					<img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
+					<p>
+						<span>
+							<a href="#">Ladda ner</a>
+							|
+							<a href="#">Mer information</a>
+						</span>
+					</p>
+					<p class="text-medium">
+						Taggar: <a href="#">faktablad</a> | <a href="#">pedagogik</a> | <a href="#">konst- och
+							kulturutbildningar</a>
+					</p>
+				</article>
 
-        <article class="container">
-          <h3><a href="#">Områdesanalys: Pedagogik</a></h3>
-          <p>Utgiven: 2020-04-28</p>
-          <img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
-          <p>
-            <span>
-              <a href="#">Ladda ner</a>
-              |
-              <a href="#">Mer information</a>
-            </span>
-          </p>
-          <p>
-            Taggar: <a href="#">områdesanalys</a><a href="#">pedagogik</a
-            ><a href="#">underlag</a>
-          </p>
-        </article>
+				<article>
+					<h2 class="h6">
+						<a href="#">Faktablad: Kvalitetskriterier för yrkeshögskolan 2020</a>
+					</h2>
+					<p class="text-medium text-italic">Utgiven: 2019-10-30</p>
+					<img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
+					<p>
+						<span>
+							<a href="#">Ladda ner</a>
+							|
+							<a href="#">Mer information</a>
+						</span>
+					</p>
+					<p class="text-medium">Taggar: <a href="#">faktablad</a> | <a href="#">kvalitet</a></p>
+				</article>
 
-        <article class="container">
-          <h3><a href="#">Rapport: Studerandes sysselsättning 2019</a></h3>
-          <p>Utgiven: 2020-02-06</p>
-          <img
-            src="/u02-redesign-unit7/assets/png/publikationer_placeholder_thumb.png"
-            alt=""
-          />
-          <p>
-            <span>
-              <a href="#">Ladda ner</a>
-              |
-              <a href="#">Mer information</a>
-            </span>
-          </p>
-          <p>
-            Taggar: <a href="#">rapport</a><a href="#">enkät</a
-            ><a href="#">underlag</a>
-          </p>
-        </article>
-      </div>
-    </main>
+				<article>
+					<h2 class="h6">
+						<a href="#">Stödmaterial:Jämställd utbildning</a>
+					</h2>
+					<p class="text-medium text-italic">Utgiven: 2019-11-22</p>
+					<img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
+					<p>
+						<span>
+							<a href="#">Ladda ner</a>
+							|
+							<a href="#">Mer information</a>
+						</span>
+					</p>
+					<p class="text-medium">
+						Taggar: <a href="#">stödmaterial</a> | <a href="#">jämställdhet</a> | <a href="#">konst- och
+							kulturutbildningar</a>
+					</p>
+				</article>
 
-    <!-- sidebar -->
+				<article>
+					<h2 class="h6">
+						<a href="#">Områdesanalys: Hälso- och sjukvård samt socialt arbete</a>
+					</h2>
+					<p class="text-medium text-italic">Utgiven: 2020-05-19</p>
+					<img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
+					<p>
+						<span>
+							<a href="#">Ladda ner</a>
+							|
+							<a href="#">Mer information</a>
+						</span>
+					</p>
+					<p class="text-medium">
+						Taggar: <a href="#">områdesanalys</a> | <a href="#">socialt arbete</a> | <a href="#">underlag</a>
+					</p>
+				</article>
+
+				<article>
+					<h2 class="h6">
+						<a href="#">Områdesanalys: Pedagogik</a>
+					</h2>
+					<p class="text-medium text-italic">Utgiven: 2020-04-28</p>
+					<img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
+					<p>
+						<span>
+							<a href="#">Ladda ner</a>
+							|
+							<a href="#">Mer information</a>
+						</span>
+					</p>
+					<p class="text-medium">
+						Taggar: <a href="#">områdesanalys</a> | <a href="#">pedagogik</a> | <a href="#">underlag</a>
+					</p>
+				</article>
+
+				<article>
+					<h2 class="h6">
+						<a href="#">Rapport: Studerandes sysselsättning 2019</a>
+					</h2>
+					<p class="text-medium text-italic">Utgiven: 2020-02-06</p>
+					<img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
+					<p>
+						<span>
+							<a href="#">Ladda ner</a>
+							|
+							<a href="#">Mer information</a>
+						</span>
+					</p>
+					<p class="text-medium">
+						Taggar: <a href="#">rapport</a> | <a href="#">enkät</a> | <a href="#">underlag</a>
+					</p>
+				</article>
+			</section>
+		</div>
+	</main>
+
+	<!-- sidebar -->
+	<!--
     <aside class="container">
       <h3>Populära sökord/taggar</h3>
       <ul>
@@ -219,11 +218,13 @@
         <li><a href="#">pedagogik</a></li>
         <li><a href="#">underlag</a></li>
       </ul>
-    </aside>
+	</aside>
+	-->
 
-    <footer component="/components/footer.html" id="main-footer"></footer>
+	<footer component="/components/footer.html" id="main-footer"></footer>
 
-    <!-- Save the following script in place for production -->
-    <!-- <script src="/js/component-loader.js"></script> -->
-  </body>
+	<!-- Save the following script in place for production -->
+	<!-- <script src="/js/component-loader.js"></script> -->
+</body>
+
 </html>
