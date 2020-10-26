@@ -17,32 +17,43 @@
   }
 }
 
-#article-section {
-  .full-width-section {
-	grid-area: full-width;
-  }
-
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 1rem;
-  grid-template-areas:
-	"."
-	"."
-	"full-width";
-
-  section {
-	background: $smoke;
-	padding: 1.375rem 1.25rem;
+#latest-publications {
 	display: grid;
-	grid-template-columns: 1fr;
-	row-gap: 1.5rem;
-	grid-template-areas: "."
-  }
+  	grid-template-columns: 1fr;
+  	row-gap: 1.5rem;
+  	grid-template-areas:
+	  	"header"
+		".";
+  
+	.pub-head {
+		grid-area: header;
+	}
 
-  article {
-	  background: $dark-smoke;
-	  padding: 1rem;
-  }
+  	.info-div {
+		background: $smoke;
+		padding: 1.375rem 1.25rem;
+  	}
+  
+	.article-section {
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: 1.5rem;
+		grid-template-areas: 
+			"."
+			"."
+			"."
+			"."
+			"."
+			".";
+
+		article {
+	  		background: $dark-smoke;
+			padding: 1.5rem;
+			img {
+				padding: 0.5rem 0;
+			}
+		}
+	}
 }
 
 #popular-tags {
@@ -74,17 +85,6 @@
 	  z-index: 1;
 	}
   }
-  /*
-  .more-news {
-	display: grid;
-	row-gap: 2rem;
-
-	.lvl2-news {
-	  background: $smoke;
-	  padding: 1.375rem 1.25rem;
-	}
-  }
-  */
 }
 
 @include media-lg {
@@ -97,18 +97,15 @@
 	  "full-width full-width";
   }
 
-  	#article-section {
-		section {
-			.pub-head {
-				grid-area: header;
-			}
-			grid-template-columns: repeat(4, 1fr);
+  	#latest-publications {
+		.article-section {
+			grid-template-columns: repeat(3, 1fr);
 			column-gap: 1rem;
 			row-gap: 2rem;
 	  		grid-template-areas: 
-				"header header header header"
-				". . . ."
-				". . . .";
+				". . . "
+				". . . "
+				". . . ";
 		}
   	}
 }
