@@ -13,3 +13,14 @@ body {
 	position: relative;
 	min-height: 100vh;
 }
+
+body {
+	&.scroll-lock {
+		overflow: hidden;
+	}
+}
+
+// Clear webkit apparance
+input[type="search"] {
+	-webkit-appearance: none;
+}
