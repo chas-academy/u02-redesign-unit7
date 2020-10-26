@@ -100,7 +100,7 @@
   	#article-section {
 		section {
 			.pub-head {
-				grid-area: "header";
+				grid-area: header;
 			}
 			grid-template-columns: repeat(4, 1fr);
 			column-gap: 1rem;
@@ -112,4 +112,3 @@
 		}
   	}
 }
-
