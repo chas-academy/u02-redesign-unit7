@@ -136,8 +136,6 @@ To clone the project and save it locally:
 7. When enabling 'Sass Watch' it should create a new CSS-file called `style.min.css`. This is the file you will link to in your `<head>` tag in your HTML-file (see above at [Start working on your assigned page](#start-working-on-your-assigned-page)). 
 8. Write additional CSS in the SCSS-file you created!
 
-## Useful links
-
 ### Github pull request. Industry standard/Best practice
 
 Keep in mind that while these instructions **are** best practice/standars when working on bigger projects, they are also very tedious and might not alawys be performed. That being said, there is nothing stopping you from trying it out and maybe even learning something in the process 😱
@@ -168,6 +166,13 @@ and then delete the RC branch with
 (since the pull request is approved, the `feature-branch-name` branch will be deleted once it's merged into main).
 
 **NOTE:** As a reviewer you should not perform the acctual merge of the pull request. That is the job of the person making the request, your job as a reviewer is to **review** the code and either **comment** or **approve** once you are done reviewing.
+
+## Contributors
+
+[![](https://imgshare.io/images/2020/10/26/T4WV23X5X-U019R2TH9PY-5011a274909e-512.th.jpg)](https://github.com/AndersLilienberg)
+[![](https://avatars0.githubusercontent.com/u/986301?s=160&u=0a0340c2388817773705b814d4a76e49289dce47&v=4)](https://github.com/axelra82)
+[![](https://avatars1.githubusercontent.com/u/66753700?s=160&u=796bee84086e3f39d131ddf5a4e07dce78075eef&v=4)](https://github.com/stenwall)
+[![](https://imgshare.io/images/2020/10/26/T4WV23X5X-U01AA3E035J-090221f11eab-512.th.jpg)](https://github.com/Oskar-Mikael)
 
 ## File structure
 
