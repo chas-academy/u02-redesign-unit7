@@ -31,7 +31,7 @@ $hoverColor: rgba($black, 0.5);
 
 // Yellows
 $icterine: #f8f066;
-$wellow-pantone: #fee51e;
+$yellow-pantone: #fee51e;
 
 // Blues
 $raisin-black: #19212c;
@@ -93,12 +93,16 @@ $dark-slate-gray: #394d45;
 	background: $royal-blue !important;
 }
 
+.background-baby-blue {
+	background: $baby-blue !important;
+}
+
 .background-icterine {
 	background: $icterine !important;
 }
 
-.background-wellow-pantone {
-	background: $wellow-pantone !important;
+.background-yellow-pantone {
+	background: $yellow-pantone !important;
 }
 
 .background-raisin-black {
