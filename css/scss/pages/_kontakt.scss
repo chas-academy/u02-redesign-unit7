@@ -2,6 +2,51 @@
 	form {
 		display: grid;
 		grid-template-columns: 1fr;
+		row-gap: 1rem;
+
+		label {
+			padding: 0.25rem;
+			background: $prussian-blue;
+			color: $white;
+			font-weight: 700;
+		}
+	}
+}
+
+div#thank-you-flash {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 75vw;
+	height: auto;
+	display: block;
+	background: $success;
+	color: $white;
+	border-radius: 0.25rem;
+	transform: translate(-50%, -50%) scale(1.2) rotateX(35deg);
+	opacity: 0;
+	padding: 3rem;
+	text-align: center;
+	animation: overlay-flash 7s forwards;
+
+	@keyframes overlay-flash {
+		10% {
+			opacity: 1;
+		}
+
+		20% {
+			transform: translate(-50%, -50%) scale(1) rotateX(0);
+		}
+
+		90% {
+			transform: translate(-50%, -50%) scale(1);
+			opacity: 1;
+		}
+
+		100% {
+			transform: translate(-50%, -50%) scale(0.8);
+			opacity: 0;
+		}
 	}
 }
 
@@ -9,7 +54,7 @@
 	#contact-form-section {
 		form {
 			grid-template-columns: repeat(2, 1fr);
-			gap: 1rem 1rem;
+			column-gap: 1rem;
 			grid-template-areas:
 				"name-label subject-label"
 				"name subject"

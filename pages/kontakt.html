@@ -76,7 +76,7 @@
 
 		<!-- General contact informaiton -->
 		<article class="container background-prussian-blue text-white mt-2">
-			<h1>Kontaktinfromation</h1>
+			<h1>Kontaktinformation</h1>
 
 			<h2>Telefonväxel</h2>
 			<p>
@@ -175,7 +175,7 @@
 			<p>Du kan även skriva till oss direkt med hjälp av Kontaktformuläret nedan.</p>
 
 			<form id="contact-form" action="" method="POST">
-				<label for="name" class="background-prussian-blue text-white inline-block">Namn</label>
+				<label for="name">Namn</label>
 				<input type="text" id="name" name="name" placeholder="Fullständigt namn" />
 
 				<label for="mail">E-post</label>
@@ -186,7 +186,7 @@
 
 				<label for="subject">Ämne</label>
 				<select id="subject">
-					<option value="">-- VÄLJ ETT ÄMNE --</option>
+					<option value="" aria-disabled="true" disabled selected>Välj ämne</option>
 					<option value="education">Utbildning</option>
 					<option value="apply">Ansöka</option>
 					<option value="report">Felanmälan</option>
@@ -194,8 +194,7 @@
 
 				<label for="message">Fråga</label>
 				<textarea id="message" name="message" rows="5" cols="5" placeholder="Hur kan vi hjälpa dig?"></textarea>
-
-				<button type="submit">Skicka</button>
+				<button onclick="contactFormEmail(this.parentNode)">Skicka</button>
 			</form>
 		</section>
 
@@ -243,6 +242,7 @@
 
 	<footer component="/components/footer.html" id="main-footer"></footer>
 
+	<script src="/js/contact-form.js"></script>
 	<!-- Save the following script in place for production -->
 	<!-- <script src="/js/component-loader.js"></script> -->
 </body>
