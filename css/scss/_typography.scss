@@ -26,11 +26,12 @@ p {
 a {
 	color: $black;
 	font-weight: 700;
-	text-decoration: none;
+	text-decoration: underline;
 	transition: all 350ms;
 
 	&:hover {
 		color: $hoverColor;
+		text-decoration: none;
 	}
 }
 
