@@ -1,0 +1,27 @@
+.bg-yellow {
+    background-color: yellow;
+    text-align: center;
+}
+.lrt-head {
+    font-size: 40px;
+    padding: 50px 10px;
+}
+
+.container-box {
+    background-color: rgba(160, 159, 159, 0.6);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 11px 14px 10px 0px rgba(0,0,0,0.75);
+    
+}
+.container-box > p {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 500;
+    padding: 10px;
+}
+@media only screen and (min-width: 440px) {
+    .lrt-head {
+        font-size: 60px;
+    }
+}
