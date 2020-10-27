@@ -62,8 +62,9 @@ const contactFormEmail = (formEl) => {
 		}
 	}
 
+	const formButton = formEl.querySelector('button');
 	// Monitor user interaction, "click"
-	this.addEventListener('click', (event) => {
+	formButton.addEventListener('click', (event) => {
 
 		// Start by using the event to
 		// stop the form from submitting
