@@ -125,6 +125,37 @@ $dark-slate-gray: #394d45;
 	background: $dark-slate-gray !important;
 }
 
+// Lighten background
+@for $i from 0 through 100 {
+	.background-icterine-l-#{$i} {
+		background: lighten($icterine, $i) !important;
+	}
+
+	.background-yellow-pantone-l-#{$i} {
+		background: lighten($yellow-pantone, $i) !important;
+	}
+
+	.background-raisin-black-l-#{$i} {
+		background: lighten($raisin-black, $i) !important;
+	}
+
+	.background-prussian-blue-l-#{$i} {
+		background: lighten($prussian-blue, $i) !important;
+	}
+
+	.background-shadow-blue-l-#{$i} {
+		background: lighten($shadow-blue, $i) !important;
+	}
+
+	.background-burnished-brown-l-#{$i} {
+		background: lighten($burnished-brown, $i) !important;
+	}
+
+	.background-dark-slate-gray-l-#{$i} {
+		background: lighten($dark-slate-gray, $i) !important;
+	}
+}
+
 .spectrum {
 	background: linear-gradient(
 		to right,
