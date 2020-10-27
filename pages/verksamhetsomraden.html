@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYH - Myndigheten för yrkeshögskolan</title>
+    <link rel="stylesheet" href="../css/style.min.css?v=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico">
+    <!-- Save the following scripts in place for production -->
+    <!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
+
+    <!-- DRY KISS 💋 -->
+    <script>
+        // This script helps us with github pages reference problem
+        // Consider removing, and use relative root refrencing (i.e. /) in production
+
+        // Test for location
+        // local is default in file references
+        // if we are on github, changes file references
+
+        // Set up variables for location test
+        const chasGitHub = 'chas-academy.github.io';
+        const gitHubRepoName = 'u02-redesign-unit7';
+
+        // Find out if location is GitHub pages or not
+        const isGitHub = window.location.host === chasGitHub ? true : false;
+
+        // Define the relative root path
+        const cssFile = '/css/style.min.css?v=1.0';
+        const jsFile = '/js/component-loader.js';
+
+        // Create the elements we'll need in head
+        const styleEl = document.createElement('link');
+        const scriptEl = document.createElement('script');
+
+        // Set attributes for elements
+        styleEl.rel = 'stylesheet';
+        styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
+        scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
+
+        // Add style element to head
+        document.head.appendChild(styleEl);
+
+        // Wait for DOM to finish, then add
+        // component-loader script to end of body
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.appendChild(scriptEl);
+        });
+    </script>
+</head>
+<header component="/components/header.html" id="main-header"></header>
+<body>
+    <div class="container">
+        <h1>Verksamhetsområden</h1>
+        <p>Myndigheten för yrkeshögskolan har i uppdrag att ansvara för frågor som rör utbildningar inom yrkeshögskolan. Dessutom ansvarar vi för ytterligare frågor inom utbildningsområdet. 
+        </p>
+    </div>
+    <div class="container">
+        <img src="/assets/images/bilder/YH-start.png" alt="yrkeshögskolan" >
+        <br>
+        <a href="#">Yrkeshögskolan</a>
+        <p>Utbildningar som svarar mot arbetslivets behov av kvalificerad yrkeskompetens och som drivs i nära samverkan med företag och andra arbetsgivare.</p>
+    </div>
+    <div class="container">
+        <img src="/assets/images/bilder/KK-start.png" alt="yrkeshögskolan">
+        <a href="#">Konst och kulturutbildningar</a>
+        <p>Utbildningar som är högskoleförberedande, yrkesinriktade eller inom kulturarvsområdet och drivs av privata utbildningsanordnare.</p>
+    </div>
+    <div class="container">
+        <img src="/assets/images/bilder/Kontakttolk.png" alt="yrkeshögskolan">
+        <a href="#">Tolkutbildningar</a>
+        <p>Utbildningar till kontakttolk, teckenspråks- och dövblindtolk samt skrivtolk som drivs av folkhögskolor och studieförbund.</p>
+    </div>
+    <div class="container">
+        <img src="/assets/images/bilder/ET-start.png" alt="yrkeshögskolan">
+        <a href="#">Utbildningar med endast tillsyn</a>
+        <p>Eftergymnasiala utbildningar inom olika områden som bedrivs av fristående skolor. Utbildningarnas statliga stöd omfattas endast av tillsyn.</p>
+    </div>
+    <div class="container">
+        <img src="/assets/images/bilder/SEQF.png" alt="yrkeshögskolan">
+        <a href="#">SeQF</a>
+        <p>Sveriges referensram för kvalifikationer (SeQF) ska synliggöra allt lärande för att öka matchningen på arbetsmarknaden.</p>
+    </div>
+    <div class="container">
+        <img src="/assets/images/bilder/Scandinav_41YW_validering_webb.jpg" alt="yrkeshögskolan">
+        <a href="#">Om validering</a>
+        <p>Validering innebär att en persons kunskaper och kompetenser kartläggs och bedöms på ett strukturerat sätt, för studier eller arbete, oavsett hur, var eller när de förvärvats.</p>
+    </div>
+    <footer component="/components/footer.html" id="main-footer"></footer>
+</body>
+</html>
