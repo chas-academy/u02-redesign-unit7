@@ -1,9 +1,10 @@
 .bg-yellow {
     background-color: yellow;
     text-align: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 10px;
     border-bottom: 5px solid black;
+    border-top: 5px solid black;
+
 }
 .lrt-head {
     font-size: 40px;
@@ -14,31 +15,34 @@
     background-color: rgba(160, 159, 159, 0.6);
     border-radius: 10px;
     box-shadow: 11px 14px 10px 0px rgba(0,0,0,0.75);
-    padding-bottom: 1em;
-    
+    padding: 1em;
+    margin-bottom: 4em;
 }
 .container-box > p {
     text-align: center;
     font-size: 23px;
     padding: 30px;
     line-height: 2em;
+    margin-bottom: 2em;
 }
 .breadcrumbs {
-    padding-top:20px;
     font-size: 20px;
     text-align: center;
 }
 .background-signal-green {
     border-radius: 5px;
     border: 0.05em solid white;
+    padding: 1rem;
+    font-size: 0.865rem;
+    text-decoration: none;
 }
 .link-active {
     color:blue;
     font-weight: bold;
 }
 .paragraph-img {
-    height: 60%;
-    width: 60%;
+    height: 80%;
+    width: 80%;
     padding-top:20px;
     display:block;
     margin: 0 auto;

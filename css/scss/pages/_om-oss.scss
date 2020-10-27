@@ -1,13 +1,41 @@
 .background-green {
     background-color: #00C84E;
     text-align: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 10px;
     border-bottom: 5px solid black;
+    border-top: 5px solid black;
 }
 .oo-head {
     font-size: 40px;
     padding-top: 20px;
+}
+#pen-img {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: 70%;
+    border: solid black 5px;
+    margin-top: 2em;
+}
+.background-signal-yellow {
+    background: #FFFF00;
+    border-radius: 5px;
+    border: 0.05em solid black;
+    padding: 1rem;
+    font-size: 0.865rem;
+    text-decoration: none;
+}
+.container-box-dark {
+    background-color: rgba(54, 54, 54, 0.6);
+    border-radius: 10px;
+    box-shadow: 11px 14px 10px 0px rgba(0,0,0,0.75);
+    padding: 1em;
+}
+@media only screen and (min-width: 768px) {
+    #pen-img {
+    width: 80%;
+    height: 80%;
+}
 }
 @media only screen and (min-width: 440px) {
     .oo-head {
