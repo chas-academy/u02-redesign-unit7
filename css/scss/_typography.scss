@@ -30,12 +30,12 @@ a {
 	transition: all 350ms;
 
 	&:hover {
-		color: rgba($black, 0.5);
+		color: $hoverColor;
 	}
 }
 
 // Headings
-@for $i from 1 through 3 {
+@for $i from 1 through 6 {
 	h#{$i} {
 		font-family: "Helvetica", sans-serif;
 	}
@@ -79,6 +79,12 @@ h6,
 }
 
 // Font style classes
+
+// Styles
+
+.text-italic {
+	font-style: italic !important; 
+}
 
 // Weights
 strong,

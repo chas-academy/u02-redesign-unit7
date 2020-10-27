@@ -21,10 +21,15 @@ $ce: #eeeeee;
 $black: #000000;
 $white: #ffffff;
 $smoke: #f5f5f5;
+$dark-smoke: #c4c4c4;
 
 $signal-green: #1ac03e;
 $royal-blue: #0d0d75;
 $baby-blue: #4563ae;
+$white-pink: #fff3f3;
+$gray-green: #f3f3ec;
+
+$hoverColor: rgba($black, 0.5);
 
 // Classes
 .text-primary {
@@ -78,4 +83,16 @@ $baby-blue: #4563ae;
 		hsl(320, 100%, 50%) 83.33%,
 		hsl(360, 100%, 50%) 100%
 	);
+}
+
+// Replace hash (#) function for hex color
+@function sansHashColor($string) {
+	@if type-of($string) == "color" and str-index(#{$string}, "#") == 1 {
+		$hex: str-slice(ie-hex-str($string), 4);
+		$string: unquote("#{$hex}");
+
+		@return "%23" + $string;
+	}
+
+	@return $string;
 }
