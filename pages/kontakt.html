@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MYH - Myndigheten för yrkeshögskolan</title>
+	<link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico">
+	<!-- Save the following scripts in place for production -->
+	<!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
+
+	<!-- DRY KISS 💋 -->
+	<script>
+		// This script helps us with github pages reference problem
+		// Consider removing, and use relative root refrencing (i.e. /) in production
+
+		// Test for location
+		// local is default in file references
+		// if we are on github, changes file references
+
+		// Set up variables for location test
+		const chasGitHub = 'chas-academy.github.io';
+		const gitHubRepoName = 'u02-redesign-unit7';
+
+		// Find out if location is GitHub pages or not
+		const isGitHub = window.location.host === chasGitHub ? true : false;
+
+		// Define the relative root path
+		const cssFile = '/css/style.min.css?v=1.0';
+		const jsFile = '/js/component-loader.js';
+
+		// Create the elements we'll need in head
+		const styleEl = document.createElement('link');
+		const scriptEl = document.createElement('script');
+
+		// Set attributes for elements
+		styleEl.rel = 'stylesheet';
+		styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
+		scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
+
+		// Add style element to head
+		document.head.appendChild(styleEl);
+
+		// Wait for DOM to finish, then add
+		// component-loader script to end of body
+		document.addEventListener('DOMContentLoaded', () => {
+			document.body.appendChild(scriptEl);
+		});
+	</script>
+</head>
+
+<body>
+	<header component="/components/header.html" id="main-header"></header>
+
+	<main>
+		<!-- Important message -->
+		<article class="container background-smoke">
+			<h1>Bra att veta innan du kontaktar oss</h1>
+			<p>
+				Myndigheten för yrkeshögskolan är en <strong>statlig myndighet</strong>. Den information som du
+				översänder till oss, oavsett form, blir därför en <strong>offentlig handling</strong>.
+			</p>
+			<p>
+				Vi registrerar alla allmänna handlingar och sparar dem i vårt diarium.
+			</p>
+		</article>
+
+		<!-- Forum link -->
+		<article class="container background-icterine mt-2">
+			<h1>Kundforum</h1>
+			<p>
+				Se vanliga frågor och svar samt ställ dina frågor i vårt
+				<strong><a href="https://forum.myh.se" target="_blank">digitala frågeforum</a></strong>
+			</p>
+		</article>
+
+		<!-- General contact informaiton -->
+		<article class="container background-prussian-blue text-white mt-2">
+			<h1>Kontaktinfromation</h1>
+
+			<h2>Telefonväxel</h2>
+			<p>
+				Växeln är öppen vardagar 9.00-15.00 med <strong>lunchstängt</strong> 11.30 - 13.00
+			</p>
+			<p>
+				<a href="tel:0102090100">010-209 01 00</a>
+			</p>
+
+			<h2>E-post</h2>
+			<p>
+				<em>Allmänna frågor/synpunkter:</em> <a href="mailto:info@myh.se">info@myh.se</a>
+			</p>
+			<p>
+				<em>Registrator:</em> <a href="mailto:registrator@myh.se">registrator@myh.se</a>
+			</p>
+			<p>
+				<em>Webbfrågor:</em> <a href="mailto:webbredaktionen@myh.se">webbredaktionen@myh.se</a>
+			</p>
+			<p>
+				<em>Personlig e-post enligt:</em> <a href="mailto:fornamn.efternamn@myh.se">fornamn.efternamn@myh.se</a>
+			</p>
+		</article>
+
+		<article class="container line-top line-bottom mt-2">
+			<h1>
+				Västerås
+			</h1>
+
+			<h2>
+				Besöksadress
+			</h2>
+			<p>
+				<a href="https://goo.gl/maps/qEeaWD4aZNSLy62p9" target="_blank" rel="noopener noreferrer">
+					Ingenjör Bååths gata 19, 722 12 Västerås
+				</a>
+			</p>
+			<p>
+				<strong>Öppettider <span class="text-small">(helgfri måndag till fredag)</span></strong>
+			</p>
+			<p>
+				09.00 -15.00 med <strong>lunchstängt</strong> 12.00 - 13.00
+			</p>
+
+			<h2>
+				Postadress
+			</h2>
+			<p>
+				Myndigheten för yrkeshögskolan
+			</p>
+			<p>
+				Box 145
+			</p>
+			<p>
+				721 05 Västerås
+			</p>
+		</article>
+
+		<article class="container line-bottom mb-2">
+			<h1>
+				Hässleholm
+			</h1>
+
+			<h2>
+				Besöksadress
+			</h2>
+			<p>
+				<a href="https://goo.gl/maps/MHy9piHmRwYJVTwy7" target="_blank" rel="noopener noreferrer">
+					Frykholmsgatan 10, 281 31 Hässleholm
+				</a>
+			</p>
+			<p>
+				<strong>Öppettider <span class="text-small">(helgfri måndag till fredag)</span></strong>
+			</p>
+			<p>
+				09.00 -15.00 med <strong>lunchstängt</strong> 12.00 - 13.00
+			</p>
+
+			<h2>
+				Postadress
+			</h2>
+			<p>
+				Myndigheten för yrkeshögskolan
+			</p>
+			<p>
+				Box 85
+			</p>
+			<p>
+				281 21 Hässleholm
+			</p>
+		</article>
+
+		<!-- Misc contact related information -->
+		<section class="container background-dark-slate-gray text-white">
+			<h1>Övrig information</h1>
+
+			<article>
+				<h3 class="h5">Fakturering</h2>
+					<p>
+						Från och med den 1 april 2019 blir det lag på att alla inköp i offentlig sektor ska faktureras
+						med elektronisk faktura (e-faktura).
+					</p>
+					<p>
+						<a href="https://www.myh.se/Om-oss/Fakturera-oss/">
+							Läs här om hur du kan fakturera oss elektroniskt
+						</a>
+					</p>
+			</article>
+
+			<article>
+				<h3 class="h5">Pressjour</h2>
+					<p>
+						Besök vårt
+						<a href="https://www.mynewsdesk.com/se/myndigheten-foer-yrkeshoegskolan" target="_blank"
+							rel="noopener noreferrer">
+							nyhetsrum
+						</a>
+						eller ring oss på
+						<a href="tel:0102090173">
+							010-209 01 73
+						</a>
+					</p>
+			</article>
+
+			<article>
+				<h3 class="h5">Organisationsnummer</h3>
+				<p>
+					202100-6230
+				</p>
+			</article>
+		</section>
+
+	</main>
+
+	<footer component="/components/footer.html" id="main-footer"></footer>
+
+	<!-- Save the following script in place for production -->
+	<!-- <script src="/js/component-loader.js"></script> -->
+</body>
+
+</html>

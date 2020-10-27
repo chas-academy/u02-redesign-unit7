@@ -6,12 +6,19 @@
 @import "./scss/grid";
 @import "./scss/lists";
 @import "./scss/forms-input-select";
+@import "./scss/parallax-scroll";
 
 // Components
+@import "./scss/components/body-overlay";
+@import "./scss/components/search";
 @import "./scss/components/header";
 @import "./scss/components/footer";
 @import "./scss/components/button";
+@import "./scss/components/scroll-to-top";
 
 // Pages
 @import "./scss/pages/index";
 @import "./scss/pages/publikationer";
+@import "./scss/pages/lagar-regler-tillsyn";
+@import "./scss/pages/kontakt";
+@import "./scss/pages/om-oss";
