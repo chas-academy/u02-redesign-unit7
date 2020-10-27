@@ -1,8 +1,7 @@
-#index-student-info-banner {
+article#index-student-info-banner {
 	&.container {
 		margin-top: 2rem;
 		padding: 1rem;
-		background: $gray-green;
 
 		p:last-child {
 			margin-bottom: 0;
@@ -10,60 +9,71 @@
 	}
 }
 
-#main-option-sections {
-	padding-bottom: 0;
-	display: grid;
-	grid-template-columns: 1fr;
-	row-gap: 1rem;
-	grid-template-areas: ".";
+section#main-option-sections {
+	&.container {
+		ul {
+			display: grid;
+			grid-template-columns: 1fr;
+			row-gap: 1rem;
+			grid-template-areas: ".";
 
-	h1 {
-		margin: 0;
-		transform: translateY(0);
-		will-change: transform;
-		transition: transform 0.35s;
+			li {
+				margin: 0;
+				transform: translateY(0);
+				will-change: transform;
+				transition: transform 0.35s;
 
-		&:hover {
-			transform: translateY(0.25rem);
-		}
+				&:hover {
+					transform: translateY(0.25rem);
+				}
 
-		a {
-			display: block;
-			padding: 1rem;
-			font-size: 0.865rem;
-			word-break: break-word;
+				a {
+					display: block;
+					padding: 1rem;
+					margin: 0;
+					font-size: 0.865rem;
+					word-break: break-word;
+					text-decoration: none;
+					height: 100%;
 
-			p {
-				font-size: 0.5rem;
-			}
+					&::before {
+						content: "";
+					}
 
-			&:hover {
-				opacity: 0.5;
+					p {
+						font-size: 0.5rem;
+					}
+
+					&:hover {
+						opacity: 0.5;
+					}
+				}
 			}
 		}
 	}
 }
 
-#main-gateway {
-	.main-gateway-full-width {
-		grid-area: full-width;
-	}
+section#main-gateway {
+	&.container {
+		.main-gateway-full-width {
+			grid-area: full-width;
+		}
 
-	display: grid;
-	grid-template-columns: 1fr;
-	row-gap: 1rem;
-	grid-template-areas:
-		"."
-		"."
-		"full-width";
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: 1rem;
+		grid-template-areas:
+			"."
+			"."
+			"full-width";
 
-	section {
-		background: $smoke;
-		padding: 1.375rem 1.25rem;
+		article {
+			padding: 1.375rem 1.25rem;
+		}
 	}
 }
 
-#front-page-news {
+section#front-page-news {
 	padding: 0;
 
 	.main-news {
@@ -105,27 +115,33 @@
 }
 
 @include media-lg {
-	#index-student-info-banner {
+	article#index-student-info-banner {
 		padding-left: 2rem;
 		padding-right: 2rem;
 	}
 
-	#main-gateway {
-		grid-template-columns: repeat(2, 1fr);
-		column-gap: 2rem;
-		row-gap: 2rem;
-		grid-template-areas:
-			". ."
-			"full-width full-width";
+	section#main-gateway {
+		&.container {
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 2rem;
+			row-gap: 2rem;
+			grid-template-areas:
+				". ."
+				"full-width full-width";
+		}
 	}
 
-	#main-option-sections {
-		grid-template-columns: repeat(5, 1fr);
-		column-gap: 0.5rem;
-		grid-template-areas: ". . . . .";
+	section#main-option-sections {
+		&.container {
+			ul {
+				grid-template-columns: repeat(5, 1fr);
+				column-gap: 0.5rem;
+				grid-template-areas: ". . . . .";
+			}
+		}
 	}
 
-	#front-page-news {
+	section#front-page-news {
 		.more-news {
 			grid-template-columns: repeat(2, 1fr);
 			column-gap: 2rem;
