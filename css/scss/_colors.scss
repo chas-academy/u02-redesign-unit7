@@ -28,23 +28,49 @@ $royal-blue: #0d0d75;
 $baby-blue: #4563ae;
 $white-pink: #fff3f3;
 $gray-green: #f3f3ec;
-
 $hoverColor: rgba($black, 0.5);
+
+// Yellows
+$icterine: #f8f066;
+$yellow-pantone: #fee51e;
+
+// Blues
+$raisin-black: #19212c;
+$prussian-blue: #263a52;
+$shadow-blue: #7891b6;
+
+// Reds
+$burnished-brown: #9b777d;
+
+// Greens
+$dark-slate-gray: #394d45;
 
 // Classes
 .text-primary {
 	color: $color-primary !important;
+
+	a {
+		color: $color-primary !important;
+	}
 }
 
 .text-black {
 	color: $black !important;
+
+	a {
+		color: $black !important;
+	}
 }
 
 .text-white {
 	color: $white !important;
+
+	a {
+		color: $white !important;
+	}
 }
 
-.background-light {
+.background-smoke {
 	background: $smoke !important;
 }
 
@@ -70,6 +96,65 @@ $hoverColor: rgba($black, 0.5);
 
 .background-baby-blue {
 	background: $baby-blue !important;
+}
+
+.background-icterine {
+	background: $icterine !important;
+}
+
+.background-yellow-pantone {
+	background: $yellow-pantone !important;
+}
+
+.background-raisin-black {
+	background: $raisin-black !important;
+}
+
+.background-prussian-blue {
+	background: $prussian-blue !important;
+}
+
+.background-shadow-blue {
+	background: $shadow-blue !important;
+}
+
+.background-burnished-brown {
+	background: $burnished-brown !important;
+}
+
+.background-dark-slate-gray {
+	background: $dark-slate-gray !important;
+}
+
+// Lighten background
+@for $i from 0 through 100 {
+	.background-icterine-l-#{$i} {
+		background: lighten($icterine, $i) !important;
+	}
+
+	.background-yellow-pantone-l-#{$i} {
+		background: lighten($yellow-pantone, $i) !important;
+	}
+
+	.background-raisin-black-l-#{$i} {
+		background: lighten($raisin-black, $i) !important;
+	}
+
+	.background-prussian-blue-l-#{$i} {
+		background: lighten($prussian-blue, $i) !important;
+	}
+
+	.background-shadow-blue-l-#{$i} {
+		background: lighten($shadow-blue, $i) !important;
+	}
+
+	.background-burnished-brown-l-#{$i} {
+		background: lighten($burnished-brown, $i) !important;
+	}
+
+	.background-dark-slate-gray-l-#{$i} {
+		background: lighten($dark-slate-gray, $i) !important;
+	}
 }
 
 .spectrum {

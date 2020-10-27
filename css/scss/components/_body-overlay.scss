@@ -13,6 +13,10 @@
 	transition: all 0.35s;
 	overflow-y: scroll;
 
+	a {
+		text-decoration: none;
+	}
+
 	div.pseudo-close-button {
 		position: fixed;
 		display: block;
