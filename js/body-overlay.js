@@ -1,12 +1,17 @@
 // Lock body scroll so visitor can
 // scroll overlay content only
-const bodyScrollLock = () => {
+const bodyScrollLock = (state) => {
+
 	// Toggle body scroll lock on/off
-	document.body.classList.toggle('scroll-lock');
+	if (state) {
+		document.body.classList.add('scroll-lock');
+	} else {
+		document.body.classList.remove('scroll-lock');
+	}
 }
 
 const showOverlay = (element = null, origin = false) => {
-	bodyScrollLock();
+	bodyScrollLock(true);
 	bodyOverlayEl.classList.add('show');
 
 	bodyOverlayContainerEl.appendChild(element);
@@ -18,6 +23,9 @@ const showOverlay = (element = null, origin = false) => {
 // Function to close overlay
 const hideOverlay = (element = null, origin = false) => {
 
+	// Release body scroll lock
+	bodyScrollLock(false);
+
 	// Remove overlay show class
 	bodyOverlayEl.classList.remove('show');
 
@@ -28,9 +36,6 @@ const hideOverlay = (element = null, origin = false) => {
 	} else {
 		bodyOverlayContainerEl.innerHTML = '';
 	}
-
-	// Release body scroll lock
-	bodyScrollLock();
 }
 
 // Create section and article for search overlay
