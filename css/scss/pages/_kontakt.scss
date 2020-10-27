@@ -1,7 +1,59 @@
-.map {
-	height: 23rem;
+#contact-form-section {
+	form {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+}
 
-	&.full-width {
-		width: 100%;
+@include media-lg {
+	#contact-form-section {
+		form {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1rem 1rem;
+			grid-template-areas:
+				"name-label subject-label"
+				"name subject"
+				"email-label phone-label"
+				"email phone"
+				"message-label message-label"
+				"message message"
+				"send-button send-button";
+
+			#name {
+				grid-area: name;
+			}
+			#email {
+				grid-area: email;
+			}
+			#phone {
+				grid-area: phone;
+			}
+			#subject {
+				grid-area: subject;
+			}
+			#message {
+				grid-area: message;
+			}
+
+			label[for="name"] {
+				grid-area: name-label;
+			}
+			label[for="email"] {
+				grid-area: email-label;
+			}
+			label[for="phone"] {
+				grid-area: phone-label;
+			}
+			label[for="subject"] {
+				grid-area: subject-label;
+			}
+			label[for="message"] {
+				grid-area: message-label;
+			}
+
+			button {
+				grid-area: send-button;
+			}
+		}
 	}
 }

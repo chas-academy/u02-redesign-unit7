@@ -169,6 +169,36 @@
 			</p>
 		</article>
 
+		<!-- Contact form -->
+		<section id="contact-form-section" class="container">
+			<h1>Kontaktformulär</h1>
+			<p>Du kan även skriva till oss direkt med hjälp av Kontaktformuläret nedan.</p>
+
+			<form id="contact-form" action="" method="POST">
+				<label for="name" class="background-prussian-blue text-white inline-block">Namn</label>
+				<input type="text" id="name" name="name" placeholder="Fullständigt namn" />
+
+				<label for="mail">E-post</label>
+				<input type="email" id="email" name="email" placeholder="din@epost.se" />
+
+				<label for="mail">Telefon</label>
+				<input type="phone" id="phone" name="phone" placeholder="ex. 08-123 456 (valfritt)" />
+
+				<label for="subject">Ämne</label>
+				<select id="subject">
+					<option value="">-- VÄLJ ETT ÄMNE --</option>
+					<option value="education">Utbildning</option>
+					<option value="apply">Ansöka</option>
+					<option value="report">Felanmälan</option>
+				</select>
+
+				<label for="message">Fråga</label>
+				<textarea id="message" name="message" rows="5" cols="5" placeholder="Hur kan vi hjälpa dig?"></textarea>
+
+				<button type="submit">Skicka</button>
+			</form>
+		</section>
+
 		<!-- Misc contact related information -->
 		<section class="container background-dark-slate-gray text-white">
 			<h1>Övrig information</h1>
