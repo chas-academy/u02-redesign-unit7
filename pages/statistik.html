@@ -2,79 +2,126 @@
 <html lang="sv-SE">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYH - Myndigheten för yrkeshögskolan</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico">
-    <!-- Save the following scripts in place for production -->
-    <!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MYH - Myndigheten för yrkeshögskolan</title>
+	<link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico">
+	<!-- Save the following scripts in place for production -->
+	<!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
 
-    <!-- DRY KISS 💋 -->
-    <script>
-        // This script helps us with github pages reference problem
-        // Consider removing, and use relative root refrencing (i.e. /) in production
+	<!-- DRY KISS 💋 -->
+	<script>
+		// This script helps us with github pages reference problem
+		// Consider removing, and use relative root refrencing (i.e. /) in production
 
-        // Test for location
-        // local is default in file references
-        // if we are on github, changes file references
+		// Test for location
+		// local is default in file references
+		// if we are on github, changes file references
 
-        // Set up variables for location test
-        const chasGitHub = 'chas-academy.github.io';
-        const gitHubRepoName = 'u02-redesign-unit7';
+		// Set up variables for location test
+		const chasGitHub = 'chas-academy.github.io';
+		const gitHubRepoName = 'u02-redesign-unit7';
 
-        // Find out if location is GitHub pages or not
-        const isGitHub = window.location.host === chasGitHub ? true : false;
+		// Find out if location is GitHub pages or not
+		const isGitHub = window.location.host === chasGitHub ? true : false;
 
-        // Define the relative root path
-        const cssFile = '/css/style.min.css?v=1.0';
-        const jsFile = '/js/component-loader.js';
+		// Define the relative root path
+		const cssFile = '/css/style.min.css?v=1.0';
+		const jsFile = '/js/component-loader.js';
 
-        // Create the elements we'll need in head
-        const styleEl = document.createElement('link');
-        const scriptEl = document.createElement('script');
+		// Create the elements we'll need in head
+		const styleEl = document.createElement('link');
+		const scriptEl = document.createElement('script');
 
-        // Set attributes for elements
-        styleEl.rel = 'stylesheet';
-        styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
-        scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
+		// Set attributes for elements
+		styleEl.rel = 'stylesheet';
+		styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
+		scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
 
-        // Add style element to head
-        document.head.appendChild(styleEl);
+		// Add style element to head
+		document.head.appendChild(styleEl);
 
-        // Wait for DOM to finish, then add
-        // component-loader script to end of body
-        document.addEventListener('DOMContentLoaded', () => {
-            document.body.appendChild(scriptEl);
-        });
-    </script>
+		// Wait for DOM to finish, then add
+		// component-loader script to end of body
+		document.addEventListener('DOMContentLoaded', () => {
+			document.body.appendChild(scriptEl);
+		});
+	</script>
 </head>
 
 <body>
-    <header component="/components/header.html" id="main-header"></header>
+	<header component="/components/header.html" id="main-header"></header>
 
-    <main>
-        <!-- local header -->
-        <div id="statistik-header" class="container">
-            <section>
-                <h1 class="h1">Statistik</h1>
-                <p>Här hittar du statistik om yrkeshögskoleutbildningar, konst- och kulturutbildningar och utbildningar
-                    med endast tillsyn samt tolkutbildningar inom folkbildningen.</p>
-                <p>Yrkeshögskoleutbildningar omfattar både yrkeshögskoleutbildning (YH) och kvalificerad yrkesutbildning
-                    (KY).</p>
-            </section>
-            <!-- insert filter function here -->
-            <section>
-                <p>Filter-funktion / lokal sökruta?</p>
-            </section>
-        </div>
+	<main>
+		<!-- local header -->
+		<div id="statistik-header" class="container">
+			<section>
+				<h1 class="h1">Statistik</h1>
+				<p>Här hittar du statistik om yrkeshögskoleutbildningar, konst- och kulturutbildningar och utbildningar med endast tillsyn samt tolkutbildningar inom folkbildningen.</p>
+				<p>Yrkeshögskoleutbildningar omfattar både yrkeshögskoleutbildning (YH) och kvalificerad yrkesutbildni (KY).</p>
+			</section>
+			<!-- choose depending on school form -->
+			<section>
+				<h1 class="h5">Statistik efter utbildningsform</h1>
+				<ul>
+					<li>
+						<a href="#">Yrkeshögskoleutbildningar</a>
+					</li>
+					<li>
+						<a href="#">Konst- och kulturutbildningar</a>
+					</li>
+					<li>
+						<a href="#">Utbildningar med endast tillsyn</a>
+					</li>
+					<li>
+						<a href="#">Tolkutbildningar inom folkbildningen</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+		<!-- full-width container -->
+		<div id="full-width-statistics">
+			<article class="key-numbers">
+				<img src="/assets/images/pages/statistik/statistics.jpg"
+					alt="Nyckeltal för yrkeshögskolan 2019" />
+				<div class="container banner-grid">
+					<h1 class="h3">Nyckeltal för utbildningarna  2019</h1>
+					<div>
+						<h2 class="h5">Yrkeshögskolan</h2>
+						<ul>
+							<li>214 anordnare bedrev utbildning</li>
+							<li>54 400 studerande</li>
+							<li>1,8 behöriga sökande per utbildningsplats</li>
+						</ul>
+					</div>
+					<div>
+						<h2 class="h5">Konst- och kulturutbildningar</h2>
+						<ul>
+							<li>42 anordnare bedrev utbildning</li>
+							<li>5 500 studerande</li>
+							<li>53 skolor/administrativa enheter</li>
+						</ul>
+					</div>
+					<div>
+						<h2 class="h5">Tolkutbildningar</h2>
+						<ul>
+							<li>11 skolor hade kontakttolkutbilning</li>
+							<li>5 folkhögskolor hade utbildning till teckenspråkstolk</li>
+							<li>1 skola hade skrivtolutbildning</li>
+						</ul>
+					</div>
+					<a href="#" target="_self"><button variant="white">läs mer</button></a>
+				</div>
+			</article>
+		</div>
 
 
-    </main>
+	</main>
 
-    <footer component="/components/footer.html" id="main-footer"></footer>
+	<footer component="/components/footer.html" id="main-footer"></footer>
 
-    <!-- Save the following script in place for production -->
-    <!-- <script src="/js/component-loader.js"></script> -->
+	<!-- Save the following script in place for production -->
+	<!-- <script src="/js/component-loader.js"></script> -->
 
 </body>
 
