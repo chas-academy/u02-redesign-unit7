@@ -47,14 +47,26 @@ $dark-slate-gray: #394d45;
 // Classes
 .text-primary {
 	color: $color-primary !important;
+
+	a {
+		color: $color-primary !important;
+	}
 }
 
 .text-black {
 	color: $black !important;
+
+	a {
+		color: $black !important;
+	}
 }
 
 .text-white {
 	color: $white !important;
+
+	a {
+		color: $white !important;
+	}
 }
 
 .background-smoke {
