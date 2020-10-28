@@ -76,7 +76,7 @@
 
 		<!-- General contact informaiton -->
 		<article class="container background-prussian-blue text-white mt-2">
-			<h1>Kontaktinfromation</h1>
+			<h1>Kontaktinformation</h1>
 
 			<h2>Telefonväxel</h2>
 			<p>
@@ -169,6 +169,35 @@
 			</p>
 		</article>
 
+		<!-- Contact form -->
+		<section id="contact-form-section" class="container">
+			<h1>Kontaktformulär</h1>
+			<p>Du kan även skriva till oss direkt med hjälp av Kontaktformuläret nedan.</p>
+
+			<form id="contact-form" action="" method="POST">
+				<label for="name">Namn</label>
+				<input type="text" id="name" name="name" placeholder="Fullständigt namn" />
+
+				<label for="mail">E-post</label>
+				<input type="email" id="email" name="email" placeholder="din@epost.se" />
+
+				<label for="mail">Telefon</label>
+				<input type="phone" id="phone" name="phone" placeholder="ex. 08-123 456 (valfritt)" />
+
+				<label for="subject">Ämne</label>
+				<select id="subject">
+					<option value="" aria-disabled="true" disabled selected>Välj ämne</option>
+					<option value="education">Utbildning</option>
+					<option value="apply">Ansöka</option>
+					<option value="report">Felanmälan</option>
+				</select>
+
+				<label for="message">Fråga</label>
+				<textarea id="message" name="message" rows="5" cols="5" placeholder="Hur kan vi hjälpa dig?"></textarea>
+				<button onclick="contactFormEmail(this.parentNode)">Skicka</button>
+			</form>
+		</section>
+
 		<!-- Misc contact related information -->
 		<section class="container background-dark-slate-gray text-white">
 			<h1>Övrig information</h1>
@@ -213,6 +242,7 @@
 
 	<footer component="/components/footer.html" id="main-footer"></footer>
 
+	<script src="/js/contact-form.js"></script>
 	<!-- Save the following script in place for production -->
 	<!-- <script src="/js/component-loader.js"></script> -->
 </body>
