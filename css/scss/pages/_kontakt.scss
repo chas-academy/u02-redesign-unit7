@@ -29,6 +29,12 @@ div#thank-you-flash {
 	text-align: center;
 	animation: overlay-flash 7s forwards;
 
+	button.close-button {
+		&::before {
+			@include times-close($white);
+		}
+	}
+
 	@keyframes overlay-flash {
 		10% {
 			opacity: 1;
