@@ -1,6 +1,38 @@
-.parallax {
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+// .parallax {
+//     background-size: cover;
+//     background-position: center center;
+//     background-attachment: fixed;
+//     background-repeat: no-repeat;
+// }
+
+@mixin parallax($color: $white, $scale: 2) {
+    // New parallax container
+    // This container should wrap
+    // everything you want in the parallax
+    .parallax-container {
+        overflow: hidden;
+        transform: translateZ(0);
+        perspective: 1px;
+    }
+
+    // Regular container
+    // Usage example for color:
+    // parallax($black) to get black text
+    .container {
+        transform: translateZ(0);
+        color: $color;
+    }
+
+    // Use this class on the element
+    // you want "parallaxed"
+    // Use scale if you need
+    // background to be larger
+    .parallax-layer {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 100vw;
+        opacity: 0.5;
+        transform: translate3d(0, -50%, -1px) scale($scale);
+    }
 }
