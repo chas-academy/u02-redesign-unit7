@@ -51,9 +51,10 @@
 				background: rgba($black, 0.05);
 			}
 
-			input {
-				background: none;
+			input#search-field {
 				border: 1px solid lighten($black, 80);
+				width: 100%;
+				padding: 0.465rem 3.875rem 0.465rem 0.875rem;
 			}
 
 			button {
@@ -155,7 +156,7 @@
 			}
 
 			#search-box {
-				input {
+				input#search-field {
 					width: 350px;
 					transition: width 0.35s;
 
