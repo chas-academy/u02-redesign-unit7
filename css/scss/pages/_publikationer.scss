@@ -9,7 +9,7 @@
 	row-gap: 2rem;
 	grid-template-areas:
 		"header"
-		"."
+		"filter"
 		"."
 		"."
 		"."
@@ -18,13 +18,25 @@
 	
 	h1 {
 		grid-area: header;
-	}	
-
+	}
+	
+	section.filter {
+		grid-area: filter;
 	}
 }
 
 @include media-lg {
 	#latest-publications {
-
+		grid-template-columns: 1fr 4fr;
+		column-gap: 0;
+		row-gap: 2rem;
+		grid-template-areas: 
+			"header header"
+			"filter filter"
+			". ."
+			". ."
+			". ."
+			". ."
+			". .";
 	}
 }
