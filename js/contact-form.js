@@ -11,7 +11,7 @@ let formOk = false;
 let hasFocused = false;
 
 // Initial empty array for field data
-const fields = [];
+let fieldsArray = [];
 
 // Loop function for our fields
 const loopFields = (fields) => {
@@ -60,6 +60,15 @@ const loopFields = (fields) => {
 	}
 }
 
+const clearForm = (fields) => {
+	formOk = false;
+	hasFocused = false;
+	fieldsArray = [];
+	fields.forEach(field => {
+		field.value = '';
+	});
+}
+
 const formEl = document.querySelector('form#contact-form');
 const formButton = formEl.querySelector('button');
 
@@ -74,15 +83,15 @@ formButton.addEventListener('click', (event) => {
 	// Now we can start checking the form
 
 	// Get all the fields from the form
-	const formFields = formEl.querySelectorAll('input, textarea, select');
+	let formFields = formEl.querySelectorAll('input, textarea, select');
 
 	// Insert them into our empty fields array
-	formFields.forEach(f => fields.push(f));
+	formFields.forEach(field => fieldsArray.push(field));
 
 	// Run fields loop function and make sure
 	// there are fields in the fields array
-	if (fields.length) {
-		loopFields(fields);
+	if (fieldsArray.length) {
+		loopFields(fieldsArray);
 
 		if (formOk) {
 			// Do form thank you stuff
@@ -93,9 +102,8 @@ formButton.addEventListener('click', (event) => {
 			// Append thank you element to body
 			document.body.append(thankYouFlash);
 
-			// We're done with the form
-			// so we can safely remove it now
-			formEl.parentNode.remove();
+			// Clear fields 
+			clearForm(fieldsArray);
 
 			// For good measure we'll remove the
 			// thank you flash as well, once it's
@@ -109,10 +117,10 @@ formButton.addEventListener('click', (event) => {
 
 // Check if something has changed
 formEl.addEventListener('change', () => {
-	loopFields(fields);
+	loopFields(fieldsArray);
 });
 
 // Check if something is changing while user is typing
 formEl.addEventListener('keydown', () => {
-	loopFields(fields);
+	loopFields(fieldsArray);
 });
