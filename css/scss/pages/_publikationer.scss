@@ -87,14 +87,16 @@
 }
 
 @include media-lg {
-  #local-header {
+  /* 
+	#local-header {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
     row-gap: 2rem;
     grid-template-areas:
-      "full-width full-width"
+      "full-width"
       ". ";
   }
+*/
 
   #latest-publications {
     .article-section {
