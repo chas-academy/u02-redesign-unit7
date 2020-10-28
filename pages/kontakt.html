@@ -27,23 +27,29 @@
 
 		// Define the relative root path
 		const cssFile = '/css/style.min.css?v=1.0';
+		const jsContactFile = '/js/contact-form.js';
 		const jsFile = '/js/component-loader.js';
 
 		// Create the elements we'll need in head
 		const styleEl = document.createElement('link');
+
+		// Create the elements we'll need before closing body
+		const jsContactEl = document.createElement('script');
 		const scriptEl = document.createElement('script');
 
 		// Set attributes for elements
 		styleEl.rel = 'stylesheet';
 		styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
+		jsContactEl.src = !isGitHub ? jsContactFile : `/${gitHubRepoName}${jsContactFile}`;
 		scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
 
 		// Add style element to head
 		document.head.appendChild(styleEl);
 
 		// Wait for DOM to finish, then add
-		// component-loader script to end of body
+		// scripts to end of body
 		document.addEventListener('DOMContentLoaded', () => {
+			document.body.appendChild(jsContactEl);
 			document.body.appendChild(scriptEl);
 		});
 	</script>
@@ -101,7 +107,36 @@
 			</p>
 		</article>
 
-		<article class="container line-top line-bottom mt-2">
+		<!-- Contact form -->
+		<section id="contact-form-section" class="container line-bottom">
+			<h1>Kontaktformulär</h1>
+			<p>Du kan även skriva till oss direkt med hjälp av Kontaktformuläret nedan.</p>
+
+			<form id="contact-form" action="" method="POST">
+				<label for="name">Namn</label>
+				<input type="text" id="name" name="name" placeholder="Fullständigt namn" />
+
+				<label for="mail">E-post</label>
+				<input type="email" id="email" name="email" placeholder="din@epost.se" />
+
+				<label for="mail">Telefon</label>
+				<input type="phone" id="phone" name="phone" placeholder="ex. 08-123 456 (valfritt)" />
+
+				<label for="subject">Ämne</label>
+				<select id="subject">
+					<option value="" aria-disabled="true" disabled selected>Välj ämne</option>
+					<option value="education">Utbildning</option>
+					<option value="apply">Ansöka</option>
+					<option value="report">Felanmälan</option>
+				</select>
+
+				<label for="message">Fråga</label>
+				<textarea id="message" name="message" rows="5" cols="5" placeholder="Hur kan vi hjälpa dig?"></textarea>
+				<button>Skicka</button>
+			</form>
+		</section>
+
+		<article class="container line-bottom">
 			<h1>
 				Västerås
 			</h1>
@@ -135,7 +170,7 @@
 			</p>
 		</article>
 
-		<article class="container line-bottom mb-2">
+		<article class="container">
 			<h1>
 				Hässleholm
 			</h1>
@@ -168,35 +203,6 @@
 				281 21 Hässleholm
 			</p>
 		</article>
-
-		<!-- Contact form -->
-		<section id="contact-form-section" class="container">
-			<h1>Kontaktformulär</h1>
-			<p>Du kan även skriva till oss direkt med hjälp av Kontaktformuläret nedan.</p>
-
-			<form id="contact-form" action="" method="POST">
-				<label for="name">Namn</label>
-				<input type="text" id="name" name="name" placeholder="Fullständigt namn" />
-
-				<label for="mail">E-post</label>
-				<input type="email" id="email" name="email" placeholder="din@epost.se" />
-
-				<label for="mail">Telefon</label>
-				<input type="phone" id="phone" name="phone" placeholder="ex. 08-123 456 (valfritt)" />
-
-				<label for="subject">Ämne</label>
-				<select id="subject">
-					<option value="" aria-disabled="true" disabled selected>Välj ämne</option>
-					<option value="education">Utbildning</option>
-					<option value="apply">Ansöka</option>
-					<option value="report">Felanmälan</option>
-				</select>
-
-				<label for="message">Fråga</label>
-				<textarea id="message" name="message" rows="5" cols="5" placeholder="Hur kan vi hjälpa dig?"></textarea>
-				<button onclick="contactFormEmail(this.parentNode)">Skicka</button>
-			</form>
-		</section>
 
 		<!-- Misc contact related information -->
 		<section class="container background-dark-slate-gray text-white">
@@ -242,7 +248,6 @@
 
 	<footer component="/components/footer.html" id="main-footer"></footer>
 
-	<script src="/js/contact-form.js"></script>
 	<!-- Save the following script in place for production -->
 	<!-- <script src="/js/component-loader.js"></script> -->
 </body>
