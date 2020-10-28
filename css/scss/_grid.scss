@@ -42,7 +42,7 @@
 	// Padding
 	// all sides
 	.p-#{$i} {
-		padding: #{$i} !important;
+		padding: #{$i}rem !important;
 	}
 	// top
 	.pt-#{$i} {

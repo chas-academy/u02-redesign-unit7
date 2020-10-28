@@ -81,11 +81,9 @@
 		.lock-icon,
 		button.menu-toggle {
 			position: relative;
-			display: inline-block;
 			cursor: pointer;
 			font-weight: 700;
 			width: auto;
-			height: 1rem;
 			padding: 0 0 0 1rem;
 			border: none;
 			transition: all 0.35s;
@@ -116,6 +114,7 @@
 			grid-area: options;
 			display: flex;
 			justify-content: space-between;
+			align-items: start;
 
 			.lock-icon {
 				&::before {
