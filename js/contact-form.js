@@ -95,21 +95,30 @@ formButton.addEventListener('click', (event) => {
 
 		if (formOk) {
 			// Do form thank you stuff
-			const thankYouFlash = document.createElement('div');
-			thankYouFlash.id = 'thank-you-flash';
-			thankYouFlash.innerHTML = '<h3>Tack!</h3><p>Vi har nu mottagit ditt meddelande och återkommer till dig snarast.</p>';
+			const thankYouFlashEl = document.createElement('div');
+			thankYouFlashEl.id = 'thank-you-flash';
+			thankYouFlashEl.innerHTML = '<h3>Tack!</h3><p>Vi har nu mottagit ditt meddelande och återkommer till dig snarast.</p>';
+
+			const closeButtonEl = document.createElement('button');
+			closeButtonEl.classList.add('close-button');
+			thankYouFlashEl.appendChild(closeButtonEl);
+
+			// const closeButton = thankYouFlashEl.querySelector('button.close-button');
+			closeButtonEl.addEventListener('click', () => {
+				thankYouFlashEl.remove();
+			})
 
 			// Append thank you element to body
-			document.body.append(thankYouFlash);
+			document.body.append(thankYouFlashEl);
 
 			// Clear fields 
 			clearForm(fieldsArray);
 
 			// For good measure we'll remove the
-			// thank you flash as well, once it's
-			// done. The time out should match css animation
+			// thank you flash once it's done.
+			// The time out should match css animation
 			setTimeout(() => {
-				thankYouFlash.remove();
+				thankYouFlashEl.remove();
 			}, 7000);
 		}
 	}
