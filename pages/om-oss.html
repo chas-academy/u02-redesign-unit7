@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,39 +8,39 @@
         <link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico">
         <!-- Save the following scripts in place for production -->
         <!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
-    
+
         <!-- DRY KISS 💋 -->
         <script>
             // This script helps us with github pages reference problem
             // Consider removing, and use relative root refrencing (i.e. /) in production
-    
+
             // Test for location
             // local is default in file references
             // if we are on github, changes file references
-    
+
             // Set up variables for location test
             const chasGitHub = 'chas-academy.github.io';
             const gitHubRepoName = 'u02-redesign-unit7';
-    
+
             // Find out if location is GitHub pages or not
             const isGitHub = window.location.host === chasGitHub ? true : false;
-    
+
             // Define the relative root path
             const cssFile = '/css/style.min.css?v=1.0';
             const jsFile = '/js/component-loader.js';
-    
+
             // Create the elements we'll need in head
             const styleEl = document.createElement('link');
             const scriptEl = document.createElement('script');
-    
+
             // Set attributes for elements
             styleEl.rel = 'stylesheet';
             styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
             scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
-    
+
             // Add style element to head
             document.head.appendChild(styleEl);
-    
+
             // Wait for DOM to finish, then add
             // component-loader script to end of body
             document.addEventListener('DOMContentLoaded', () => {
@@ -47,96 +48,112 @@
             });
         </script>
     </head>
-<body>
-    <header component="../components/header.html" id="main-header">
-    </header>
-    <div class="background-icterine container mt-2 mb-2">
-      
-        
+
+    <body>
+        <header component="../components/header.html" id="main-header">
+        </header>
+        <div class="background-icterine container mt-2 mb-2">
+
+
             <h1>
                 Om oss
             </h1>
             <p>
-                Myndigheten för yrkeshögskolans huvuduppdrag är att ansvara för frågor som rör yrkeshögskolan i Sverige och verka för att utbildningarna tillgodoser arbetslivets behov av kompetens. 
+                Myndigheten för yrkeshögskolans huvuduppdrag är att ansvara för frågor som rör yrkeshögskolan i Sverige
+                och verka för att utbildningarna tillgodoser arbetslivets behov av kompetens.
             </p>
         </div>
         <div>
             <h2 class="container background-yellow-pantone mb-2">
-                <a href="https://www.myh.se/Hitta-utbildningar/" class="text-black">
-                    Hitta utbildningar
-                </a>
+                <ul>
+                    <li>
+                        <a href="https://www.myh.se/Hitta-utbildningar/">
+                            Hitta utbildningar
+                        </a>
+                    </li>
+                </ul>
             </h2>
-            </div>
-            <div class="container container-box mb-5">
-                <img id="pen-img" src="/assets/images/bilder/penna.jpg" alt="Penna"/>
-           
+        </div>
+        <div class="container background-shadow-blue mb-2">
+            <h2>
+                Rubriker
+            </h2>
+            <ul>
+                <li>
+                    <a href="https://www.myh.se/Om-oss/Organisation/">
+                        Organisation
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.myh.se/Om-oss/Sa-styrs-myndigheten/">
+                        Så styrs myndigheten
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.myh.se/Om-oss/Redovisning-av-verksamheten1/">
+                        Redovisning av verksamheten
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.myh.se/Om-oss/Remissvar-och-yttranden/">
+                        Remissvar och yttranden
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.myh.se/Om-oss/Pagaende-upphandlingar/">
+                        Pågående upphandlingar
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.myh.se/Om-oss/Fakturera-oss/">
+                        Fakturera hoss oss
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.myh.se/Om-oss/Jobba-hos-oss/">
+                        Jobba hos oss
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.myh.se/Om-oss/Behandling-av-personuppgifter/">
+                        Behandling av personuppgifter
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.myh.se/Om-oss/MYH-fyller-10-ar/">
+                        MYH fyller 10 år!
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="container background-dark-slate-gray-l-65 mb-5">
+            <img id="pen-img" class="mb-2" src="/assets/images/bilder/penna.jpg" alt="Penna" />
+
             <p>
-                Vi analyserar arbetsmarknadens behov av utbildningar inom yrkeshögskolan, beslutar vilka utbildningar som ska ingå i yrkeshögskolan och beviljar statliga medel till utbildningsanordnarna. Vi främjar även validering i utbildningarna.
-            </p>
-            <p >
-                Vi ansvarar också för frågor som rör vissa utbildningar som ligger utanför yrkeshögskolan - eftergymnasiala konst- och kulturutbildningar som bedrivs av fristående skolor samt tolkutbildningar inom folkbildningen.
+                Vi analyserar arbetsmarknadens behov av utbildningar inom yrkeshögskolan, beslutar vilka utbildningar
+                som ska ingå i yrkeshögskolan och beviljar statliga medel till utbildningsanordnarna. Vi främjar även
+                validering i utbildningarna.
             </p>
             <p>
-                Myndigheten utövar tillsyn och hanterar klagomål på de utbildningar som ligger inom vårt ansvarsområde. Vi granskar även utbildningarnas kvalitet, framställer statistik och följer upp utbildningars resultat.
+                Vi ansvarar också för frågor som rör vissa utbildningar som ligger utanför yrkeshögskolan -
+                eftergymnasiala konst- och kulturutbildningar som bedrivs av fristående skolor samt tolkutbildningar
+                inom folkbildningen.
+            </p>
+            <p>
+                Myndigheten utövar tillsyn och hanterar klagomål på de utbildningar som ligger inom vårt ansvarsområde.
+                Vi granskar även utbildningarnas kvalitet, framställer statistik och följer upp utbildningars resultat.
             </p>
             <p class="text-left mb-3">
-                Vi är också nationell samordningspunkt för EQF (European Qualifications Framework) som ska göra det lättare att jämföra utbildnings- och yrkeskvalifikationer inom EU.
+                Vi är också nationell samordningspunkt för EQF (European Qualifications Framework) som ska göra det
+                lättare att jämföra utbildnings- och yrkeskvalifikationer inom EU.
             </p>
             <p>
-            <a href="/pages/verksamhetsomraden.html">Läs mer om våra verksamhetsområden</a></p>
-          
+                <a href="/pages/verksamhetsomraden.html">Läs mer om våra verksamhetsområden</a></p>
+
         </div>
-        <div class="text-center text-medium container-box-dark">
-            
-       <ul>
-        <li>
-            <a href="https://www.myh.se/Om-oss/Organisation/">
-                Organisation
-            </a>
-        </li>
-        <li>
-            <a href="https://www.myh.se/Om-oss/Sa-styrs-myndigheten/">
-                Så styrs myndigheten
-            </a>
-        </li>
-        <li>
-            <a href="https://www.myh.se/Om-oss/Redovisning-av-verksamheten1/">
-                Redovisning av verksamheten
-            </a>
-        </li>
-        <li>
-            <a href="https://www.myh.se/Om-oss/Remissvar-och-yttranden/">
-                Remissvar och yttranden
-            </a>
-        </li>
-        <li>
-            <a href="https://www.myh.se/Om-oss/Pagaende-upphandlingar/">
-                Pågående upphandlingar
-            </a>
-        </li>
-        <li>
-            <a href="https://www.myh.se/Om-oss/Fakturera-oss/">
-                Fakturera hoss oss
-            </a>
-        </li>
-        <li>
-            <a href="https://www.myh.se/Om-oss/Jobba-hos-oss/">
-                Jobba hos oss
-            </a>
-        </li>
-        <li>
-            <a href="https://www.myh.se/Om-oss/Behandling-av-personuppgifter/">
-                Behandling av personuppgifter
-            </a>
-        </li>
-        <li>
-            <a href="https://www.myh.se/Om-oss/MYH-fyller-10-ar/">
-                MYH fyller 10 år!
-            </a>
-        </li>
-        </ul>
-        </div>
-        </div>
-    <footer component="/components/footer.html" id="main-footer"></footer>
-</body>
+
+
+        <footer component="/components/footer.html" id="main-footer"></footer>
+    </body>
+
 </html>
