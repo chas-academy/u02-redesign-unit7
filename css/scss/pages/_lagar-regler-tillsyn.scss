@@ -29,18 +29,14 @@
     font-weight: bold;
 }
 #paragraph-img {
-    height: 80%;
-    width: 80%;
-    padding-top:20px;
-    display: flex;
-    flex-wrap: nowrap;
+    height: 70% !important;
+    width: 70% !important;
 }
-.flexbox-container {
-    display: flex;
+.flex-container {
+    overflow: auto;
 }
 .flex-child {
-    flex: 1;
-    
+    display:block;
 }
 
 
@@ -54,5 +50,11 @@
     .breadcrumbs {
         text-align: left;
         font-size: 16px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .flex-child {
+        width: 50%;
+        float: left;
     }
 }
