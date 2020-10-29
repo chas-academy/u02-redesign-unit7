@@ -121,6 +121,41 @@ const componentLoader = async () => {
 	document.body.appendChild(searchScripEl);
 	document.body.appendChild(scrollTopScripEl);
 
+
+	// Create breadcrumbs
+	const createCrumbs = (crumb, isSubPage) => {
+		const breadCrumbsEl = document.querySelector('body header#main-header section#breadcrumbs ul');
+		const listItemEl = document.createElement('li');
+		listItemEl.classList.add('current-page');
+		listItemEl.innerHTML = crumb;
+
+		if (isSubPage) {
+			const startEl = document.createElement('li');
+			const startAnchorEl = document.createElement('a');
+			startAnchorEl.href = isGitHub ? `/${gitHubRepoName}` : '/';
+			startAnchorEl.innerHTML = 'Startsida';
+			startEl.appendChild(startAnchorEl);
+			breadCrumbsEl.appendChild(startEl);
+		}
+
+		breadCrumbsEl.appendChild(listItemEl);
+	}
+	// Get document title, setup regular expression
+	// Test if title can match with expression
+	// Based on match, get first string from title,
+	// before dash (-) and return it or false
+	const docTitle = document.title;
+	const regex = /(.*)\s-\s.*/gi;
+	const bread = docTitle.match(regex);
+	const crumb = bread !== null ? docTitle.replace(regex, '$1') : false;
+	if (crumb) {
+		createCrumbs(crumb, true);
+	} else {
+		createCrumbs('Startsida', false);
+	}
+	// console.log(crumb);
+
+
 	// A temporary fix for images source ref on GitHub pages
 	// Consider removing in production.
 	if (isGitHub) {
