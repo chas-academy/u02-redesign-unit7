@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>MYH - Myndigheten för yrkeshögskolan</title>
+	<title>Myndigheten för yrkeshögskolan</title>
 	<link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico">
 	<!-- Save the following scripts in place for production -->
 	<!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
@@ -42,6 +42,16 @@
 
 		// Add style element to head
 		document.head.appendChild(styleEl);
+
+		// Get document title, setup regular expression
+		// Test if title can match with expression
+		// Based on match, get first string from title,
+		// before dash (-) and return it or false
+		const docTitle = document.title;
+		const regex = /(.*)\s-\s.*/gi;
+		const match = docTitle.match(regex);
+		const bread = match !== null ? docTitle.replace(regex, '$1') : false;
+		// console.log(bread);
 
 		// Wait for DOM to finish, then add
 		// component-loader script to end of body
@@ -168,13 +178,60 @@
 						<p>
 							Från myndighetens sida vill vi uttrycka vår förståelse för den svåra situation som ni, era studerande och elever samt företrädare för arbetslivet befinner sig i. Myndigheten kommer att ta stor hänsyn till hur ni som anordnare väljer att anpassa genomförandet av era utbildningar under de omständigheter som råder.
 						</p>
-						<a
-							href="https://www.myh.se/Nyhetsrum/Nyheter/2020/Fragor-och-svar-for-dig-som-utbildningsanordnare-med-anledning-av-Coronaviruset/">
-							<button variant="white">läs mer</button>
-						</a>
+						<button variant="white">
+							<a
+								href="https://www.myh.se/Nyhetsrum/Nyheter/2020/Fragor-och-svar-for-dig-som-utbildningsanordnare-med-anledning-av-Coronaviruset/">
+								läs mer
+							</a>
+						</button>
 					</div>
 				</div>
 			</article>
+
+			<section class="index-calendar mt-2">
+
+				<article class="container background-smoke">
+					<h2>Kalender</h2>
+					<p>Myndigheten för yrkeshögskolan håller löpande distandsutbildningar, seminarium och kurser. Nedan hittar du kommande inbokningsbara händelser.</p>
+					<p>Om du är intresserad utav någon av de kommande händerlserna ber vi dig att kontakta oss på <a href="mailto:bokning@myh.se">bokning@myh.se</a> för att anmälla intresse eller boka in dig</p>
+				</article>
+
+				<section class="calendar-dates">
+					<h3 class="container pt-1 pb-1 mb-0 background-yellow-pantone">November</h3>
+
+					<div class="container calendar-date-cards">
+						<a href="https://www.myh.se/Nyhetsrum/Kalender/2020/Distansstods-webbcafe2/">
+							<article>
+								<h4>03</h4>
+								<p>Distansstöds webbcafé</p>
+							</article>
+						</a>
+
+						<a href="https://www.myh.se/Nyhetsrum/Kalender/2020/Distansstods-webbcafe3/">
+							<article>
+								<h4>05</h4>
+								<p>Distansstöds webbcafé</p>
+							</article>
+						</a>
+
+						<a href="https://www.myh.se/Nyhetsrum/Kalender/2020/Kunskap--Framtid---digital-massa/">
+							<article>
+								<h4>18<br />19</h4>
+								<p>Kunskap & Framtid - digital mässa</p>
+							</article>
+						</a>
+
+						<a href="https://www.myh.se/Nyhetsrum/Kalender/2020/Saco-studentmassa/">
+							<article>
+								<h4>24<br />27</h4>
+								<p>Saco studentmässa</p>
+							</article>
+						</a>
+
+					</div>
+
+				</section>
+			</section>
 
 			<section class="container more-news">
 				<!-- Minor/Older news -->
