@@ -17,11 +17,21 @@
 
     img {
       border: 2px solid $smoke;
+      height: 100%;
     }
   }
 }
 
 @include media-lg {
+  #latest-publications {
+    article {
+      grid-template-columns: 1fr 2fr;
+      grid-template-areas: ". .";
+    }
+  }
+}
+
+@include media-xl {
   #latest-publications {
     article {
       grid-template-columns: 1fr 4fr;
