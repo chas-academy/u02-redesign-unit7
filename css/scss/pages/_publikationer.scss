@@ -17,8 +17,37 @@ div#publication-grid {
   }
 }
 
+@include media-xs {
+  div#publication-grid {
+    img {
+      display: none;
+    }
+
+    section {
+      padding: 1rem;
+      margin: 0;
+    }
+  }
+}
+
+@include media-sm {
+  div#publication-grid {
+    img {
+      display: none;
+    }
+
+    section {
+      padding: 1rem;
+      margin: 0;
+    }
+  }
+}
+
 @include media-md {
   div#publication-grid {
+    img {
+      display: block;
+    }
   }
 }
 
