@@ -18,7 +18,7 @@ div#publication-grid {
 }
 
 @include media-lg {
-  #latest-publications {
+  div#publication-grid {
     article {
       grid-template-columns: 1fr 2fr;
       grid-template-areas: ". .";
@@ -27,10 +27,15 @@ div#publication-grid {
 }
 
 @include media-xl {
-  #latest-publications {
+  div#publication-grid {
     article {
       grid-template-columns: 1fr 4fr;
       grid-template-areas: ". .";
+      padding: 0;
+
+      section {
+        padding: 1rem;
+      }
     }
   }
 }
