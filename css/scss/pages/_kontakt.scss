@@ -1,7 +1,148 @@
-.map {
-	height: 23rem;
+section#contact-addresses {
+	&.container {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas: ".";
 
-	&.full-width {
-		width: 100%;
+		article {
+			&:first-child {
+				@extend .line-bottom;
+				@extend .pb-2;
+			}
+			&:last-child {
+				@extend .pt-2;
+			}
+		}
+	}
+}
+
+section#contact-form-section {
+	form {
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: 1rem;
+
+		label {
+			padding: 0.25rem 0.635rem;
+			background: $prussian-blue;
+			color: $white;
+			font-weight: 700;
+		}
+	}
+}
+
+div#thank-you-flash {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 75vw;
+	height: auto;
+	display: block;
+	background: $success;
+	color: $white;
+	border-radius: 0.25rem;
+	transform: translate(-50%, -50%) scale(1.2) rotateX(35deg);
+	opacity: 0;
+	padding: 3rem;
+	text-align: center;
+	animation: overlay-flash 7s forwards;
+
+	button.close-button {
+		&::before {
+			@include times-close($white);
+		}
+	}
+
+	@keyframes overlay-flash {
+		10% {
+			opacity: 1;
+		}
+
+		20% {
+			transform: translate(-50%, -50%) scale(1) rotateX(0);
+		}
+
+		90% {
+			transform: translate(-50%, -50%) scale(1);
+			opacity: 1;
+		}
+
+		100% {
+			transform: translate(-50%, -50%) scale(0.8);
+			opacity: 0;
+		}
+	}
+}
+
+@include media-lg {
+	section#contact-addresses {
+		&.container {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-areas: ". .";
+			grid-column-gap: 4rem;
+			padding-left: 0;
+			padding-right: 0;
+
+			article {
+				&:first-child {
+					border: none;
+					padding-bottom: 0 !important;
+				}
+				&:last-child {
+					padding-top: 0 !important;
+				}
+			}
+		}
+	}
+
+	section#contact-form-section {
+		form {
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 1rem;
+			grid-template-areas:
+				"name-label subject-label"
+				"name subject"
+				"email-label phone-label"
+				"email phone"
+				"message-label message-label"
+				"message message"
+				"send-button send-button";
+
+			#name {
+				grid-area: name;
+			}
+			#email {
+				grid-area: email;
+			}
+			#phone {
+				grid-area: phone;
+			}
+			#subject {
+				grid-area: subject;
+			}
+			#message {
+				grid-area: message;
+			}
+
+			label[for="name"] {
+				grid-area: name-label;
+			}
+			label[for="email"] {
+				grid-area: email-label;
+			}
+			label[for="phone"] {
+				grid-area: phone-label;
+			}
+			label[for="subject"] {
+				grid-area: subject-label;
+			}
+			label[for="message"] {
+				grid-area: message-label;
+			}
+
+			button {
+				grid-area: send-button;
+			}
+		}
 	}
 }

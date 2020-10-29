@@ -51,9 +51,10 @@
 				background: rgba($black, 0.05);
 			}
 
-			input {
-				background: none;
+			input#search-field {
 				border: 1px solid lighten($black, 80);
+				width: 100%;
+				padding: 0.465rem 3.875rem 0.465rem 0.875rem;
 			}
 
 			button {
@@ -81,11 +82,9 @@
 		.lock-icon,
 		button.menu-toggle {
 			position: relative;
-			display: inline-block;
 			cursor: pointer;
 			font-weight: 700;
 			width: auto;
-			height: 1rem;
 			padding: 0 0 0 1rem;
 			border: none;
 			transition: all 0.35s;
@@ -116,6 +115,7 @@
 			grid-area: options;
 			display: flex;
 			justify-content: space-between;
+			align-items: start;
 
 			.lock-icon {
 				&::before {
@@ -156,7 +156,7 @@
 			}
 
 			#search-box {
-				input {
+				input#search-field {
 					width: 350px;
 					transition: width 0.35s;
 

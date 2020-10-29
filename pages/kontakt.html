@@ -27,23 +27,29 @@
 
 		// Define the relative root path
 		const cssFile = '/css/style.min.css?v=1.0';
+		const jsContactFile = '/js/contact-form.js';
 		const jsFile = '/js/component-loader.js';
 
 		// Create the elements we'll need in head
 		const styleEl = document.createElement('link');
+
+		// Create the elements we'll need before closing body
+		const jsContactEl = document.createElement('script');
 		const scriptEl = document.createElement('script');
 
 		// Set attributes for elements
 		styleEl.rel = 'stylesheet';
 		styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
+		jsContactEl.src = !isGitHub ? jsContactFile : `/${gitHubRepoName}${jsContactFile}`;
 		scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
 
 		// Add style element to head
 		document.head.appendChild(styleEl);
 
 		// Wait for DOM to finish, then add
-		// component-loader script to end of body
+		// scripts to end of body
 		document.addEventListener('DOMContentLoaded', () => {
+			document.body.appendChild(jsContactEl);
 			document.body.appendChild(scriptEl);
 		});
 	</script>
@@ -54,7 +60,7 @@
 
 	<main>
 		<!-- Important message -->
-		<article class="container background-smoke">
+		<article class="container background-primary mt-2">
 			<h1>Bra att veta innan du kontaktar oss</h1>
 			<p>
 				Myndigheten för yrkeshögskolan är en <strong>statlig myndighet</strong>. Den information som du
@@ -66,7 +72,7 @@
 		</article>
 
 		<!-- Forum link -->
-		<article class="container background-icterine mt-2">
+		<article class="container background-smoke mt-2">
 			<h1>Kundforum</h1>
 			<p>
 				Se vanliga frågor och svar samt ställ dina frågor i vårt
@@ -76,8 +82,6 @@
 
 		<!-- General contact informaiton -->
 		<article class="container background-prussian-blue text-white mt-2">
-			<h1>Kontaktinfromation</h1>
-
 			<h2>Telefonväxel</h2>
 			<p>
 				Växeln är öppen vardagar 9.00-15.00 med <strong>lunchstängt</strong> 11.30 - 13.00
@@ -101,85 +105,128 @@
 			</p>
 		</article>
 
-		<article class="container line-top line-bottom mt-2">
-			<h1>
-				Västerås
-			</h1>
+		<!-- Contact form -->
+		<section id="contact-form-section" class="container background-smoke">
+			<h1>Kontaktformulär</h1>
+			<p>Du kan även skriva till oss direkt med hjälp av Kontaktformuläret nedan.</p>
 
-			<h2>
-				Besöksadress
-			</h2>
-			<p>
-				<a href="https://goo.gl/maps/qEeaWD4aZNSLy62p9" target="_blank" rel="noopener noreferrer">
-					Ingenjör Bååths gata 19, 722 12 Västerås
-				</a>
-			</p>
-			<p>
-				<strong>Öppettider <span class="text-small">(helgfri måndag till fredag)</span></strong>
-			</p>
-			<p>
-				09.00 -15.00 med <strong>lunchstängt</strong> 12.00 - 13.00
-			</p>
+			<form id="contact-form" method="POST">
+				<label for="name">Namn</label>
+				<input type="text" id="name" name="name" placeholder="Fullständigt namn" />
 
-			<h2>
-				Postadress
-			</h2>
-			<p>
+				<label for="email">E-post</label>
+				<input type="email" id="email" name="email" placeholder="din@epost.se" />
+
+				<label for="phone">Telefon</label>
+				<input type="tel" id="phone" name="phone" placeholder="ex. 08-123 456 (valfritt)" />
+
+				<label for="subject">Ämne</label>
+				<select id="subject">
+					<option value="" disabled selected>Välj ämne</option>
+					<option value="education">Utbildning</option>
+					<option value="apply">Ansöka</option>
+					<option value="report">Felanmälan</option>
+				</select>
+
+				<label for="message">Fråga</label>
+				<textarea id="message" name="message" rows="5" cols="5" placeholder="Hur kan vi hjälpa dig?"></textarea>
+				<button>Skicka</button>
+			</form>
+		</section>
+
+		<section id="contact-addresses" class="container">
+			<article>
+				<h1>
+					Västerås
+				</h1>
+
+				<h2>
+					Besöksadress
+				</h2>
+				<p>
+					<a href="https://goo.gl/maps/qEeaWD4aZNSLy62p9" target="_blank" rel="noopener noreferrer">
+						Ingenjör Bååths gata 19, 722 12 Västerås
+					</a>
+				</p>
+				<p>
+					<strong>Öppettider <span class="text-small">(helgfri måndag till fredag)</span></strong>
+				</p>
+				<p>
+					09.00 -15.00
+				</p>
+				<p class="mb-0">
+					<strong>med lunchstängt</strong>
+				</p>
+				<p>
+					12.00 - 13.00
+				</p>
+
+				<h2>
+					Postadress
+				</h2>
+				<p>
 				Myndigheten för yrkeshögskolan
-			</p>
-			<p>
+				<br />
 				Box 145
-			</p>
-			<p>
+				<br />
 				721 05 Västerås
 			</p>
-		</article>
+			</article>
 
-		<article class="container line-bottom mb-2">
-			<h1>
-				Hässleholm
-			</h1>
+			<article>
+				<h1>
+					Hässleholm
+				</h1>
 
-			<h2>
-				Besöksadress
-			</h2>
-			<p>
-				<a href="https://goo.gl/maps/MHy9piHmRwYJVTwy7" target="_blank" rel="noopener noreferrer">
-					Frykholmsgatan 10, 281 31 Hässleholm
-				</a>
-			</p>
-			<p>
-				<strong>Öppettider <span class="text-small">(helgfri måndag till fredag)</span></strong>
-			</p>
-			<p>
-				09.00 -15.00 med <strong>lunchstängt</strong> 12.00 - 13.00
-			</p>
+				<h2>
+					Besöksadress
+				</h2>
+				<p>
+					<a href="https://goo.gl/maps/MHy9piHmRwYJVTwy7" target="_blank" rel="noopener noreferrer">
+						Frykholmsgatan 10, 281 31 Hässleholm
+					</a>
+				</p>
+				<p>
+					<strong>Öppettider <span class="text-small">(helgfri måndag till fredag)</span></strong>
+				</p>
+				<p>
+					09.00 -15.00
+				</p>
+				<p class="mb-0">
+					<strong>med lunchstängt</strong>
+				</p>
+				<p>
+					12.00 - 13.00
+				</p>
 
-			<h2>
-				Postadress
-			</h2>
-			<p>
+				<h2>
+					Postadress
+				</h2>
+				<p>
 				Myndigheten för yrkeshögskolan
-			</p>
-			<p>
+				<br />
 				Box 85
-			</p>
-			<p>
+				<br />
 				281 21 Hässleholm
 			</p>
-		</article>
+			</article>
+		</section>
 
 		<!-- Misc contact related information -->
 		<section class="container background-dark-slate-gray text-white">
 			<h1>Övrig information</h1>
 
 			<article>
-				<h3 class="h5">Fakturering</h2>
-					<p>
+				<h3 class="h5">Fakturering</h3>
+				<p>
 						Från och med den 1 april 2019 blir det lag på att alla inköp i offentlig sektor ska faktureras
 						med elektronisk faktura (e-faktura).
 					</p>
-					<p>
+				<h3 class="h5">Organisationsnummer</h3>
+				<p>
+						202100-6230
+					</p>
+				<p>
 						<a href="https://www.myh.se/Om-oss/Fakturera-oss/">
 							Läs här om hur du kan fakturera oss elektroniskt
 						</a>
@@ -187,8 +234,8 @@
 			</article>
 
 			<article>
-				<h3 class="h5">Pressjour</h2>
-					<p>
+				<h3 class="h5">Pressjour</h3>
+				<p>
 						Besök vårt
 						<a href="https://www.mynewsdesk.com/se/myndigheten-foer-yrkeshoegskolan" target="_blank"
 							rel="noopener noreferrer">
@@ -199,13 +246,6 @@
 							010-209 01 73
 						</a>
 					</p>
-			</article>
-
-			<article>
-				<h3 class="h5">Organisationsnummer</h3>
-				<p>
-					202100-6230
-				</p>
 			</article>
 		</section>
 

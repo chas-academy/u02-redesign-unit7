@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MYH - Myndigheten för yrkeshögskolan</title>
+	<link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico">
+	<!-- Save the following scripts in place for production -->
+	<!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
+
+	<!-- DRY KISS 💋 -->
+	<script>
+		// This script helps us with github pages reference problem
+		// Consider removing, and use relative root refrencing (i.e. /) in production
+
+		// Test for location
+		// local is default in file references
+		// if we are on github, changes file references
+
+		// Set up variables for location test
+		const chasGitHub = 'chas-academy.github.io';
+		const gitHubRepoName = 'u02-redesign-unit7';
+
+		// Find out if location is GitHub pages or not
+		const isGitHub = window.location.host === chasGitHub ? true : false;
+
+		// Define the relative root path
+		const cssFile = '/css/style.min.css?v=1.0';
+		const jsFile = '/js/component-loader.js';
+
+		// Create the elements we'll need in head
+		const styleEl = document.createElement('link');
+		const scriptEl = document.createElement('script');
+
+		// Set attributes for elements
+		styleEl.rel = 'stylesheet';
+		styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
+		scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
+
+		// Add style element to head
+		document.head.appendChild(styleEl);
+
+		// Wait for DOM to finish, then add
+		// component-loader script to end of body
+		document.addEventListener('DOMContentLoaded', () => {
+			document.body.appendChild(scriptEl);
+		});
+	</script>
+</head>
+
+<body>
+	<header component="/components/header.html" id="main-header"></header>
+
+	<main>
+		<!-- local header -->
+		<div id="statistik-header" class="container pl-0 pr-0">
+			<section class="background-icterine full-width-section">
+				<h1 class="h1">Statistik</h1>
+				<h2 class="h6">Här hittar du statistik sorterad efter våra olika utbildningsformer, samt årsrapporter
+					och faktablad.</h2>
+				<p>Yrkeshögskoleutbildningar omfattar både yrkeshögskoleutbildning (YH) och kvalificerad yrkesutbildni
+					(KY).</p>
+			</section>
+			<!-- choose depending on school form -->
+			<section class="background-dark-slate-gray text-white">
+				<h1 class="h5">Statistik efter utbildningsform</h1>
+				<ul class="white-list">
+					<li>
+						<a href="https://www.myh.se/Statistik/Yrkeshogskoleutbildningar/" target="_blank">
+							Yrkeshögskoleutbildningar
+						</a>
+					</li>
+					<li>
+						<a href="https://www.myh.se/Statistik/Konst--och-kulturutbildningar/Konst--och-kulturutbildningar/"
+							target="_blank">
+							Konst- och kulturutbildningar
+						</a>
+					</li>
+					<li>
+						<a href="https://www.myh.se/Statistik/Konst--och-kulturutbildningar/Vissa-andra-utbildningar-utbildningar-med-endast-tillsyn/"
+							target="_blank">
+							Utbildningar med endast tillsyn
+						</a>
+					</li>
+					<li>
+						<a href="https://www.myh.se/Statistik/Tolkutbildningar/" target="_blank">
+							Tolkutbildningar inom folkbildningen
+						</a>
+					</li>
+				</ul>
+			</section>
+			<!-- contact statistics service -->
+			<section class="background-burnished-brown text-white">
+				<h1 class="h5">Frågor om statistiken?</h1>
+				<p>Har du frågor om statistiken är du välkommen att kontakta vår statistik service.</p>
+				<p>
+					<em>E-post:</em> <a href="mailto:statistikservice@myh.se">statistikservice@myh.se</a>
+				</p>
+			</section>
+		</div>
+		<!-- full-width container -->
+		<div id="full-width-statistics">
+			<article class="key-numbers">
+				<div class="parallax-container">
+					<img src="/assets/images/pages/statistik/statistics.jpg" alt="Nyckeltal för yrkeshögskolan 2019" />
+					<div class="container banner-grid">
+						<div class="headline">
+							<h1 class="h3">Nyckeltal för utbildningarna 2019</h1>
+							<p>
+								Alla våra utbildningsformer är eftergymnasiala. Vill du veta mer om utbildningarnas
+								resultat? Läs våra statistiska årsrapporter nedan. Där
+								kan du även jämföra siffrorna med tidigare år.
+							</p>
+						</div>
+						<div>
+							<h2 class="h5">Yrkeshögskolan</h2>
+							<ul>
+								<li><span class="text-strong">214</span> anordnare bedrev utbildning</li>
+								<li><span class="text-strong">54 400</span> studerande</li>
+								<li><span class="text-strong">1,8</span> behöriga sökande per utbildningsplats</li>
+							</ul>
+						</div>
+						<div>
+							<h2 class="h5">Konst- och kulturutbildningar</h2>
+							<ul>
+								<li><span class="text-strong">42</span> anordnare bedrev utbildning</li>
+								<li><span class="text-strong">5 500</span> studerande</li>
+								<li><span class="text-strong">53</span> skolor/administrativa enheter</li>
+							</ul>
+						</div>
+						<div>
+							<h2 class="h5">Tolkutbildningar</h2>
+							<ul>
+								<li><span class="text-strong">11</span> skolor hade kontakttolkutbilning</li>
+								<li><span class="text-strong">5</span> folkhögskolor hade utbildning till
+									teckenspråkstolk
+								</li>
+								<li><span class="text-strong">1</span> skola hade skrivtolkutbildning</li>
+							</ul>
+						</div>
+						<div>
+							<h2 class="h5">Utbildningar med tillsyn</h2>
+							<ul>
+								<li>
+									<span class="text-strong">15</span> anordnare bedrev utbildning
+								</li>
+								<li>
+									<span class="text-strong">740</span> studerande
+								</li>
+								<li>
+									<span class="text-strong">30</span> olika utbildningar bedrevs
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
+
+		<!-- highlighted reports -->
+		<div id="statistik-highlights" class="container">
+			<section>
+				<h1 class="h5">Statistiska årsrapporter</h1>
+				<p>Myndigheten för yrkeshögskolans senaste årsrapporter med samlad statistik om de utbildningsformer som
+					vi ansvarar för.</p>
+				<ul>
+					<li>
+						<a href="https://www.myh.se/Publikationer/2020/Statistisk-arsrapport-2020/"
+							target="_blank">Statistisk årsrapport 2020</a>
+					</li>
+					<li>
+						<a href="https://www.myh.se/Publikationer/2019/Statistisk-arsrapport-2019/"
+							target="_blank">Statistisk årsrapport 2019</a>
+					</li>
+					<li>
+						<a href="https://www.myh.se/Publikationer/2018/Statistisk-arsrapport-2018/"
+							target="_blank">Statistisk årsrapport 2018</a>
+					</li>
+					<li>
+						<a href="https://www.myh.se/Publikationer/2017/Statistisk-arsrapport-2017/"
+							target="_blank">Statistisk årsrapport 2017</a>
+					</li>
+			</section>
+			<section>
+				<h1 class="h5">Faktablad med statistik</h1>
+				<p>Faktablad med kortfattad statistik om våra olika utbildningsformer.</p>
+				<ul>
+					<li>
+						<a href="https://www.myh.se/Documents/Statitik/Yrkesh%c3%b6gskoleutbildningar/Kortfattad%20statistik/Kortfattad_statistik_yrkeshogskolan_2019.pdf"
+							target="_blank">Yrkeshögskoleutbildningar</a>
+					</li>
+					<li>
+						<a href="https://www.myh.se/Documents/Statitik/Konst-och%20kulturutbildningar%20och%20vissa%20andra%20utbildningar/Konst-%20och%20kulturutbildningar/Kortfattad%20statistik/Kortfattad_statistik_konstkulturutbildningar_2019.pdf"
+							target="_blank">Konst- och kulturutbildningar</a>
+					</li>
+					<li>
+						<a href="https://www.myh.se/Documents/Statitik/Tolkutbildningar%20inom%20folkbildningen/Kortfattad%20statistik/Kortfattad_statistik_tolkutbildningar_2019.pdf"
+							target="_blank">Tolkutbildningar inom folkbildningen</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+
+
+	</main>
+
+	<footer component="/components/footer.html" id="main-footer"></footer>
+
+	<!-- Save the following script in place for production -->
+	<!-- <script src="/js/component-loader.js"></script> -->
+
+</body>
+
+</html>

@@ -40,14 +40,14 @@ const hideOverlay = (element = null, origin = false) => {
 
 // Create section and article for search overlay
 const bodyOverlayEl = document.createElement('section');
-const pseudoCloseButtonEl = document.createElement('div');
+const closeButtonEl = document.createElement('button');
 const bodyOverlayContainerEl = document.createElement('div');
 
 // Build overlay
 bodyOverlayEl.id = 'body-overlay';
 bodyOverlayContainerEl.classList.add('container');
-pseudoCloseButtonEl.classList.add('pseudo-close-button');
-bodyOverlayEl.appendChild(pseudoCloseButtonEl);
+closeButtonEl.classList.add('close-button');
+bodyOverlayEl.appendChild(closeButtonEl);
 bodyOverlayEl.appendChild(bodyOverlayContainerEl);
 
 // Prepend body overlay to document body
