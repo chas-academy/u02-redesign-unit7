@@ -14,38 +14,38 @@ section#main-option-sections {
 		ul {
 			display: grid;
 			grid-template-columns: 1fr;
-			row-gap: 1rem;
 			grid-template-areas: ".";
 
 			li {
 				margin: 0;
-				transform: translateY(0);
-				will-change: transform;
-				transition: transform 0.35s;
-
-				&:hover {
-					transform: translateY(0.25rem);
-				}
 
 				a {
 					display: block;
-					padding: 1rem;
+					padding: 1rem 1rem 1rem 2.5rem;
 					margin: 0;
 					font-size: 0.865rem;
 					word-break: break-word;
 					text-decoration: none;
 					height: 100%;
 
-					&::before {
-						content: "";
-					}
-
 					p {
 						font-size: 0.5rem;
 					}
 
+					// Set white as color for icon
+					&::before {
+						@include chevron-right($white, 1.15rem, 1.25rem);
+					}
+
+					// List below will set black as color for icon
+					&.background-yellow-pantone {
+						&::before {
+							@include chevron-right($black);
+						}
+					}
+
 					&:hover {
-						opacity: 0.5;
+						opacity: 0.85;
 					}
 				}
 			}
@@ -147,6 +147,11 @@ section#front-page-news {
 				}
 			}
 		}
+		.more-news {
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 2rem;
+			grid-template-areas: ". .";
+		}
 	}
 }
 
@@ -154,6 +159,40 @@ section#front-page-news {
 	article#index-student-info-banner {
 		padding-left: 2rem;
 		padding-right: 2rem;
+	}
+
+	section#main-option-sections {
+		&.container {
+			ul {
+				grid-template-columns: repeat(5, 1fr);
+				column-gap: 0.5rem;
+				grid-template-areas: ". . . . .";
+
+				li {
+					transform: translateY(0);
+					will-change: transform;
+					transition: transform 0.35s;
+
+					&:hover {
+						transform: translateY(0.25rem);
+					}
+
+					a {
+						padding: 1rem;
+
+						// Using important here resolves
+						// all subset selections for other colors
+						&::before {
+							content: "" !important;
+						}
+
+						&:hover {
+							opacity: 0.5;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	section#main-gateway {
@@ -164,24 +203,6 @@ section#front-page-news {
 			grid-template-areas:
 				". ."
 				"full-width full-width";
-		}
-	}
-
-	section#main-option-sections {
-		&.container {
-			ul {
-				grid-template-columns: repeat(5, 1fr);
-				column-gap: 0.5rem;
-				grid-template-areas: ". . . . .";
-			}
-		}
-	}
-
-	section#front-page-news {
-		.more-news {
-			grid-template-columns: repeat(2, 1fr);
-			column-gap: 2rem;
-			grid-template-areas: ". .";
 		}
 	}
 }
