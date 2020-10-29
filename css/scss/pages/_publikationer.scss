@@ -3,21 +3,16 @@
   flex-wrap: wrap;
 }
 
-#latest-publications {
+div#publication-grid {
   article {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 2rem;
     grid-template-areas:
-      "."
-      "."
-      "."
       "."
       ".";
 
     img {
       border: 2px solid $smoke;
-      height: 100%;
     }
   }
 }
