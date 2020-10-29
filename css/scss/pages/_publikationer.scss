@@ -1,42 +1,31 @@
 #popular-tags {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #latest-publications {
-	display: grid;
-	grid-template-columns: 1fr;
-	row-gap: 2rem;
-	grid-template-areas:
-		"header"
-		"filter"
-		"."
-		"."
-		"."
-		"."
-		".";
-	
-	h1 {
-		grid-area: header;
-	}
-	
-	section.filter {
-		grid-area: filter;
-	}
+  article {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    grid-template-areas:
+      "."
+      "."
+      "."
+      "."
+      ".";
+
+    img {
+      border: 2px solid $smoke;
+    }
+  }
 }
 
 @include media-lg {
-	#latest-publications {
-		grid-template-columns: 1fr 4fr;
-		column-gap: 0;
-		row-gap: 2rem;
-		grid-template-areas: 
-			"header header"
-			"filter filter"
-			". ."
-			". ."
-			". ."
-			". ."
-			". .";
-	}
+  #latest-publications {
+    article {
+      grid-template-columns: 1fr 4fr;
+      grid-template-areas: ". .";
+    }
+  }
 }
