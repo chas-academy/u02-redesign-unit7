@@ -2,134 +2,142 @@
 <html lang="sv-SE">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>MYH - Myndigheten för yrkeshögskolan</title>
-	<link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico">
-	<!-- Save the following scripts in place for production -->
-	<!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nyheter - Myndigheten för yrkeshögskolan</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico">
+  <!-- Save the following scripts in place for production -->
+  <!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
 
-	<!-- DRY KISS 💋 -->
-	<script>
-		// This script helps us with github pages reference problem
-		// Consider removing, and use relative root refrencing (i.e. /) in production
+  <!-- DRY KISS 💋 -->
+  <script>
+    // This script helps us with github pages reference problem
+    // Consider removing, and use relative root refrencing (i.e. /) in production
 
-		// Test for location
-		// local is default in file references
-		// if we are on github, changes file references
+    // Test for location
+    // local is default in file references
+    // if we are on github, changes file references
 
-		// Set up variables for location test
-		const chasGitHub = 'chas-academy.github.io';
-		const gitHubRepoName = 'u02-redesign-unit7';
+    // Set up variables for location test
+    const chasGitHub = 'chas-academy.github.io';
+    const gitHubRepoName = 'u02-redesign-unit7';
 
-		// Find out if location is GitHub pages or not
-		const isGitHub = window.location.host === chasGitHub ? true : false;
+    // Find out if location is GitHub pages or not
+    const isGitHub = window.location.host === chasGitHub ? true : false;
 
-		// Define the relative root path
-		const cssFile = '/css/style.min.css?v=1.0';
-		const jsFile = '/js/component-loader.js';
+    // Define the relative root path
+    const cssFile = '/css/style.min.css?v=1.0';
+    const jsFile = '/js/component-loader.js';
 
-		// Create the elements we'll need in head
-		const styleEl = document.createElement('link');
-		const scriptEl = document.createElement('script');
+    // Create the elements we'll need in head
+    const styleEl = document.createElement('link');
+    const scriptEl = document.createElement('script');
 
-		// Set attributes for elements
-		styleEl.rel = 'stylesheet';
-		styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
-		scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
+    // Set attributes for elements
+    styleEl.rel = 'stylesheet';
+    styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
+    scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
 
-		// Add style element to head
-		document.head.appendChild(styleEl);
+    // Add style element to head
+    document.head.appendChild(styleEl);
 
-		// Wait for DOM to finish, then add
-		// component-loader script to end of body
-		document.addEventListener('DOMContentLoaded', () => {
-			document.body.appendChild(scriptEl);
-		});
-	</script>
+    // Wait for DOM to finish, then add
+    // component-loader script to end of body
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.appendChild(scriptEl);
+    });
+  </script>
 </head>
 
 <body>
-	<header component="/components/header.html" id="main-header"></header>
+  <header component="/components/header.html" id="main-header"></header>
 
-	<main>
-		<!-- Student info -->
-		<article class="container background-icterine mt-2">
-        <h1 class="h1">Nyheter</h1>
-        <p class="mt-1 mb-0">
+  <main>
+    <!-- Student info -->
+    <article class="container background-icterine mt-2">
+      <h1 class="h1">Nyheter</h1>
+      <p class="mt-1 mb-0">
           Här hittar du nyheter och presssmeddelanden
         </p>
-      </article>
-      <article class="container background white mt-3">
-        <h1 class="h1">Aktuellt</h1>
-      </article>
-      
-      <article class="container background-dark-slate-gray-l-65">
-        <a href="#">GD har ordet - Många frågor blir det… Tack för input!</a>
-        <p>2020-10-26</p>
-        <p class="mt-1">
+    </article>
+    <article class="container background white mt-3">
+      <h1 class="h1">Aktuellt</h1>
+    </article>
+
+    <article class="container background-dark-slate-gray-l-65">
+      <a href="#">GD har ordet - Många frågor blir det… Tack för input!</a>
+      <p>2020-10-26</p>
+      <p class="mt-1">
          I min förra text efterlyste jag er input om ansökningarna, tack för att ni har hört av er. Denna gång kommenterar jag även det jag skrev om förändringar inför nästa års ansökan.
         </p>
-      </article>
+    </article>
 
-      <article class="container background-dark-slate-gray-l-65 mt-1">
-        <a href="#">Resultatet av ansökningsomgången för kurser i kontakttolkning</a>
-        <p>2020-10-23</p>
-        <p class="mt-1">Varje år ansöker folkhögskolor och studieförbund om medel från Myndigheten för yrkeshögskolan för att starta kurser för kontakttolkar. I årets ansökningsomgång har 89 kurser beviljats statsbidrag för start under 2021.</p>
-      </article>
+    <article class="container background-dark-slate-gray-l-65 mt-1">
+      <a href="#">Resultatet av ansökningsomgången för kurser i kontakttolkning</a>
+      <p>2020-10-23</p>
+      <p
+        class="mt-1">Varje år ansöker folkhögskolor och studieförbund om medel från Myndigheten för yrkeshögskolan för att starta kurser för kontakttolkar. I årets ansökningsomgång har 89 kurser beviljats statsbidrag för start under 2021.</p>
+    </article>
 
-      <article class="container background-dark-slate-gray-l-65 mt-1">
-        <a href="#">Deltidsutvärdering av projektet Distansstöd</a>
-        <p>2020-10-23</p>
-        <p class="mt-1">Under hösten genomförs flera aktiviteter inom ramen för projektet ”Distansstöd". Den här enkäten vill utvärdera om ni som utbildningsanordnare upplever att projektet ger er stöd i frågor som rör distansundervisning. Svaren kommer även att användas för fortsatta aktiviteter inom projektet under 2020.</p>
-      </article>
+    <article class="container background-dark-slate-gray-l-65 mt-1">
+      <a href="#">Deltidsutvärdering av projektet Distansstöd</a>
+      <p>2020-10-23</p>
+      <p
+        class="mt-1">Under hösten genomförs flera aktiviteter inom ramen för projektet ”Distansstöd". Den här enkäten vill utvärdera om ni som utbildningsanordnare upplever att projektet ger er stöd i frågor som rör distansundervisning. Svaren kommer även att användas för fortsatta aktiviteter inom projektet under 2020.</p>
+    </article>
 
-      <article class="container background-dark-slate-gray-l-65 mt-1">
-        <a href="#">Tre nya utbildningar till kontakttolk inom yrkeshögskolan</a>
-        <p>2020-10-22</p>
-        <p class="mt-1">I början av nästa år startar tre nya utbildningar till kontakttolk inom yrkeshögskolan. Därmed fortsätter den försöksverksamhet med kontakttolkutbildningar som startade 2019 och som ska redovisas till regeringen 2024.</p>
-      </article>
+    <article class="container background-dark-slate-gray-l-65 mt-1">
+      <a href="#">Tre nya utbildningar till kontakttolk inom yrkeshögskolan</a>
+      <p>2020-10-22</p>
+      <p
+        class="mt-1">I början av nästa år startar tre nya utbildningar till kontakttolk inom yrkeshögskolan. Därmed fortsätter den försöksverksamhet med kontakttolkutbildningar som startade 2019 och som ska redovisas till regeringen 2024.</p>
+    </article>
 
-      <article class="container background-dark-slate-gray-l-65 mt-1">
-        <a href="#">Nu kan du administrera korta yrkeshögskoleutbildningar i Mina sidor</a>
+    <article class="container background-dark-slate-gray-l-65 mt-1">
+      <a href="#">Nu kan du administrera korta yrkeshögskoleutbildningar i Mina sidor</a>
       <p>2020-10-16</p>
-        <p class="mt-1">Från och med den 16 oktober är det möjligt att sköta större delen av administrationen av utbildningen och de studerande i Mina sidor.</p>
-      </article>
+      <p
+        class="mt-1">Från och med den 16 oktober är det möjligt att sköta större delen av administrationen av utbildningen och de studerande i Mina sidor.</p>
+    </article>
 
-      <article class="container background-dark-slate-gray-l-65 mt-1">
-        <a href="#">Yrkeshögskola – det populäraste alternativet för tjänstemän vid omställning</a>
-        <p>2020-10-16</p>
-        <p class="mt-1">När förutsättningarna på arbetsmarknaden förändras i pandemins spår blir omställning allt viktigare. Omställningsaktören TRR är en av de aktörer som stöttar tjänstemän i privat sektor när de förlorat jobbet. I förra veckan släppte de nya siffror som visar att yrkeshögskolan är den populäraste utbildningsformen för tjänstemän som ska ställa om.</p>
-      </article>
+    <article class="container background-dark-slate-gray-l-65 mt-1">
+      <a href="#">Yrkeshögskola – det populäraste alternativet för tjänstemän vid omställning</a>
+      <p>2020-10-16</p>
+      <p
+        class="mt-1">När förutsättningarna på arbetsmarknaden förändras i pandemins spår blir omställning allt viktigare. Omställningsaktören TRR är en av de aktörer som stöttar tjänstemän i privat sektor när de förlorat jobbet. I förra veckan släppte de nya siffror som visar att yrkeshögskolan är den populäraste utbildningsformen för tjänstemän som ska ställa om.</p>
+    </article>
 
 
-<article class="container background white mt-3">
-        <h1 class="h1">Pressmeddelanden</h1>
-      </article>
+    <article class="container background white mt-3">
+      <h1 class="h1">Pressmeddelanden</h1>
+    </article>
 
-      <article class="container background-prussian-blue-l-65">
-        <a href="#">Storsatsning på data/IT när yrkeshögskolan växer</a>
-        <p>2019-01-29</p>
-        <p class="mt-1">Idag presenterar Myndigheten för yrkeshögskolan de nya utbildningar som beviljats att starta från och med hösten 2019. Av de närmare 500 nya YH-utbildningarna som beviljats är var femte inom data/IT.</p>
-      </article>
+    <article class="container background-prussian-blue-l-65">
+      <a href="#">Storsatsning på data/IT när yrkeshögskolan växer</a>
+      <p>2019-01-29</p>
+      <p
+        class="mt-1">Idag presenterar Myndigheten för yrkeshögskolan de nya utbildningar som beviljats att starta från och med hösten 2019. Av de närmare 500 nya YH-utbildningarna som beviljats är var femte inom data/IT.</p>
+    </article>
 
-      <article class="container background-prussian-blue-l-65 mt-1">
-        <a href="#">Lokförare – populäraste YH-utbildningen</a>
-        <p>2018-08-20</p>
-        <p class="mt-1">Söktrycket till yrkeshögskolan (YH) har de senaste åren ökat stadigt. Utbildningen med allra flest antal behöriga sökande per plats är lokförarutbildningen.</p>
-      </article>
+    <article class="container background-prussian-blue-l-65 mt-1">
+      <a href="#">Lokförare – populäraste YH-utbildningen</a>
+      <p>2018-08-20</p>
+      <p
+        class="mt-1">Söktrycket till yrkeshögskolan (YH) har de senaste åren ökat stadigt. Utbildningen med allra flest antal behöriga sökande per plats är lokförarutbildningen.</p>
+    </article>
 
-      <article class="container background-prussian-blue-l-65 mt-1">
-        <a href="#">Platser kvar på många YH-utbildningar</a>
-        <p>2018-08-15</p>
-        <p class="mt-1">I höst startar historiskt många yrkeshögskoleutbildningar. Antagningen till de flesta har redan stängt, men på vissa utbildningar finns det fortfarande platser kvar. Soleltekniker, redovisningskonsult och stödpedagog är några av de utbildningar som fortfarande tar emot ansökningar.</p>
-      </article>
-</main>
+    <article class="container background-prussian-blue-l-65 mt-1">
+      <a href="#">Platser kvar på många YH-utbildningar</a>
+      <p>2018-08-15</p>
+      <p
+        class="mt-1">I höst startar historiskt många yrkeshögskoleutbildningar. Antagningen till de flesta har redan stängt, men på vissa utbildningar finns det fortfarande platser kvar. Soleltekniker, redovisningskonsult och stödpedagog är några av de utbildningar som fortfarande tar emot ansökningar.</p>
+    </article>
+  </main>
 
-	<footer component="/components/footer.html" id="main-footer"></footer>
+  <footer component="/components/footer.html" id="main-footer"></footer>
 
-	<!-- Save the following script in place for production -->
-	<!-- <script src="/js/component-loader.js"></script> -->
+  <!-- Save the following script in place for production -->
+  <!-- <script src="/js/component-loader.js"></script> -->
 </body>
 
 </html>
