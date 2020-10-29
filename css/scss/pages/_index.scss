@@ -101,6 +101,11 @@ section#front-page-news {
 						transform: scale(1.05);
 					}
 
+					&:first-child {
+						background: $prussian-blue;
+						color: $white;
+					}
+
 					article {
 						display: grid;
 						grid-template-columns: 1fr 2fr;
@@ -143,7 +148,30 @@ section#front-page-news {
 				div.calendar-date-cards {
 					grid-template-columns: repeat(2, 1fr);
 					column-gap: 2rem;
-					grid-template-areas: ". .";
+					grid-template-areas:
+						"next-event next-event"
+						". .";
+
+					a {
+						&:first-child {
+							grid-area: next-event;
+
+							&:hover {
+								transform: scale(1.025);
+							}
+
+							article {
+								grid-template-columns: 1fr 4fr;
+
+								h4 {
+									font-size: 5rem;
+								}
+								p {
+									font-size: 2rem;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -214,7 +242,9 @@ section#front-page-news {
 				div.calendar-date-cards {
 					grid-template-columns: repeat(3, 1fr);
 					column-gap: 2rem;
-					grid-template-areas: ". . .";
+					grid-template-areas:
+						"next-event next-event next-event"
+						". . .";
 				}
 			}
 		}
