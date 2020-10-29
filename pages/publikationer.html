@@ -76,9 +76,32 @@
 		</section>
 
 		<!-- latest publications -->
-		<section class="background-shadow-blue mt-2 container">
-			<h1 class="h2">Senaste publikationerna</h1>
-			<!-- filter section -->
+		<section id="filter-section" class="container background-smoke">
+			<h1>Senaste publikationerna</h1>
+			<p>För att hitta bland våra publikationer kan du filtrera sökningen nedan.</p>
+		
+			<form id="contact-form" method="POST">
+				<label for="name">Namn</label>
+				<input type="text" id="name" name="name" placeholder="Fullständigt namn" />
+		
+				<label for="email">E-post</label>
+				<input type="email" id="email" name="email" placeholder="din@epost.se" />
+		
+				<label for="phone">Telefon</label>
+				<input type="tel" id="phone" name="phone" placeholder="ex. 08-123 456 (valfritt)" />
+		
+				<label for="subject">Ämne</label>
+				<select id="subject">
+					<option value="" disabled selected>Välj ämne</option>
+					<option value="education">Utbildning</option>
+					<option value="apply">Ansöka</option>
+					<option value="report">Felanmälan</option>
+				</select>
+		
+				<label for="message">Fråga</label>
+				<textarea id="message" name="message" rows="5" cols="5" placeholder="Hur kan vi hjälpa dig?"></textarea>
+				<button>Skicka</button>
+			</form>
 		</section>
 		<!-- article section -->
 		<div id="publication-grid" class="container pl-0 pr-0 pb-1">
