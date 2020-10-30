@@ -145,7 +145,7 @@ const componentLoader = async () => {
 		if (isSubPage) {
 			const startEl = document.createElement('li');
 			const startAnchorEl = document.createElement('a');
-			startAnchorEl.href = isGitHub ? `/${gitHubRepoName}` : '/';
+			startAnchorEl.href = '/'; // We're fixing all anchors at end of file, so we don't need isGitHub ? `/${gitHubRepoName}` :  anymore
 			startAnchorEl.innerHTML = 'Startsida';
 			startEl.appendChild(startAnchorEl);
 			breadCrumbsEl.appendChild(startEl);
