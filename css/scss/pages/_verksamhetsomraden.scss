@@ -12,9 +12,7 @@ section#main-area-grid {
 
 @include media-lg {
   section#main-area-grid {
-    &.container {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-areas: ". .";
-    }
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: ". .";
   }
 }
