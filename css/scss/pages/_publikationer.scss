@@ -4,6 +4,8 @@
 }
 
 section#filter-section {
+  padding: 1.5rem 1.25rem;
+
   form {
     display: grid;
     grid-template-columns: 1fr;
@@ -134,7 +136,7 @@ div#publication-grid {
   }
   div#publication-grid {
     img {
-      position: static;
+      display: block;
     }
     article {
       grid-template-columns: 1fr 3fr;
