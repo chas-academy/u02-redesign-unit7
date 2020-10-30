@@ -137,9 +137,6 @@ div#publication-grid {
   div#publication-grid {
     img {
       display: block;
-      //  width: 100%;
-      //  height: auto;
-      //  object-fit: cover;
     }
     article {
       grid-template-columns: 1fr 3fr;
@@ -153,6 +150,9 @@ div#publication-grid {
 
 @include media-xl {
   div#publication-grid {
+    img {
+      display: block;
+    }
     article {
       grid-template-columns: 1fr 5fr;
       grid-template-areas: ". .";
