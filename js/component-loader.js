@@ -21,7 +21,10 @@ const componentLoader = async () => {
 		// Define el (const) from componentElemets
 		// using iterator index
 		const el = componentElemets[i];
-		const componentTag = el.tagName;
+
+		// Probably won't need this anymore since
+		// We're checking all anchors at end of file now
+		// const componentTag = el.tagName;
 
 		// Get file location from element atrribute
 		const file = !isGitHub ? el.getAttribute(keyword) : `/${gitHubRepoName}${el.getAttribute(keyword)}`;
@@ -30,49 +33,51 @@ const componentLoader = async () => {
 			const fetchResponse = await fetch(file);
 			let html = fetchResponse.ok ? await fetchResponse.text() : false;
 
-			// For now we only need to change things in header element
-			if (componentTag === 'HEADER') {
+			// Comment out for now. Doing test for all anchors at end of files
 
-				// GitHub pages are on organization
-				// We need to fix some src and href to match this
-				if (isGitHub) {
-					// Parse HTML string to DOM so we can manipulate it
-					const nodeList = new DOMParser().parseFromString(html, 'text/html').body;
+			// // For now we only need to change things in header element
+			// // if (componentTag === 'HEADER') {
 
-					const logotypeLink = nodeList.querySelector('a#main-header-logotype');
-					logotypeLink.href = `/${gitHubRepoName}/`;
+			// 	// GitHub pages are on organization
+			// 	// We need to fix some src and href to match this
+			// 	// if (isGitHub) {
+			// 	// 	// Parse HTML string to DOM so we can manipulate it
+			// 	// 	const nodeList = new DOMParser().parseFromString(html, 'text/html').body;
 
-					const headerLogotype = nodeList.querySelector('a#main-header-logotype img');
-					headerLogotype.src = headerLogotype.getAttribute('src');
+			// 	// 	const logotypeLink = nodeList.querySelector('a#main-header-logotype');
+			// 	// 	logotypeLink.href = `/${gitHubRepoName}/`;
 
-					// Get all anchors in list items from menu (nav)
-					const menuItems = nodeList.querySelectorAll('.container nav ul li a');
+			// 	// 	const headerLogotype = nodeList.querySelector('a#main-header-logotype img');
+			// 	// 	headerLogotype.src = headerLogotype.getAttribute('src');
 
-					// Loop anchors in for each loop
-					menuItems.forEach(item => {
+			// 	// 	// Get all anchors in list items from menu (nav)
+			// 	// 	const menuItems = nodeList.querySelectorAll('.container nav ul li a');
 
-						// Get item href
-						const itemUrl = item.href;
+			// 	// 	// Loop anchors in for each loop
+			// 	// 	menuItems.forEach(item => {
 
-						// Get anchor URL object using itemUrl (const)
-						const menuItemPath = new URL(itemUrl);
+			// 	// 		// Get item href
+			// 	// 		const itemUrl = item.href;
 
-						// Create correct path reference
-						const itemPathHref = menuItemPath.href;
-						const itemPathName = menuItemPath.pathname;
-						// const itemPathOrigin = menuItemPath.origin;
+			// 	// 		// Get anchor URL object using itemUrl (const)
+			// 	// 		const menuItemPath = new URL(itemUrl);
 
-						// Check if link has a page assigned
-						// I.e. doesn't have hash (#) at the end
-						if (!itemPathHref.endsWith('#')) {
-							item.href = `/${gitHubRepoName}${itemPathName}`
-						}
-					});
+			// 	// 		// Create correct path reference
+			// 	// 		const itemPathHref = menuItemPath.href;
+			// 	// 		const itemPathName = menuItemPath.pathname;
+			// 	// 		// const itemPathOrigin = menuItemPath.origin;
 
-					// Update HTML that will be in header
-					html = nodeList.outerHTML;
-				}
-			}
+			// 	// 		// Check if link has a page assigned
+			// 	// 		// I.e. doesn't have hash (#) at the end
+			// 	// 		if (!itemPathHref.endsWith('#')) {
+			// 	// 			item.href = `/${gitHubRepoName}${itemPathName}`
+			// 	// 		}
+			// 	// 	});
+
+			// 	// 	// Update HTML that will be in header
+			// 	// 	html = nodeList.outerHTML;
+			// 	// }
+			// }
 
 			// If HTML string is not false add it to element
 			if (html) {
