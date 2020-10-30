@@ -76,66 +76,69 @@
 		</section>
 
 		<!-- latest publications -->
-		<section id="filter-section" class="container background-smoke">
-			<h1>Senaste publikationerna</h1>
-			<p class="pb-1">För att hitta bland våra publikationer kan du filtrera sökningen nedan.</p>
+		<div class="line-top container pt-2 pl-0 pr-0 pb-0">
+			<section id="filter-section" class="background-smoke">
+				<h1>Senaste publikationerna</h1>
+				<p>För att hitta bland våra publikationer kan du filtrera sökningen nedan. Gör du ingen filtrering eller
+					sökning så listas alla publikationer i kronologisk ordning.</p>
 
-			<form id="filter-form" method="GET">
-				<label for="type">Publikationstyp</label>
-				<select id="type">
-					<option value="" disabled selected>Välj publikationstyp</option>
-					<option value="guidelines">Ansökningsanvisningar</option>
-					<option value="folders">Broschyrer</option>
-					<option value="fact-folders">Faktablad</option>
-					<option value="handbooks">Handböcker</option>
-					<option value="information">Informationsmaterial</option>
-					<option value="area-analyzes">Områdesanalyser</option>
-					<option value="reports">Rapporter</option>
-					<option value="statistics-annual-reports">Statistiska årsrapporter</option>
-					<option value="support-material">Stödmaterial</option>
-					<option value="annual-accounts">Årsredovisningar</option>
-				</select>
+				<form id="filter-form">
+					<label for="type">Publikationstyp</label>
+					<select id="type">
+						<option value="" disabled selected>Välj publikationstyp</option>
+						<option value="guidelines">Ansökningsanvisningar</option>
+						<option value="folders">Broschyrer</option>
+						<option value="fact-folders">Faktablad</option>
+						<option value="handbooks">Handböcker</option>
+						<option value="information">Informationsmaterial</option>
+						<option value="area-analyzes">Områdesanalyser</option>
+						<option value="reports">Rapporter</option>
+						<option value="statistics-annual-reports">Statistiska årsrapporter</option>
+						<option value="support-material">Stödmaterial</option>
+						<option value="annual-accounts">Årsredovisningar</option>
+					</select>
 
-				<label for="year">Årtal</label>
-				<select id="year">
-					<option value="" disabled selected>Välj årtal</option>
-					<option value="2020">2020</option>
-					<option value="2019">2019</option>
-					<option value="2018">2018</option>
-					<option value="2017">2017</option>
-					<option value="2016">2016</option>
-					<option value="2015">2015</option>
-					<option value="2014">2014</option>
-					<option value="2013">2013</option>
-					<option value="2012">2012</option>
-					<option value="2011">2011</option>
-					<option value="2010">2010</option>
-				</select>
+					<label for="year">Årtal</label>
+					<select id="year">
+						<option value="" disabled selected>Välj årtal</option>
+						<option value="2020">2020</option>
+						<option value="2019">2019</option>
+						<option value="2018">2018</option>
+						<option value="2017">2017</option>
+						<option value="2016">2016</option>
+						<option value="2015">2015</option>
+						<option value="2014">2014</option>
+						<option value="2013">2013</option>
+						<option value="2012">2012</option>
+						<option value="2011">2011</option>
+						<option value="2010">2010</option>
+					</select>
 
-				<label for="search-keywords">Fritext/sökord</label>
-				<input type="text" id="search-keywords" name="kyword-search" placeholder="Valfritt" />
+					<label for="search-keywords">Fritext/sökord</label>
+					<input type="text" id="search-keywords" name="kyword-search" placeholder="Valfritt" />
 
-				<button>SÖK!</button>
-			</form>
-		</section>
+					<button>SÖK!</button>
+				</form>
+			</section>
+		</div>
 		<!-- article section -->
 		<div id="publication-grid" class="container pl-0 pr-0 pb-1">
 			<article class="background-smoke mb-1">
-				<img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
+				<img src="/assets/images/pages/publikationer/sarskiltpedstod.png" alt="" />
 				<section class="pub-grid-mobile">
 					<h2 class="h6">
-						<a href="#">
-							Faktablad: Särskilt pedagogiskt stöd och tillgänglighet - för dig som studerar på en konst-
-							och kulturutbildning.
+						<a
+							href="https://www.myh.se/Publikationer/2020/Faktablad-Sarskilt-pedagogiskt-stod-och-tillganglighet--for-dig-som-studerar-pa-en-konst--och-kulturutbildning/">
+							Faktablad: Särskilt pedagogiskt stöd och tillgänglighet - för dig som studerar på en
+							konst-och kulturutbildning.
 						</a>
 					</h2>
 					<p class="text-small text-italic text-muted">Utgiven: 2020-02-11</p>
 					<p class="pub-links">
-						<span>
-							<a href="#">Ladda ner</a>
-							|
-							<a href="#">Mer information</a>
-						</span>
+						<button>
+							<a href="https://www.myh.se/Documents/Publikationer/Informationsmaterial/Faktablad-2020-KK/Infoblad_SPSstuderande_KK-Januari-2020.pdf"
+								target="_blank">Ladda ner</a>
+						</button>
 					</p>
 					<p class="text-medium p-0 m-0">
 						Taggar: <a href="#">faktablad</a> | <a href="#">pedagogik</a> | <a href="#">konst- och
@@ -144,36 +147,38 @@
 			</article>
 
 			<article class="background-smoke mb-1">
-				<img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
+				<img src="/assets/images/pages/publikationer/kvalitetskriterier.png" alt="" />
 				<section class="pub-grid-mobile">
 					<h2 class="h6">
-						<a href="#">Faktablad: Kvalitetskriterier för yrkeshögskolan 2020</a>
+						<a
+							href="https://www.myh.se/Publikationer/2019/Faktablad-kvalitetskriterier-for-yrkeshogskolan-2019/">Faktablad:
+							Kvalitetskriterier för yrkeshögskolan 2020</a>
 					</h2>
 					<p class="text-small text-italic text-muted">Utgiven: 2019-10-30</p>
 					<p class="pub-links">
-						<span>
-							<a href="#">Ladda ner</a>
-							|
-							<a href="#">Mer information</a>
-						</span>
+						<button>
+							<a
+								href="https://www.myh.se/Documents/Publikationer/Informationsmaterial/Kvalitetskriterier_2020.pdf">Ladda
+								ner</a>
+						</button>
 					</p>
 					<p class="text-medium p-0 m-0">Taggar: <a href="#">faktablad</a> | <a href="#">kvalitet</a></p>
 				</section>
 			</article>
 
 			<article class="background-smoke mb-1">
-				<img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
+				<img src="/assets/images/pages/publikationer/jamstalldutbildning.png" alt="" />
 				<section>
 					<h2 class="h6">
-						<a href="#">Stödmaterial: Jämställd utbildning</a>
+						<a href="https://www.myh.se/Publikationer/2019/Jamstalld-utbildning/">Stödmaterial: Jämställd
+							utbildning</a>
 					</h2>
 					<p class="text-small text-italic text-muted">Utgiven: 2019-11-22</p>
 					<p class="pub-links">
-						<span>
-							<a href="#">Ladda ner</a>
-							|
-							<a href="#">Mer information</a>
-						</span>
+						<button>
+							<a href="https://www.myh.se/Documents/Publikationer/Informationsmaterial/MYH-Jamstalld-Utbildning-2019.pdf"
+								target="_blank">Ladda ner</a>
+						</button>
 					</p>
 					<p class="text-medium p-0 m-0">
 						Taggar: <a href="#">stödmaterial</a> | <a href="#">jämställdhet</a> | <a href="#">konst- och
@@ -183,18 +188,19 @@
 			</article>
 
 			<article class="background-smoke mb-1">
-				<img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
+				<img src="/assets/images/pages/publikationer/halsosjukvard.png" alt="" />
 				<section class="pub-grid-mobile">
 					<h2 class="h6">
-						<a href="#">Områdesanalys: Hälso- och sjukvård samt socialt arbete</a>
+						<a
+							href="https://www.myh.se/Publikationer/2020/Omradesanalys-halso--och-sjukvard-samt-socialt-arbete/">Områdesanalys:
+							Hälso- och sjukvård samt socialt arbete</a>
 					</h2>
 					<p class="text-small text-italic text-muted">Utgiven: 2020-05-19</p>
 					<p class="pub-links">
-						<span>
-							<a href="#">Ladda ner</a>
-							|
-							<a href="#">Mer information</a>
-						</span>
+						<button>
+							<a href="https://www.myh.se/Documents/Publikationer/Rapporter/2020/Analys_HalsoSjukvard2020.pdf"
+								target="_blank">Ladda ner</a>
+						</button>
 					</p>
 					<p class="text-medium p-0 m-0">
 						Taggar: <a href="#">områdesanalys</a> | <a href="#">socialt arbete</a> | <a
@@ -204,18 +210,18 @@
 			</article>
 
 			<article class="background-smoke mb-1">
-				<img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
+				<img src="/assets/images/pages/publikationer/pedagogikanalys.png" alt="" />
 				<section class="pub-grid-mobile">
 					<h2 class="h6">
-						<a href="#">Områdesanalys: Pedagogik</a>
+						<a href="https://www.myh.se/Publikationer/2020/Omradesanalys-pedagogik/">Områdesanalys:
+							Pedagogik</a>
 					</h2>
 					<p class="text-small text-italic text-muted">Utgiven: 2020-04-28</p>
 					<p class="pub-links">
-						<span>
-							<a href="#">Ladda ner</a>
-							|
-							<a href="#">Mer information</a>
-						</span>
+						<button>
+							<a href="https://www.myh.se/Documents/Publikationer/Rapporter/2020/Pedagogik_analys2020.pdf"
+								target>Ladda ner</a>
+						</button>
 					</p>
 					<p class="text-medium p-0 m-0">
 						Taggar: <a href="#">områdesanalys</a> | <a href="#">pedagogik</a> | <a href="#">underlag</a>
@@ -224,18 +230,18 @@
 			</article>
 
 			<article class="background-smoke mb-1">
-				<img src="/assets/png/publikationer_placeholder_thumb.png" alt="" />
+				<img src="/assets/images/pages/publikationer/sysselsattningsrapport.png" alt="" />
 				<section class="pub-grid-mobile">
 					<h2 class="h6">
-						<a href="#">Rapport: Studerandes sysselsättning 2019</a>
+						<a href="https://www.myh.se/Publikationer/2020/Studerandes-sysselsattning-2019/">Rapport:
+							Studerandes sysselsättning 2019</a>
 					</h2>
 					<p class="text-small text-italic text-muted">Utgiven: 2020-02-06</p>
 					<p class="pub-links">
-						<span>
-							<a href="#">Ladda ner</a>
-							|
-							<a href="#">Mer information</a>
-						</span>
+						<button>
+							<a href="https://www.myh.se/Documents/Publikationer/sysselsattningsrapport2019.pdf">Ladda
+								ner</a>
+						</button>
 					</p>
 					<p class="text-medium p-0 m-0">
 						Taggar: <a href="#">rapport</a> | <a href="#">enkät</a> | <a href="#">underlag</a>
