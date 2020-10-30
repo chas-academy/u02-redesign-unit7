@@ -30,3 +30,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# VS code settings folder - local only
+.vscode/

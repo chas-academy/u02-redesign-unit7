@@ -7,7 +7,7 @@ const scrollHandler = () => {
 
 	// Declare var for when, in vertical page percent (i.e. 0.8 = 80%) scrolled,
 	// we want the "scroll to top" button to show
-	const breakPoint = 0.45;
+	const breakPoint = 0.35;
 
 	// Test current position and check against break point
 	// Do not use toggle on classList. Since we're constantly
@@ -27,8 +27,9 @@ const toTop = () => {
 	// A simple vanilla JS "to top" logic
 	rootEl.scrollTo({
 		top: 0,
-		behavior: "smooth"
-	})
+		left: 0,
+		behavior: 'smooth'
+	});
 }
 
 // Define document root element for scroll top
