@@ -74,9 +74,10 @@ section#front-page-news {
 	padding: 0;
 
 	article.main-news {
-		@extend .text-white;
-
-		@include parallax;
+		&.parallax {
+			@extend .text-white;
+			@include parallax;
+		}
 	}
 
 	section.index-calendar {

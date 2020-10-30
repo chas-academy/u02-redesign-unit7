@@ -28,4 +28,10 @@
         background: $backgroundColor;
         z-index: -2;
     }
+
+    &.is-git {
+        &::before {
+            background: url("/u02-redesign-unit7#{$backgroundImage}") no-repeat center;
+        }
+    }
 }
