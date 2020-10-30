@@ -1,16 +1,21 @@
-section#main-area-grid {
+section {
   &.container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 2rem 2rem;
-    grid-template-areas: ". .";
-
     article {
       padding: 0rem;
 
       div {
         padding: 1rem 1.375rem;
       }
+    }
+  }
+}
+@include media-lg {
+  section#main-area-grid {
+    &.container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: ". .";
     }
   }
 }

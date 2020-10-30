@@ -74,8 +74,8 @@ section#front-page-news {
 	padding: 0;
 
 	article.main-news {
-		position: relative;
-		background: $black;
+		@extend .text-white;
+
 		@include parallax;
 	}
 
