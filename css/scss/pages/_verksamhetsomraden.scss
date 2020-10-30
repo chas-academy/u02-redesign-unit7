@@ -1,16 +1,15 @@
 section#main-area-grid {
-  &.container {
-    display: grid;
-    gap: 2rem 2rem;
-    article {
-      padding: 0rem;
+  display: grid;
+  gap: 2rem 2rem;
+  article {
+    padding: 0rem;
 
-      div {
-        padding: 1rem 1.375rem;
-      }
+    div {
+      padding: 1rem 1.375rem;
     }
   }
 }
+
 @include media-lg {
   section#main-area-grid {
     &.container {
