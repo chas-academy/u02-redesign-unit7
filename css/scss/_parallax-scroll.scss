@@ -1,38 +1,31 @@
-// .parallax {
-//     background-size: cover;
-//     background-position: center center;
-//     background-attachment: fixed;
-//     background-repeat: no-repeat;
-// }
+@mixin parallax(
+    $backgroundImage: "/assets/images/pages/index/webopt-green-chameleon-s9CC2SKySJM-unsplash.jpg",
+    $backgroundColor: $black,
+    $opacity: 0.5
+) {
+    position: relative;
 
-@mixin parallax($color: $white, $scale: 2) {
-    // New parallax container
-    // This container should wrap
-    // everything you want in the parallax
-    .parallax-container {
-        overflow: hidden;
-        transform: translateZ(0);
-        perspective: 1px;
-    }
-
-    // Regular container
-    // Usage example for color:
-    // parallax($black) to get black text
-    .container {
-        transform: translateZ(0);
-        color: $color;
-    }
-
-    // Use this class on the element
-    // you want "parallaxed"
-    // Use scale if you need
-    // background to be larger
-    .parallax-layer {
-        position: fixed;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        display: block;
         top: 0;
-        bottom: 0;
+        left: 0;
         width: 100vw;
-        opacity: 0.5;
-        transform: translate3d(0, -50%, -1px) scale($scale);
+        height: 100%;
+    }
+
+    &::before {
+        opacity: $opacity;
+        background: url($backgroundImage) no-repeat center;
+        background-size: cover;
+        background-attachment: fixed;
+        z-index: -1;
+    }
+
+    &::after {
+        background: $backgroundColor;
+        z-index: -2;
     }
 }
