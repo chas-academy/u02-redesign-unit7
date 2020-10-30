@@ -63,7 +63,7 @@
 			</p>
 		</section>
 		<!-- popular tags -->
-		<section class="container background-prussian-blue text-white mt-2">
+		<section class="container background-prussian-blue text-white mt-2 mb-2">
 			<h1 class="h4">Populära taggar</h1>
 			<ul id="popular-tags" class="white-list">
 				<li><a href="#">rapport</a></li>
@@ -80,7 +80,7 @@
 			<h1>Senaste publikationerna</h1>
 			<p class="pb-1">För att hitta bland våra publikationer kan du filtrera sökningen nedan.</p>
 
-			<form id="filter-form" method="POST">
+			<form id="filter-form" method="GET">
 				<label for="type">Publikationstyp</label>
 				<select id="type">
 					<option value="" disabled selected>Välj publikationstyp</option>
@@ -111,8 +111,11 @@
 					<option value="2011">2011</option>
 					<option value="2010">2010</option>
 				</select>
-				
-				<button>Skicka</button>
+
+				<label for="search-keywords">Fritext/sökord</label>
+				<input type="text" id="search-keywords" name="kyword-search" placeholder="Valfritt" />
+
+				<button>SÖK!</button>
 			</form>
 		</section>
 		<!-- article section -->
