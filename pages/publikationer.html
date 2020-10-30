@@ -63,7 +63,7 @@
 			</p>
 		</section>
 		<!-- popular tags -->
-		<section class="container background-prussian-blue text-white mt-2">
+		<section class="container background-prussian-blue text-white mt-2 mb-2">
 			<h1 class="h4">Populära taggar</h1>
 			<ul id="popular-tags" class="white-list">
 				<li><a href="#">rapport</a></li>
@@ -76,9 +76,47 @@
 		</section>
 
 		<!-- latest publications -->
-		<section class="background-shadow-blue mt-2 container">
-			<h1 class="h2">Senaste publikationerna</h1>
-			<!-- filter section -->
+		<section id="filter-section" class="container background-smoke">
+			<h1>Senaste publikationerna</h1>
+			<p class="pb-1">För att hitta bland våra publikationer kan du filtrera sökningen nedan.</p>
+
+			<form id="filter-form" method="GET">
+				<label for="type">Publikationstyp</label>
+				<select id="type">
+					<option value="" disabled selected>Välj publikationstyp</option>
+					<option value="guidelines">Ansökningsanvisningar</option>
+					<option value="folders">Broschyrer</option>
+					<option value="fact-folders">Faktablad</option>
+					<option value="handbooks">Handböcker</option>
+					<option value="information">Informationsmaterial</option>
+					<option value="area-analyzes">Områdesanalyser</option>
+					<option value="reports">Rapporter</option>
+					<option value="statistics-annual-reports">Statistiska årsrapporter</option>
+					<option value="support-material">Stödmaterial</option>
+					<option value="annual-accounts">Årsredovisningar</option>
+				</select>
+
+				<label for="year">Årtal</label>
+				<select id="year">
+					<option value="" disabled selected>Välj årtal</option>
+					<option value="2020">2020</option>
+					<option value="2019">2019</option>
+					<option value="2018">2018</option>
+					<option value="2017">2017</option>
+					<option value="2016">2016</option>
+					<option value="2015">2015</option>
+					<option value="2014">2014</option>
+					<option value="2013">2013</option>
+					<option value="2012">2012</option>
+					<option value="2011">2011</option>
+					<option value="2010">2010</option>
+				</select>
+
+				<label for="search-keywords">Fritext/sökord</label>
+				<input type="text" id="search-keywords" name="kyword-search" placeholder="Valfritt" />
+
+				<button>SÖK!</button>
+			</form>
 		</section>
 		<!-- article section -->
 		<div id="publication-grid" class="container pl-0 pr-0 pb-1">

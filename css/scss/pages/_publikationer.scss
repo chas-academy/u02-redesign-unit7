@@ -3,6 +3,54 @@
   flex-wrap: wrap;
 }
 
+section#filter-section {
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    grid-template-areas:
+      "type-label"
+      "type"
+      "year-label"
+      "year"
+      "keywords-label"
+      "keywords"
+      "search-button";
+
+    #type {
+      grid-area: type;
+    }
+    #year {
+      grid-area: year;
+    }
+    #search-keywords {
+      grid-area: keywords;
+    }
+
+    label[for="type"] {
+      grid-area: type-label;
+    }
+    label[for="year"] {
+      grid-area: year-label;
+    }
+    label[for="search-keywords"] {
+      grid-area: keywords-label;
+    }
+
+    button {
+      grid-area: search-button;
+    }
+  }
+
+  label {
+    padding: 0.25rem 0.635rem;
+    background: $shadow-blue;
+    color: $white;
+    font-weight: 700;
+  }
+}
+
 div#publication-grid {
   article {
     display: grid;
@@ -74,6 +122,16 @@ div#publication-grid {
 }
 */
 @include media-lg {
+  section#filter-section {
+    form {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 1rem;
+      grid-template-areas:
+        "type-label year-label keywords-label"
+        "type year keywords"
+        "search-button search-button search-button";
+    }
+  }
   div#publication-grid {
     img {
       position: static;
