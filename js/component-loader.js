@@ -170,6 +170,16 @@ const componentLoader = async () => {
 			const img = pageImages[i];
 			img.src = `/${gitHubRepoName}${img.getAttribute('src')}`;
 		}
+
+		const pageAnchors = document.querySelectorAll('a');
+		for (let i = 0; i < pageAnchors.length; i++) {
+			const anchor = pageAnchors[i];
+			const isLocal = anchor.getAttribute('href').match(/http:|https:|tel:|mailto:|127\.0\.0\.1/gi) ? false : true;
+			if (isLocal) {
+				anchor.href = `/${gitHubRepoName}${anchor.getAttribute('href')}`
+			}
+		}
+
 		const parallaxes = document.querySelectorAll('.parallax');
 		for (let i = 0; i < parallaxes.length; i++) {
 			const parallax = parallaxes[i];
