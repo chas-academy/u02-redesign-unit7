@@ -111,6 +111,13 @@ const componentLoader = async () => {
 	// Insert scroll to top file in script source
 	scrollTopScripEl.src = !isGitHub ? `/js/scroll-to-top.js` : `/${gitHubRepoName}/js/scroll-to-top.js`;
 
+
+	// Create empty script element for scroll to top
+	const polyfillEl = document.createElement('script');
+
+	// Insert scroll to top file in script source
+	polyfillEl.src = !isGitHub ? `/js/smooth-scroll-polyfill.js` : `/${gitHubRepoName}/js/smooth-scroll-polyfill.js`;
+
 	// Append scripts to body. Append, rather than prepend
 	// will add script at the end of body since this file
 	// must load last (otherwise the function can't find its elements
@@ -120,6 +127,40 @@ const componentLoader = async () => {
 	document.body.appendChild(menuTogglerScriptEl);
 	document.body.appendChild(searchScripEl);
 	document.body.appendChild(scrollTopScripEl);
+	document.body.appendChild(polyfillEl);
+
+
+	// Create breadcrumbs
+	const createCrumbs = (crumb, isSubPage) => {
+		const breadCrumbsEl = document.querySelector('body header#main-header section#breadcrumbs ul');
+		const listItemEl = document.createElement('li');
+		listItemEl.classList.add('current-page');
+		listItemEl.innerHTML = crumb;
+
+		if (isSubPage) {
+			const startEl = document.createElement('li');
+			const startAnchorEl = document.createElement('a');
+			startAnchorEl.href = isGitHub ? `/${gitHubRepoName}` : '/';
+			startAnchorEl.innerHTML = 'Startsida';
+			startEl.appendChild(startAnchorEl);
+			breadCrumbsEl.appendChild(startEl);
+		}
+
+		breadCrumbsEl.appendChild(listItemEl);
+	}
+	// Get document title, setup regular expression
+	// Test if title can match with expression
+	// Based on match, get first string from title,
+	// before dash (-) and return it or false
+	const docTitle = document.title;
+	const regex = /(.*)\s-\s.*/gi;
+	const bread = docTitle.match(regex);
+	const crumb = bread !== null ? docTitle.replace(regex, '$1') : false;
+	if (crumb) {
+		createCrumbs(crumb, true);
+	} else {
+		createCrumbs('Startsida', false);
+	}
 
 	// A temporary fix for images source ref on GitHub pages
 	// Consider removing in production.
