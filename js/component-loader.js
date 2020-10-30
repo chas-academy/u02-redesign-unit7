@@ -170,6 +170,11 @@ const componentLoader = async () => {
 			const img = pageImages[i];
 			img.src = `/${gitHubRepoName}${img.getAttribute('src')}`;
 		}
+		const parallaxes = document.querySelectorAll('.parallax');
+		for (let i = 0; i < parallaxes.length; i++) {
+			const parallax = parallaxes[i];
+			parallax.classList.add('is-git');
+		}
 	}
 }
 
