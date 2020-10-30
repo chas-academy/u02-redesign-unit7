@@ -6,7 +6,8 @@
     position: relative;
 
     &::before,
-    &::after {
+    &::after,
+    &.is-git::before {
         content: "";
         position: absolute;
         display: block;
