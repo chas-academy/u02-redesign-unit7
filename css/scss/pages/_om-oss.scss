@@ -1,12 +1,11 @@
 .oo-video {
-   width: 60%;
-   height: 80%;
-}
-@include media-sm {
-    .oo-video {
-        width: 560px; 
-        height: 315px;
-
-    }
-
-}
+    width: 100%;
+    height: 360px;
+ }
+ @include media-sm {
+     .oo-video {
+         width: 100%; 
+         height: 560px;
+ 
+     }
+ }
