@@ -175,6 +175,7 @@ const componentLoader = async () => {
 		for (let i = 0; i < pageAnchors.length; i++) {
 			const anchor = pageAnchors[i];
 			const isLocal = anchor.getAttribute('href').match(/http:|https:|tel:|mailto:/gi) ? false : true;
+			console.log(`${anchor} is local: ${isLocal}`);
 			if (isLocal) {
 				anchor.href = `/${gitHubRepoName}${anchor.getAttribute('href')}`
 			}
