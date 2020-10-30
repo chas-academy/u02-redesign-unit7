@@ -154,7 +154,7 @@ div#publication-grid {
 @include media-xl {
   div#publication-grid {
     article {
-      grid-template-columns: 1fr 6fr;
+      grid-template-columns: 1fr 5fr;
       grid-template-areas: ". .";
       section {
         padding: 1.2rem;
