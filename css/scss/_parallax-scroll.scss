@@ -31,7 +31,11 @@
 
     &.is-git {
         &::before {
+            opacity: $opacity;
             background: url("/u02-redesign-unit7#{$backgroundImage}") no-repeat center;
+            background-size: cover;
+            background-attachment: fixed;
+            z-index: -1;
         }
     }
 }
