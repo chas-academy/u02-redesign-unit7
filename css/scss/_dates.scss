@@ -1,0 +1,8 @@
+time {
+	@extend .text-medium;
+	@extend .text-muted;
+}
+
+div.date {
+	@extend time;
+}

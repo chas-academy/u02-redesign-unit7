@@ -1,4 +1,5 @@
-button {
+button,
+.button {
 	font-size: 1rem;
 	border: 1px solid $black;
 	padding: 0.675rem 1.235rem;
@@ -6,26 +7,33 @@ button {
 	background: none;
 	opacity: 1;
 	will-change: opacity;
-	transition: opacity 0.35s;
+	transition: all 0.35s;
 	font-weight: 700;
+	text-decoration: none;
+	display: inline-block;
 	cursor: pointer;
 
-	a {
-		text-decoration: none;
-	}
-
 	&:hover {
-		opacity: 0.75;
+		border-color: lighten($black, 80);
 	}
 
-	&[variant*="white"] {
+	&.white {
 		border-color: $white;
 		color: $white;
 
-		a {
-			color: $white;
+		&:hover {
+			border-color: rgba($white, 0.4);
 		}
 	}
+
+	// &[variant*="white"] {
+	// 	border-color: $white;
+	// 	color: $white;
+
+	// 	a {
+	// 		color: $white;
+	// 	}
+	// }
 }
 
 button.close-button {
