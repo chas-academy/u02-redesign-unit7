@@ -1,9 +1,8 @@
 section#main-area-grid {
   &.container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 2rem;
-    grid-template-areas: ". .";
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: ".";
 
     article {
       padding: 0rem;
@@ -13,4 +12,10 @@ section#main-area-grid {
       }
     }
   }
+}
+@include media-lg {
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 2rem;
+    grid-template-areas: ". .";
 }
