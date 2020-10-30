@@ -111,6 +111,13 @@ const componentLoader = async () => {
 	// Insert scroll to top file in script source
 	scrollTopScripEl.src = !isGitHub ? `/js/scroll-to-top.js` : `/${gitHubRepoName}/js/scroll-to-top.js`;
 
+
+	// Create empty script element for scroll to top
+	const polyfillEl = document.createElement('script');
+
+	// Insert scroll to top file in script source
+	polyfillEl.src = !isGitHub ? `/js/smooth-scroll-polyfill.js` : `/${gitHubRepoName}/js/smooth-scroll-polyfill.js`;
+
 	// Append scripts to body. Append, rather than prepend
 	// will add script at the end of body since this file
 	// must load last (otherwise the function can't find its elements
@@ -120,6 +127,7 @@ const componentLoader = async () => {
 	document.body.appendChild(menuTogglerScriptEl);
 	document.body.appendChild(searchScripEl);
 	document.body.appendChild(scrollTopScripEl);
+	document.body.appendChild(polyfillEl);
 
 
 	// Create breadcrumbs
@@ -153,8 +161,6 @@ const componentLoader = async () => {
 	} else {
 		createCrumbs('Startsida', false);
 	}
-	// console.log(crumb);
-
 
 	// A temporary fix for images source ref on GitHub pages
 	// Consider removing in production.
