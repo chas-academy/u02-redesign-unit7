@@ -1,9 +1,7 @@
-section#main-area-grid {
+section {
   &.container {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-areas: ".";
-
+    gap: 2rem 2rem;
     article {
       padding: 0rem;
 
@@ -14,8 +12,10 @@ section#main-area-grid {
   }
 }
 @include media-lg {
-  display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 2rem;
-    grid-template-areas: ". .";
+  section#main-area-grid {
+    &.container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: ". .";
+    }
+  }
 }
