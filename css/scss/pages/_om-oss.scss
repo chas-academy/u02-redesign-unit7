@@ -1,5 +1,12 @@
 .oo-video {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   width: 60%;
+   height: 80%;
+}
+@include media-sm {
+    .oo-video {
+        width: 560px; 
+        height: 315px;
+
+    }
+
 }
