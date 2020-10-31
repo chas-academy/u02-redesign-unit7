@@ -6,7 +6,7 @@ article#index-student-info-banner {
 	}
 }
 
-section#main-option-sections {
+aside#main-option-sections {
 	&.container {
 		ul {
 			display: grid;
@@ -50,7 +50,7 @@ section#main-option-sections {
 	}
 }
 
-section#main-gateway {
+div#main-gateway {
 	&.container {
 		.main-gateway-full-width {
 			grid-area: full-width;
@@ -70,7 +70,7 @@ section#main-gateway {
 	}
 }
 
-section#front-page-news {
+div#front-page-news {
 	padding: 0;
 
 	article.main-news {
@@ -80,7 +80,7 @@ section#front-page-news {
 		}
 	}
 
-	section.index-calendar {
+	div.index-calendar {
 		section.calendar-dates {
 			div.calendar-date-cards {
 				display: grid;
@@ -128,8 +128,8 @@ section#front-page-news {
 		}
 	}
 
-	section.more-news {
-		article.news-section-title {
+	div.more-news {
+		section.news-section-title {
 			grid-area: news-title;
 		}
 
@@ -157,8 +157,8 @@ section#front-page-news {
 }
 
 @include media-md {
-	section#front-page-news {
-		section.index-calendar {
+	div#front-page-news {
+		div.index-calendar {
 			section.calendar-dates {
 				div.calendar-date-cards {
 					grid-template-columns: repeat(2, 1fr);
@@ -191,7 +191,7 @@ section#front-page-news {
 			}
 		}
 
-		section.more-news {
+		div.more-news {
 			grid-template-columns: repeat(2, 1fr);
 			column-gap: 2rem;
 			grid-template-areas:
@@ -207,7 +207,7 @@ section#front-page-news {
 		padding-right: 2rem;
 	}
 
-	section#main-option-sections {
+	aside#main-option-sections {
 		&.container {
 			ul {
 				grid-template-columns: repeat(5, 1fr);
@@ -241,7 +241,7 @@ section#front-page-news {
 		}
 	}
 
-	section#main-gateway {
+	div#main-gateway {
 		&.container {
 			grid-template-columns: repeat(2, 1fr);
 			column-gap: 2rem;
@@ -254,8 +254,8 @@ section#front-page-news {
 }
 
 @include media-xl {
-	section#front-page-news {
-		section.index-calendar {
+	div#front-page-news {
+		div.index-calendar {
 			section.calendar-dates {
 				div.calendar-date-cards {
 					grid-template-columns: repeat(3, 1fr);
