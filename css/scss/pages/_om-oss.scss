@@ -5,7 +5,8 @@
 }
 .oo-video {
     width: 100%;
-    height: 560px;
+    height: 65vh;
+    min-height: 560px;
  }
  @include media-lg {
      .oo-video {
