@@ -1,0 +1,28 @@
+section {
+	ul#news-list,
+	ul#press-release-list {
+		&.container {
+			li {
+				@extend .p-1;
+				@extend .mt-0;
+				@extend .mb-1;
+			}
+		}
+	}
+
+	ul#news-list {
+		&.container {
+			li {
+				@extend .background-primary-l-25;
+			}
+		}
+	}
+
+	ul#press-release-list {
+		&.container {
+			li {
+				@extend .background-smoke;
+			}
+		}
+	}
+}
