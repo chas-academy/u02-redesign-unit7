@@ -2,141 +2,148 @@
 <html lang="sv-SE">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Verksamhetsområden - Myndigheten för yrkeshögskolan</title>
-  <link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico" />
-  <!-- Save the following scripts in place for production -->
-  <!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Verksamhetsområden - Myndigheten för yrkeshögskolan</title>
+	<link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico" />
+	<!-- Save the following scripts in place for production -->
+	<!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
 
-  <!-- DRY KISS 💋 -->
-  <script>
-    // This script helps us with github pages reference problem
-    // Consider removing, and use relative root refrencing (i.e. /) in production
+	<!-- DRY KISS 💋 -->
+	<script>
+		// This script helps us with github pages reference problem
+		// Consider removing, and use relative root refrencing (i.e. /) in production
 
-    // Test for location
-    // local is default in file references
-    // if we are on github, changes file references
+		// Test for location
+		// local is default in file references
+		// if we are on github, changes file references
 
-    // Set up variables for location test
-    const chasGitHub = "chas-academy.github.io";
-    const gitHubRepoName = "u02-redesign-unit7";
+		// Set up variables for location test
+		const chasGitHub = "chas-academy.github.io";
+		const gitHubRepoName = "u02-redesign-unit7";
 
-    // Find out if location is GitHub pages or not
-    const isGitHub = window.location.host === chasGitHub ? true : false;
+		// Find out if location is GitHub pages or not
+		const isGitHub = window.location.host === chasGitHub ? true : false;
 
-    // Define the relative root path
-    const cssFile = "/css/style.min.css?v=1.0";
-    const jsFile = "/js/component-loader.js";
+		// Define the relative root path
+		const cssFile = "/css/style.min.css?v=1.0";
+		const jsFile = "/js/component-loader.js";
 
-    // Create the elements we'll need in head
-    const styleEl = document.createElement("link");
-    const scriptEl = document.createElement("script");
+		// Create the elements we'll need in head
+		const styleEl = document.createElement("link");
+		const scriptEl = document.createElement("script");
 
-    // Set attributes for elements
-    styleEl.rel = "stylesheet";
-    styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
-    scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
+		// Set attributes for elements
+		styleEl.rel = "stylesheet";
+		styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
+		scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
 
-    // Add style element to head
-    document.head.appendChild(styleEl);
+		// Add style element to head
+		document.head.appendChild(styleEl);
 
-    // Wait for DOM to finish, then add
-    // component-loader script to end of body
-    document.addEventListener("DOMContentLoaded", () => {
-      document.body.appendChild(scriptEl);
-    });
-  </script>
+		// Wait for DOM to finish, then add
+		// component-loader script to end of body
+		document.addEventListener("DOMContentLoaded", () => {
+			document.body.appendChild(scriptEl);
+		});
+	</script>
 </head>
 
 <body>
-  <header component="/components/header.html" id="main-header"></header>
+	<header component="/components/header.html" id="main-header"></header>
 
-  <main>
-    <article class="container background-icterine mt-2">
-      <h1 class="h5">Verksamhetsområden</h1>
-      <p class="mt-1">
-          Myndigheten för yrkeshögskolan har i uppdrag att ansvara för frågor
-          som rör utbildningar inom yrkeshögskolan.<br />
-          Dessutom ansvarar vi för ytterligare frågor inom utbildningsområdet.
-        </p>
-    </article>
+	<main>
+		<article class="container background-primary mt-2">
+			<h1>Verksamhetsområden</h1>
+			<p>
+				Myndigheten för yrkeshögskolan har i uppdrag att ansvara för frågor som rör utbildningar inom yrkeshögskolan.
+			</p>
+			<p>
+				Här nedan kan du se de olika verksamhetsområden som vi överser och läsa mer om dem på deras respektive sidor.
+			</p>
+		</article>
 
-    <section id="main-area-grid" class="container pl-0 pr-0">
-      <article class="background-dark-slate-gray-l-65">
-        <img src="/assets/images/bilder/YH-start.png" style="width: 100%" alt="yrkeshögskolan" />
-        <div>
-          <a href="#">Yrkeshögskolan</a>
-          <p class="mt-1">
-              Utbildningar som svarar mot arbetslivets behov av kvalificerad
-              yrkeskompetens och som drivs i nära samverkan med företag och
-              andra arbetsgivare.
-            </p>
-        </div>
-      </article>
-      <article class="background-prussian-blue-l-65">
-        <img src="/assets/images/bilder/KK-start.png" style="width: 100%" alt="yrkeshögskolan" />
-        <div>
-          <a href="#">Konst och kulturutbildningar</a>
-          <p class="mt-1">
-            Utbildningar som är högskoleförberedande, yrkesinriktade eller inom
-            kulturarvsområdet och drivs av privata utbildningsanordnare.
-          </p>
-        </div>
-      </article>
+		<section id="main-areas-grid" class="container pl-0 pr-0">
+			<article class="background-dark-slate-gray text-white">
+				<img src="/assets/images/pages/verksamhetsomraden/webopt-product-school-XZkk5xT8Xrk-unsplash.jpg"
+					alt="yrkeshögskolan" />
+				<div class="p-1">
+					<p>
+						<a href="https://www.myh.se/Verksamhetsomraden/Yrkeshogskolan/">Yrkeshögskolan</a>
+					</p>
+					<p>
+						Utbildningar som svarar mot arbetslivets behov av kvalificerad yrkeskompetens och som drivs i nära samverkan med företag och andra arbetsgivare.
+					</p>
+				</div>
+			</article>
+			<article class="background-prussian-blue text-white">
+				<img src="/assets/images/pages/verksamhetsomraden/webopt-yu-cong-t43f7rDsYEI-unsplash.jpg"
+					alt="yrkeshögskolan" />
+				<div class="p-1">
+					<p>
+						<a href="https://www.myh.se/Verksamhetsomraden/Konst--och-kulturutbildningar/">Konst och kulturutbildningar</a>
+					</p>
+					<p>
+						Utbildningar som är högskoleförberedande, yrkesinriktade eller inom kulturarvsområdet och drivs av privata utbildningsanordnare.
+					</p>
+				</div>
+			</article>
 
-      <article class="background-icterine-l-25">
-        <img src="/assets/images/bilder/Kontakttolk.png" style="width: 100%" alt="yrkeshögskolan" />
-        <div>
-          <a href="#">Tolkutbildningar</a>
-          <p class="mt-1">
-            Utbildningar till kontakttolk, teckenspråks- och dövblindtolk samt
-            skrivtolk som drivs av folkhögskolor och studieförbund.
-          </p>
-        </div>
-      </article>
+			<article class="background-yellow-pantone">
+				<img src="/assets/images/pages/verksamhetsomraden/webopt-sincerely-media-01tbPwcWFWM-unsplash.jpg"
+					alt="yrkeshögskolan" />
+				<div class="p-1">
+					<p>
+						<a href="https://www.myh.se/Verksamhetsomraden/Tolkutbildningar/">Tolkutbildningar</a>
+					</p>
+					<p>
+						Utbildningar till kontakttolk, teckenspråks- och dövblindtolk samt skrivtolk som drivs av folkhögskolor och studieförbund.
+					</p>
+				</div>
+			</article>
 
-      <article class="background-raisin-black-l-65">
-        <img src="/assets/images/bilder/ET-start.png" style="width: 100%" alt="yrkeshögskolan" />
-        <div>
-          <a href="#">Utbildningar med endast tillsyn</a>
-          <p class="mt-1">
-            Eftergymnasiala utbildningar inom olika områden som bedrivs av
-            fristående skolor. Utbildningarnas statliga stöd omfattas endast av
-            tillsyn.
-          </p>
-        </div>
-      </article>
+			<article class="background-raisin-black text-white">
+				<img src="/assets/images/pages/verksamhetsomraden/webopt-scott-graham-OQMZwNd3ThU-unsplash.jpg"
+					alt="yrkeshögskolan" />
+				<div class="p-1">
+					<p>
+						<a href="https://www.myh.se/Verksamhetsomraden/Utbildningar-med-endast-tillsyn/">Utbildningar med endast tillsyn</a>
+					</p>
+					<p>
+						Eftergymnasiala utbildningar inom olika områden som bedrivs av fristående skolor. Utbildningarnas statliga stöd omfattas endast av tillsyn.
+					</p>
+				</div>
+			</article>
 
-      <article class="background-smoke">
-        <img src="/assets/images/bilder/SEQF.png" style="width: 100%" alt="yrkeshögskolan" />
-        <div>
-          <a href="#">SeQF</a>
-          <p class="mt-1">
-            Sveriges referensram för kvalifikationer (SeQF) ska synliggöra allt
-            lärande för att öka matchningen på arbetsmarknaden.
-          </p>
-        </div>
-      </article>
+			<article class="background-shadow-blue text-white">
+				<img src="/assets/images/pages/verksamhetsomraden/webopt-ux-indonesia-qC2n6RQU4Vw-unsplash.jpg"
+					alt="yrkeshögskolan" />
+				<div class="p-1">
+					<p>
+						<a href="https://www.myh.se/Verksamhetsomraden/SeQF/">SeQF</a>
+					</p>
+					<p>
+						Sveriges referensram för kvalifikationer (SeQF) ska synliggöra allt lärande för att öka matchningen på arbetsmarknaden.
+					</p>
+				</div>
+			</article>
 
-      <article class="background-yellow-pantone-l-25">
-        <img src="/assets/images/bilder/Scandinav_41YW_validering_webb.jpg" style="width: 100%" alt="yrkeshögskolan" />
-        <div>
-          <a href="#">Om validering</a>
-          <p class="mt-1">
-            Validering innebär att en persons kunskaper och kompetenser
-            kartläggs och bedöms på ett strukturerat sätt, för studier eller
-            arbete, oavsett hur, var eller när de förvärvats.
-          </p>
-        </div>
-      </article>
-    </section>
-  </main>
+			<article class="background-burnished-brown text-white">
+				<img src="/assets/images/pages/verksamhetsomraden/webopt-glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg"
+					alt="yrkeshögskolan" />
+				<div class="p-1">
+					<p>
+						<a href="https://www.myh.se/Verksamhetsomraden/Validering1/">Om validering</a>
+					</p>
+					<p>
+						Validering innebär att en persons kunskaper och kompetenser kartläggs och bedöms på ett strukturerat sätt, för studier eller arbete, oavsett hur, var eller när de förvärvats.
+					</p>
+				</div>
+			</article>
+		</section>
+	</main>
 
-  <footer component="/components/footer.html" id="main-footer"></footer>
-
-  <!-- Save the following script in place for production -->
-  <!-- <script src="/js/component-loader.js"></script> -->
+	<footer component="/components/footer.html" id="main-footer"></footer>
 </body>
 
 </html>
