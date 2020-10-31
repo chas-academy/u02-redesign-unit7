@@ -1,77 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv-SE">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MYH - Om oss</title>
-        <link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico">
-        <!-- Save the following scripts in place for production -->
-        <!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om oss - Myndigheten för yrkeshögskolan</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico">
+    <!-- Save the following scripts in place for production -->
+    <!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
 
-        <!-- DRY KISS 💋 -->
-        <script>
-            // This script helps us with github pages reference problem
-            // Consider removing, and use relative root refrencing (i.e. /) in production
+    <!-- DRY KISS 💋 -->
+    <script>
+        // This script helps us with github pages reference problem
+        // Consider removing, and use relative root refrencing (i.e. /) in production
 
-            // Test for location
-            // local is default in file references
-            // if we are on github, changes file references
+        // Test for location
+        // local is default in file references
+        // if we are on github, changes file references
 
-            // Set up variables for location test
-            const chasGitHub = 'chas-academy.github.io';
-            const gitHubRepoName = 'u02-redesign-unit7';
+        // Set up variables for location test
+        const chasGitHub = 'chas-academy.github.io';
+        const gitHubRepoName = 'u02-redesign-unit7';
 
-            // Find out if location is GitHub pages or not
-            const isGitHub = window.location.host === chasGitHub ? true : false;
+        // Find out if location is GitHub pages or not
+        const isGitHub = window.location.host === chasGitHub ? true : false;
 
-            // Define the relative root path
-            const cssFile = '/css/style.min.css?v=1.0';
-            const jsFile = '/js/component-loader.js';
+        // Define the relative root path
+        const cssFile = '/css/style.min.css?v=1.0';
+        const jsFile = '/js/component-loader.js';
 
-            // Create the elements we'll need in head
-            const styleEl = document.createElement('link');
-            const scriptEl = document.createElement('script');
+        // Create the elements we'll need in head
+        const styleEl = document.createElement('link');
+        const scriptEl = document.createElement('script');
 
-            // Set attributes for elements
-            styleEl.rel = 'stylesheet';
-            styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
-            scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
+        // Set attributes for elements
+        styleEl.rel = 'stylesheet';
+        styleEl.href = !isGitHub ? cssFile : `/${gitHubRepoName}${cssFile}`;
+        scriptEl.src = !isGitHub ? jsFile : `/${gitHubRepoName}${jsFile}`;
 
-            // Add style element to head
-            document.head.appendChild(styleEl);
+        // Add style element to head
+        document.head.appendChild(styleEl);
 
-            // Wait for DOM to finish, then add
-            // component-loader script to end of body
-            document.addEventListener('DOMContentLoaded', () => {
-                document.body.appendChild(scriptEl);
-            });
-        </script>
-    </head>
+        // Wait for DOM to finish, then add
+        // component-loader script to end of body
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.appendChild(scriptEl);
+        });
+    </script>
+</head>
 
-    <body>
-        <header component="/components/header.html" id="main-header">
-        </header>
-        <div class="background-icterine container mt-2 mb-2">
-            <h1>
-                Om oss
-            </h1>
-            <p>
-                Myndigheten för yrkeshögskolans huvuduppdrag är att ansvara för frågor som rör yrkeshögskolan i Sverige
-                och verka för att utbildningarna tillgodoser arbetslivets behov av kompetens.
-            </p>
-        </div>
-            <article class="container background-yellow-pantone pt-3 mb-2">
-                <ul>
-                    <li>
-                        <a href="https://www.myh.se/Hitta-utbildningar/">
-                            Hitta utbildningar
-                        </a>
-                    </li>
-                </ul>
-            </article>
-            <section id="headline-video" class="container p-0"> 
-            <div class=" background-shadow-blue p-1 mb-2 text-white">     
+<body>
+    <header component="/components/header.html" id="main-header"></header>
+    <article class="background-icterine container mt-2">
+        <h1>
+            Om oss
+        </h1>
+        <p>
+            Myndigheten för yrkeshögskolans huvuduppdrag är att ansvara för frågor som rör yrkeshögskolan i Sverige och verka för att utbildningarna tillgodoser arbetslivets behov av kompetens.
+        </p>
+
+        <p>
+            Vi analyserar arbetsmarknadens behov av utbildningar inom yrkeshögskolan, beslutar vilka utbildningar som ska ingå i yrkeshögskolan och beviljar statliga medel till utbildningsanordnarna. Vi främjar även validering i utbildningarna.
+        </p>
+        <p>
+            Vi ansvarar också för frågor som rör vissa utbildningar som ligger utanför yrkeshögskolan - eftergymnasiala konst- och kulturutbildningar som bedrivs av fristående skolor samt tolkutbildningar inom folkbildningen.
+        </p>
+        <p>
+            Myndigheten utövar tillsyn och hanterar klagomål på de utbildningar som ligger inom vårt ansvarsområde. Vi granskar även utbildningarnas kvalitet, framställer statistik och följer upp utbildningars resultat.
+        </p>
+        <p>
+            Vi är också nationell samordningspunkt för EQF (European Qualifications Framework) som ska göra det lättare att jämföra utbildnings- och yrkeskvalifikationer inom EU.
+        </p>
+        <p>
+            Här kan du <a href="/pages/verksamhetsomraden.html">läsa mer om våra verksamhetsområden</a>
+        </p>
+    </article>
+
+    <div class="container p-0">
+        <embed id="about-video" src="https://www.youtube.com/embed/2rx8GVrdhoQ" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen />
+    </div>
+
+    <section id="subjects-find" class="container p-0 mt-2">
+        <article class=" background-prussian-blue p-1 text-white">
             <h2>
                 Rubriker
             </h2>
@@ -122,44 +134,50 @@
                     </a>
                 </li>
             </ul>
-    </div>
-    <div class="p-1 background-prussian-blue mb-2 text-white">
-            <h2>
-                Om yrkeshögskolan
-            </h2>
-            <p>
-                Se vår film för att få en kort inblick i vår verksamhet!
-            </p>
-            <embed class="mt-2 oo-video" src="https://www.youtube.com/embed/2rx8GVrdhoQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen/>
-    </div>
-</section>
+        </article>
+        <article class="background-dark-slate-gray p-1 text-white">
+            <h2>Hitta utbildningar</h2>
 
-    <div class="container background-dark-slate-gray-l-65 mb-2">
-            <p>
-                Vi analyserar arbetsmarknadens behov av utbildningar inom yrkeshögskolan, beslutar vilka utbildningar
-                som ska ingå i yrkeshögskolan och beviljar statliga medel till utbildningsanordnarna. Vi främjar även
-                validering i utbildningarna.
-            </p>
-            <p>
-                Vi ansvarar också för frågor som rör vissa utbildningar som ligger utanför yrkeshögskolan -
-                eftergymnasiala konst- och kulturutbildningar som bedrivs av fristående skolor samt tolkutbildningar
-                inom folkbildningen.
-            </p>
-            <p>
-                Myndigheten utövar tillsyn och hanterar klagomål på de utbildningar som ligger inom vårt ansvarsområde.
-                Vi granskar även utbildningarnas kvalitet, framställer statistik och följer upp utbildningars resultat.
-            </p>
-            <p class="text-left mb-3">
-                Vi är också nationell samordningspunkt för EQF (European Qualifications Framework) som ska göra det
-                lättare att jämföra utbildnings- och yrkeskvalifikationer inom EU.
-            </p>
-            <p>
-                <a href="/pages/verksamhetsomraden.html">Läs mer om våra verksamhetsområden</a></p>
+            <ul class="white-list">
+                <li>
+                    <p>
+                            <strong>Yrkeshögskoleutbildningar</strong>
+                        </p>
+                    <p>
+                            <a href="https://www.yrkeshogskolan.se" target="_blank">yrkeshogskolan.se</a>
+                        </p>
+                </li>
+                <li>
+                    <p>
+                            <strong>Konst- och kulturutbildningar</strong>
+                        </p>
+                    <p>
+                            <a href="https://www.konstkulturutbildning.se" target="_blank">konstkulturutbildning.se</a>
+                        </p>
+                </li>
+                <li>
+                    <p>
+                            <strong>Tolkutbildningar inom folkbildningen</strong>
+                        </p>
+                    <p>
+                            <a href="http://blitolk.nu" target="_blank">blitolk.nu</a>
+                        </p>
+                </li>
+                <li>
+                    <p>
+                            <strong>Utbildningar med endast tillsyn</strong>
+                        </p>
+                    <p>
+                            <a
+                            href="/Verksamhetsomraden/Utbildningar-med-endast-tillsyn/Beviljade-utbildningar-med-endast-tillsyn/">Pågående
+                            utbildningar med endast tillsyn</a>
+                        </p>
+                </li>
+            </ul>
+        </article>
+    </section>
 
-        </div>
-
-
-        <footer component="/components/footer.html" id="main-footer"></footer>
-    </body>
+    <footer component="/components/footer.html" id="main-footer"></footer>
+</body>
 
 </html>

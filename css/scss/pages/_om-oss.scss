@@ -1,20 +1,18 @@
-#headline-video {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: ".";
+section#subjects-find {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: ".";
 }
-.oo-video {
+embed#about-video {
     width: 100%;
-    height: 560px;
- }
- @include media-lg {
-     .oo-video {
-         height: 300px;
-     }
+    height: 65vh;
+    min-height: 550px;
+}
 
-     #headline-video {
+@include media-lg {
+    section#subjects-find {
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: ". .";
         column-gap: 2rem;
-     }
- }
+    }
+}
