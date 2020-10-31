@@ -6,14 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Myndigheten för yrkeshögskolan</title>
 	<link rel="shortcut icon" type="image/x-icon" href="https://myh.se/assets/images/favicon.ico">
-	<!-- Save the following scripts in place for production -->
-	<!-- <link rel="stylesheet" href="/css/style.min.css?v=1.0"> -->
-
 	<!-- DRY KISS 💋 -->
 	<script>
 		// This script helps us with github pages reference problem
-		// Consider removing, and use relative root refrencing (i.e. /) in production
-
+    
 		// Test for location
 		// local is default in file references
 		// if we are on github, changes file references
@@ -59,7 +55,7 @@
 		<article id="index-student-info-banner" class="container background-primary mt-2 p-1">
 			<h1 class="h5">Är du Student?</h1>
 			<p>
-				Information för dig som är student hittar du på 
+				Information för dig som är student hittar du på
 				<a href="https://yrkeshogskolan.se">
 					yrkeshogskolan.se
 				</a>
@@ -67,7 +63,7 @@
 		</article>
 
 		<!-- Quick access options -->
-		<section id="main-option-sections" class="container pl-0 pr-0">
+		<aside id="main-option-sections" class="container pl-0 pr-0">
 			<ul>
 				<li>
 					<a href="https://myh.se/Lagar-regler-och-tillsyn/Anmal-brister-i-en-utbildning/"
@@ -104,12 +100,12 @@
 					</a>
 				</li>
 			</ul>
-		</section>
+		</aside>
 
 		<!-- Main option lists -->
-		<section id="main-gateway" class="container pl-0 pr-0 line-top">
+		<div id="main-gateway" class="container pl-0 pr-0 line-top">
 			<article class="background-prussian-blue-l-65">
-				<h1 class="h5">Ansök om att bedriva utbildning</h1>
+				<h2 class="h5">Ansök om att bedriva utbildning</h2>
 				<ul>
 					<li>
 						<a
@@ -133,7 +129,7 @@
 			</article>
 
 			<article class="background-dark-slate-gray-l-65">
-				<h1 class="h5">För dig som bedriver utbildning</h1>
+				<h2 class="h5">För dig som bedriver utbildning</h2>
 				<ul>
 					<li>
 						<a
@@ -157,9 +153,10 @@
 			</article>
 
 			<article class="main-gateway-full-width background-primary-l-25">
-				<h1 class="h5">För företag och organisationer</h1>
+				<h2 class="h5">För företag och organisationer</h2>
 				<p>
-					Arbetslivet är den främsta drivkraften bakom vilka yrkeshögskoleutbildningar som startar och hur de är upplagda.
+					Arbetslivet är den främsta drivkraften bakom vilka yrkeshögskoleutbildningar som startar och hur
+					de är upplagda.
 				</p>
 				<ul>
 					<li>
@@ -173,24 +170,28 @@
 					</li>
 				</ul>
 			</article>
-		</section>
+		</div>
 
-		<section id="front-page-news">
+		<div id="front-page-news">
 
 			<!-- Main news article -->
 			<article class="main-news parallax">
 				<div class="container">
 					<a
 						href="https://myh.se/Nyhetsrum/Nyheter/2020/Fragor-och-svar-for-dig-som-utbildningsanordnare-med-anledning-av-Coronaviruset/">
-						<h1 class="h3">
+						<h2 class="h3">
 							Frågor och svar för utbildningsanordnare med anledning av coronaviruset
-						</h1>
+						</h2>
 					</a>
-					<h2 class="h5">
-						Här svarar myndigheten löpande på frågor som kommer in från utbildningsanordnare med anledning av coronaviruset.
-					</h2>
+					<h3 class="h5">
+						Här svarar myndigheten löpande på frågor som kommer in från utbildningsanordnare med
+						anledning av coronaviruset.
+					</h3>
 					<p>
-						Från myndighetens sida vill vi uttrycka vår förståelse för den svåra situation som ni, era studerande och elever samt företrädare för arbetslivet befinner sig i. Myndigheten kommer att ta stor hänsyn till hur ni som anordnare väljer att anpassa genomförandet av era utbildningar under de omständigheter som råder.
+						Från myndighetens sida vill vi uttrycka vår förståelse för den svåra situation som ni, era
+						studerande och elever samt företrädare för arbetslivet befinner sig i. Myndigheten kommer
+						att ta stor hänsyn till hur ni som anordnare väljer att anpassa genomförandet av era
+						utbildningar under de omständigheter som råder.
 					</p>
 
 					<a class="button white" role="button"
@@ -201,12 +202,15 @@
 				</div>
 			</article>
 
-			<section class="index-calendar mt-2">
+			<div class="index-calendar mt-2">
 
 				<article class="container background-smoke">
 					<h2>Kalender</h2>
-					<p>Myndigheten för yrkeshögskolan håller löpande distandsutbildningar, seminarium och kurser. Nedan hittar du kommande inbokningsbara händelser.</p>
-					<p>Om du är intresserad utav någon av de kommande händerlserna ber vi dig att kontakta oss på <a href="mailto:bokning@myh.se">bokning@myh.se</a> för att anmälla intresse eller boka in dig</p>
+					<p>Myndigheten för yrkeshögskolan håller löpande distandsutbildningar, seminarium och kurser.
+						Nedan hittar du kommande inbokningsbara händelser.</p>
+					<p>Om du är intresserad utav någon av de kommande händerlserna ber vi dig att kontakta oss på <a
+							href="mailto:bokning@myh.se">bokning@myh.se</a> för att anmälla intresse eller boka in
+						dig</p>
 				</article>
 
 				<section class="calendar-dates">
@@ -244,15 +248,17 @@
 					</div>
 
 				</section>
-			</section>
+			</div>
 
-			<section class="container more-news pl-0 pr-0">
-				<article class="container news-section-title pt-1 pb-1 text-white background-dark-slate-gray">
+			<div class="container more-news pl-0 pr-0">
+				<section class="container news-section-title pt-1 pb-1 text-white background-dark-slate-gray">
 					<h2>Senaste Nyheter</h2>
 					<p>
-						Här hittar du de senaste nyheterna som vi pulicerar på myndigheten för yrkeshögskolan. <strong>För att ta del av alla nyheter</strong> kan du besöka sidan <a href="/pages/nyheter.html">nyheter</a>
+						Här hittar du de senaste nyheterna som vi pulicerar på myndigheten för yrkeshögskolan.
+						<strong>För att ta del av alla nyheter</strong> kan du besöka sidan <a
+							href="/pages/nyheter.html">nyheter</a>
 					</p>
-				</article>
+				</section>
 
 				<!-- Minor/Older news -->
 				<div class="news-item">
@@ -262,14 +268,15 @@
 					<article>
 						<a
 							href="https://myh.se/Nyhetsrum/Nyheter/2020/Resultat-av-ansokningsomgangen-for-kurser-i-kontakttolkning/">
-							<h1 class="h4">Resultatet av ansökningsomgången för kurser i kontakttolkning</h1>
+							<h2 class="h4">Resultatet av ansökningsomgången för kurser i kontakttolkning</h2>
 						</a>
 						<div class="date">
 							Publicerad:
 							<time datetime="2020-10-23 11:53">2020-10-23</time>
 						</div>
 						<p>
-							Varje år ansöker folkhögskolor och studieförbund om medel från Myndigheten för yrkeshögskolan för att starta kurser för kontakttolkar.
+							Varje år ansöker folkhögskolor och studieförbund om medel från Myndigheten för
+							yrkeshögskolan för att starta kurser för kontakttolkar.
 						</p>
 						<a class="button" role="button"
 							href="https://myh.se/Nyhetsrum/Nyheter/2020/Resultat-av-ansokningsomgangen-for-kurser-i-kontakttolkning/">
@@ -283,14 +290,16 @@
 						alt="Två personer som tar på varandras händer">
 					<article>
 						<a href="https://myh.se/Nyhetsrum/Nyheter/2020/Deltidsutvardering-av-projektet-Distansstod/">
-							<h1 class="h4">Deltidsutvärdering av projektet Distansstöd</h1>
+							<h2 class="h4">Deltidsutvärdering av projektet Distansstöd</h2>
 						</a>
 						<div class="date">
 							Publicerad:
 							<time datetime="2020-10-23 11:53">2020-10-23</time>
 						</div>
 						<p>
-							Under hösten genomförs flera aktiviteter inom ramen för projektet ”Distansstöd". Den här enkäten vill utvärdera om ni som utbildningsanordnare upplever att projektet ger er stöd i frågor som rör distansundervisning.
+							Under hösten genomförs flera aktiviteter inom ramen för projektet ”Distansstöd". Den här
+							enkäten vill utvärdera om ni som utbildningsanordnare upplever att projektet ger er stöd
+							i frågor som rör distansundervisning.
 						</p>
 						<a class="button" role="button"
 							href="https://myh.se/Nyhetsrum/Nyheter/2020/Deltidsutvardering-av-projektet-Distansstod/">
@@ -298,16 +307,13 @@
 						</a>
 					</article>
 				</div>
-			</section>
+			</div>
 
-		</section>
+		</div>
 
 	</main>
 
 	<footer component="/components/footer.html" id="main-footer"></footer>
-
-	<!-- Save the following script in place for production -->
-	<!-- <script src="/js/component-loader.js"></script> -->
 </body>
 
 </html>

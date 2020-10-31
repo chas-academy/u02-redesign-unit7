@@ -111,38 +111,40 @@
 			<p>Du kan även skriva till oss direkt med hjälp av Kontaktformuläret nedan.</p>
 
 			<form id="contact-form" method="POST">
-				<label for="name">Namn</label>
-				<input type="text" id="name" name="name" placeholder="Fullständigt namn" />
+				<label id="name-label" for="name">Namn</label>
+				<input type="text" id="name" name="name" aria-labelledby="name-label" placeholder="Fullständigt namn" />
 
-				<label for="email">E-post</label>
-				<input type="email" id="email" name="email" placeholder="din@epost.se" />
+				<label id="email-label" for="email">E-post</label>
+				<input type="email" id="email" name="email" aria-labelledby="email-label" placeholder="din@epost.se" />
 
-				<label for="phone">Telefon</label>
-				<input type="tel" id="phone" name="phone" placeholder="ex. 08-123 456 (valfritt)" />
+				<label id="phone-label" for="phone">Telefon</label>
+				<input type="tel" id="phone" name="phone" aria-labelledby="phone-label"
+					placeholder="ex. 08-123 456 (valfritt)" />
 
-				<label for="subject">Ämne</label>
-				<select id="subject">
+				<label id="subject-label" for="subject">Ämne</label>
+				<select id="subject" aria-labelledby="subject-label">
 					<option value="" disabled selected>Välj ämne</option>
 					<option value="education">Utbildning</option>
 					<option value="apply">Ansöka</option>
 					<option value="report">Felanmälan</option>
 				</select>
 
-				<label for="message">Fråga</label>
-				<textarea id="message" name="message" rows="5" cols="5" placeholder="Hur kan vi hjälpa dig?"></textarea>
+				<label id="message-label" for="message">Fråga</label>
+				<textarea id="message" name="message" rows="5" cols="5" aria-labelledby="message-label"
+					placeholder="Hur kan vi hjälpa dig?"></textarea>
 				<button>Skicka</button>
 			</form>
 		</section>
 
-		<section id="contact-addresses" class="container">
+		<div id="contact-addresses" class="container">
 			<article>
-				<h1>
+				<h2 class="h1">
 					Västerås
-				</h1>
-
-				<h2>
-					Besöksadress
 				</h2>
+
+				<h3 class="h2">
+					Besöksadress
+				</h3>
 				<p>
 					<a href="https://goo.gl/maps/qEeaWD4aZNSLy62p9" target="_blank" rel="noopener noreferrer">
 						Ingenjör Bååths gata 19, 722 12 Västerås
@@ -161,26 +163,26 @@
 					12.00 - 13.00
 				</p>
 
-				<h2>
+				<h3 class="h2">
 					Postadress
-				</h2>
+				</h3>
 				<p>
-				Myndigheten för yrkeshögskolan
-				<br />
-				Box 145
-				<br />
-				721 05 Västerås
-			</p>
+					Myndigheten för yrkeshögskolan
+					<br />
+					Box 145
+					<br />
+					721 05 Västerås
+				</p>
 			</article>
 
 			<article>
-				<h1>
+				<h2 class="h1">
 					Hässleholm
-				</h1>
-
-				<h2>
-					Besöksadress
 				</h2>
+
+				<h3 class="h2">
+					Besöksadress
+				</h3>
 				<p>
 					<a href="https://goo.gl/maps/MHy9piHmRwYJVTwy7" target="_blank" rel="noopener noreferrer">
 						Frykholmsgatan 10, 281 31 Hässleholm
@@ -199,53 +201,53 @@
 					12.00 - 13.00
 				</p>
 
-				<h2>
+				<h3 class="h2">
 					Postadress
-				</h2>
+				</h3>
 				<p>
-				Myndigheten för yrkeshögskolan
-				<br />
-				Box 85
-				<br />
-				281 21 Hässleholm
-			</p>
+					Myndigheten för yrkeshögskolan
+					<br />
+					Box 85
+					<br />
+					281 21 Hässleholm
+				</p>
 			</article>
-		</section>
+		</div>
 
 		<!-- Misc contact related information -->
 		<section class="container background-dark-slate-gray text-white">
-			<h1>Övrig information</h1>
+			<h2 class="h1">Övrig information</h2>
 
 			<article>
 				<h3 class="h5">Fakturering</h3>
 				<p>
-						Från och med den 1 april 2019 blir det lag på att alla inköp i offentlig sektor ska faktureras
-						med elektronisk faktura (e-faktura).
-					</p>
+					Från och med den 1 april 2019 blir det lag på att alla inköp i offentlig sektor ska faktureras
+					med elektronisk faktura (e-faktura).
+				</p>
 				<h3 class="h5">Organisationsnummer</h3>
 				<p>
-						202100-6230
-					</p>
+					202100-6230
+				</p>
 				<p>
-						<a href="https://www.myh.se/Om-oss/Fakturera-oss/">
-							Läs här om hur du kan fakturera oss elektroniskt
-						</a>
-					</p>
+					<a href="https://www.myh.se/Om-oss/Fakturera-oss/">
+						Läs här om hur du kan fakturera oss elektroniskt
+					</a>
+				</p>
 			</article>
 
 			<article>
-				<h3 class="h5">Pressjour</h3>
+				<h2 class="h5">Pressjour</h2>
 				<p>
-						Besök vårt
-						<a href="https://www.mynewsdesk.com/se/myndigheten-foer-yrkeshoegskolan" target="_blank"
-							rel="noopener noreferrer">
-							nyhetsrum
-						</a>
-						eller ring oss på
-						<a href="tel:0102090173">
-							010-209 01 73
-						</a>
-					</p>
+					Besök vårt
+					<a href="https://www.mynewsdesk.com/se/myndigheten-foer-yrkeshoegskolan" target="_blank"
+						rel="noopener noreferrer">
+						nyhetsrum
+					</a>
+					eller ring oss på
+					<a href="tel:0102090173">
+						010-209 01 73
+					</a>
+				</p>
 			</article>
 		</section>
 
