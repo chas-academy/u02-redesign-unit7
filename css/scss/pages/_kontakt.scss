@@ -1,4 +1,4 @@
-section#contact-addresses {
+div#contact-addresses {
 	&.container {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -75,7 +75,7 @@ div#thank-you-flash {
 }
 
 @include media-lg {
-	section#contact-addresses {
+	div#contact-addresses {
 		&.container {
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-areas: ". .";
