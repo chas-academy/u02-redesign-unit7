@@ -38,27 +38,23 @@
 #full-width-statistics {
   padding: 0;
 
-  article.key-numbers {
+  div.key-numbers {
     &.parallax {
       @extend .text-white;
       @include parallax-container(
         "/assets/images/pages/statistik/statistics.jpg"
       );
     }
-
-    .banner-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      row-gap: 2rem;
-      grid-template-areas:
-        "headline"
-        "."
-        "."
-        "."
-        ".";
-
-      .headline {
-        grid-area: headline;
+    article {
+      div.banner-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        grid-template-areas:
+          "."
+          "."
+          "."
+          ".";
       }
     }
   }
@@ -74,16 +70,17 @@
       ". .";
   }
   #full-width-statistics {
-    article.key-numbers {
-      div.banner-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 2rem;
-        row-gap: 2rem;
-        grid-template-areas:
-          "headline headline"
-          ". ."
-          ". .";
+    div.key-numbers {
+      article {
+        div.banner-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: 2rem;
+          row-gap: 2rem;
+          grid-template-areas:
+            ". ."
+            ". .";
+        }
       }
     }
   }
