@@ -41,7 +41,7 @@
   .key-numbers {
     position: relative;
     background: $black;
-    @include parallax;
+    // @include parallax;
 
     .banner-grid {
       display: grid;
