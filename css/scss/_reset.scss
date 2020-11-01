@@ -4,7 +4,7 @@
 	padding: 0;
 	// Make sure long words break
 	// rather than expand the box
-	word-break: break-all;
+	word-wrap: break-word;
 
 	&:focus {
 		outline: none;

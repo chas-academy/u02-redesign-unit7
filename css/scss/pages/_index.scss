@@ -76,7 +76,7 @@ div#front-page-news {
 	article.main-news {
 		&.parallax {
 			@extend .text-white;
-			@include parallax;
+			@include parallax-container;
 		}
 	}
 
@@ -92,34 +92,43 @@ div#front-page-news {
 				a {
 					text-decoration: none;
 					border-radius: 0.15rem;
-					padding: 1rem 0;
+					padding: 1rem;
 					background: $white;
-
-					&:hover {
-						transform: scale(1.05);
-					}
 
 					&:first-child {
 						background: $prussian-blue;
 						color: $white;
+
+						article {
+							h4 {
+								font-size: 3rem;
+							}
+						}
+					}
+
+					&:hover {
+						animation: hoverPulse 0.5s ease-in infinite alternate;
+
+						@keyframes hoverPulse {
+							from {
+								transform: scale(1);
+							}
+							to {
+								transform: scale(1.025);
+							}
+						}
 					}
 
 					article {
-						display: grid;
-						grid-template-columns: 1fr 2fr;
-						grid-template-areas: ". .";
-						column-gap: 0.5rem;
-
+						display: flex;
 						h4 {
 							font-size: 3rem;
 							font-weight: 700;
 							line-height: 1;
-							padding: 0.5rem 0 0.5rem 0.75rem;
-							margin: 0;
+							margin: 0 1rem 0 0;
 						}
 
 						p {
-							padding: 0.5rem 0.75rem 0.5rem 0;
 							text-decoration: underline;
 						}
 					}
@@ -168,18 +177,18 @@ div#front-page-news {
 						". .";
 
 					a {
+						article {
+							display: block;
+						}
+
 						&:first-child {
 							grid-area: next-event;
 
-							&:hover {
-								transform: scale(1.025);
-							}
-
 							article {
-								grid-template-columns: 1fr 4fr;
-
+								display: flex;
 								h4 {
 									font-size: 5rem;
+									margin-right: 1rem;
 								}
 								p {
 									font-size: 2rem;
