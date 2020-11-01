@@ -38,10 +38,13 @@
 #full-width-statistics {
   padding: 0;
 
-  .key-numbers {
-    position: relative;
-    background: $black;
-    // @include parallax;
+  article.key-numbers {
+    &.parallax {
+      @extend .text-white;
+      @include parallax-container(
+        "/assets/images/pages/statistik/statistics.jpg"
+      );
+    }
 
     .banner-grid {
       display: grid;
