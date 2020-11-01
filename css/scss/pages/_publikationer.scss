@@ -44,13 +44,6 @@ section#filter-section {
       grid-area: search-button;
     }
   }
-
-  // label {
-  //   padding: 0.25rem 0.635rem;
-  //   background: $shadow-blue;
-  //   color: $white;
-  //   font-weight: 700;
-  // }
 }
 
 div#publication-grid {
@@ -63,7 +56,7 @@ div#publication-grid {
       border: 2px solid $smoke;
     }
 
-    a button {
+    a.button {
       @extend .mb-1;
       @extend .mt-1;
     }
