@@ -1,4 +1,4 @@
-section#subjects-find {
+div#subjects-find {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: ".";
@@ -10,7 +10,7 @@ embed#about-video {
 }
 
 @include media-lg {
-    section#subjects-find {
+    div#subjects-find {
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: ". .";
         column-gap: 2rem;
